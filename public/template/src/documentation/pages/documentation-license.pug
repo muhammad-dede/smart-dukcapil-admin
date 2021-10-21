@@ -1,0 +1,23 @@
+//- =========================================================================================
+    File Name: documentation-license.pug
+    Description: Documentation license page
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+
+extends template
+
+block pageVars
+    - var pageTitle    = "License"
+    - var activeMenu   = "license"
+
+append breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"License"}])
+
+
+
+//- Include page content in content block
+append content
+    include ../contents/documentation-license.html

@@ -1,0 +1,49 @@
+//- =========================================================================================
+    File Name: ext-component-media-player.pug
+    Description: Component-player
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================
+
+extends template
+
+block pageVars
+    - var pageTitle = "Media player"
+    - var pageSubTitle = "Media"
+    - var description = "My Media player"
+    - var activeMenu = "ext-component-media-player"
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Extensions"}, {name:"Media Player"}])
+
+
+//- Include page content in page block
+append content
+    include ../contents/ext-component-media-player.html
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+   link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/extensions/plyr.min.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+   script(src=app_assets_path+'/vendors/js/extensions/plyr.min.js')
+   script(src=app_assets_path+'/vendors/js/extensions/plyr.polyfilled.min.js')
+
+//- Page CSS
+//------------------------------
+//- Add page specific CSS
+append pagecss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/extensions/ext-component-media-player.css')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+   script(src=app_assets_path+'/js/scripts/extensions/ext-component-media-player.js')

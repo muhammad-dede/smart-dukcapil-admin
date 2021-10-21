@@ -1,0 +1,52 @@
+//- =========================================================================================
+  File Name: app-invoice-add.pug
+  Description: Invoice Add Application
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: PIXINVENT
+  Author URL: http://www.themeforest.net/user/pixinvent
+  ==========================================================================================-//
+
+extends template
+
+block pageVars
+  - var pageTitle   = "Invoice Add"
+  - var pageSubTitle = "Invoice Add"
+  - var description  = "Invoice Add Application"
+  - var activeMenu   = "app-invoice-add"
+
+block page-header
+
+//- Include file manager content
+append content
+  include ../contents/app-invoice-add.html
+
+//- vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+
+append vendorcss
+  link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/pickers/flatpickr/flatpickr.min.css')
+  link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/forms/select/select2.min.css')
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+  link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/forms/pickers/form-flat-pickr.css')
+  link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/app-invoice.css')
+
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+  script(src=app_assets_path+'/vendors/js/forms/repeater/jquery.repeater.min.js')
+  script(src=app_assets_path+'/vendors/js/forms/select/select2.full.min.js')
+  script(src=app_assets_path+'/vendors/js/pickers/flatpickr/flatpickr.min.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+  script(src=app_assets_path+'/js/scripts/pages/app-invoice.js')

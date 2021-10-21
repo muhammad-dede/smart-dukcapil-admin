@@ -1,0 +1,59 @@
+//- =========================================================================================
+    File Name: app-user-edit.pug
+    Description: User edit page.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+
+extends template
+
+block pageVars
+    - var pageTitle    = "User Edit"
+    - var pageSubTitle = "User Edit"
+    - var description  = "User edit page"
+    - var activeMenu   = "app-user-edit"
+
+block page-header
+
+//- Include chat content in page block
+append content
+    include ../contents/app-user-edit.html
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/forms/pickers/form-flat-pickr.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/forms/form-validation.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/pages/app-user.css')
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+    //- select2 css
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/forms/select/select2.min.css')
+    //- flat pickr CSS -//
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/pickers/flatpickr/flatpickr.min.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+    //- select2 js
+    script(src=app_assets_path+'/vendors/js/forms/select/select2.full.min.js')
+    //- validation js
+    script(src=app_assets_path+'/vendors/js/forms/validation/jquery.validate.min.js')
+    //- flat pickr js -//
+    script(src=app_assets_path+'/vendors/js/pickers/flatpickr/flatpickr.min.js')
+
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+    script(src=app_assets_path+'/js/scripts/pages/app-user-edit.js')
+    //- Template JS for tabs
+    script(src=app_assets_path+'/js/scripts/components/components-navs.js')

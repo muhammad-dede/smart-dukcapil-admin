@@ -1,0 +1,45 @@
+//- =========================================================================================
+  File Name: documentation-laravel-authentication.pug
+  Description: Define LARAVEL structure for header, menu, content & footer
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: PIXINVENT
+  Author URL: http://www.themeforest.net/user/pixinvent
+  ==========================================================================================-//
+
+extends template
+
+block pageVars
+  - var pageTitle    = "Laravel Passport"
+  - var activeMenu   = "laravel-passport"
+
+
+
+append pageConfig
+  - var contentLayout = 'content-right-sidebar'
+  - var sidebarSticky = true
+  //-OPTIONS:- true, false | For sticky(floating) sidebar, will affect only if there is a sidebar
+
+append breadcrumbs
+  +breadcrumbs([{url:"index.html",name:"Home"}, {name:"Laravel"}, {name:"Laravel Passport"}])
+
+
+
+//- Include page content in content block
+append content
+  include ../contents/documentation-laravel-passport.html
+
+append sidebar
+  include ../contents/sidebar/documentation-laravel-passport-sidebar.html
+
+//- Page specific dependency
+//------------------------------
+
+//- Add custom page specific CSS
+append pagecss
+  link(rel='stylesheet', type='text/css', href='../../../app-assets/vendors/css/ui/prism-treeview.css')
+
+
+//- Add custom page specific JS
+append pagejs
+  script(src='../../../app-assets/vendors/js/ui/prism-treeview.js', type='text/javascript')

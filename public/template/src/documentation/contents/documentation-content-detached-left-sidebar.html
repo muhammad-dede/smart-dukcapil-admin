@@ -1,0 +1,138 @@
+<!-- Content Detached Left Sidebar -->
+<section id="content-detached-left-sidebar">
+  <!-- CSS Classes -->
+  <section id="content-detached-left-sidebar-css" class="card">
+    <div class="card-header">
+      <h4 class="card-title">CSS Classes</h4>
+      <div class="heading-elements">
+        <ul class="list-inline mb-0">
+          <li>
+            <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-content collapse show" aria-expanded="true">
+      <div class="card-body">
+        <p>
+          This table contains all classes related to the content detached left sidebar layout. This is a custom layout
+          classes for content detached left sidebar layout page requirements.
+        </p>
+        <p>All these options can be set via following classes:</p>
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Classes</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>.sidebar-detached.sidebar-left</code></td>
+                <td>
+                  Use these classes as a child of <code>.content-wrapper</code> class to float the sidebar on left side
+                  of the content section.
+                </td>
+              </tr>
+              <tr>
+                <td><code>.sidebar</code></td>
+                <td>
+                  Use this class as a child of <code>.sidebar-detached.sidebar-left</code> class to float the sidebar on
+                  left side of the content section.
+                </td>
+              </tr>
+              <tr>
+                <td><code>.content-detached.content-right</code></td>
+                <td>
+                  Use these classes as a child of <code>.content-wrapper</code> class to float the content on right side
+                  so that left sidebar floats to the left side of the content section.
+                </td>
+              </tr>
+              <tr>
+                <td><code>.content-body</code></td>
+                <td>
+                  Use this class as a child of <code>.content-detached.content-right</code> classes to create some
+                  margin on the left side of the content section so that content and sidebar doesn't overlap.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ CSS Classes -->
+
+  <!-- HTML Markup -->
+  <section id="content-detached-left-sidebar-html" class="card">
+    <div class="card-header">
+      <h4 class="card-title">HTML Markup</h4>
+      <div class="heading-elements">
+        <ul class="list-inline mb-0">
+          <li>
+            <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-content collapse show" aria-expanded="true">
+      <div class="card-body">
+        <p>
+          This section contains HTML Markup to create 3 column detached left sidebar layout. This layout has a
+          navigation, content and left detached sidebar sections with common header and footer sections.
+        </p>
+        <ul>
+          <li>
+            Add <code>.sidebar-detached.sidebar-left</code> classes for adjusting detached sidebar section to left side.
+          </li>
+          <li>
+            Add <code>.sidebar</code> class as a child of <code>.sidebar-detached.sidebar-left</code> classes for
+            adjusting detached sidebar section to left side.
+          </li>
+          <li>
+            Add <code>.content-detached.content-right</code> classes for adjusting detached content section to right
+            side.
+          </li>
+          <li>
+            Add <code>.content-body</code> class as a child of <code>.content-detached.content-right</code> classes to
+            create some margin on the left side of the content section.
+          </li>
+        </ul>
+        <pre class="language-markup mb-0">
+<code class="language-markup">
+&lt;!-- BEGIN: Content --&gt;
+&lt;div class="app-content content"&gt;
+  &lt;div class="content-wrapper"&gt;
+    &lt;!-- Content Header --&gt;
+    &lt;div class="content-header row"&gt;
+      ...
+    &lt;/div&gt;
+    &lt;!--/ Content Header --&gt;
+
+    &lt;!-- Sidebar Detached to Left --&gt;
+    &lt;div class="sidebar-detached sidebar-left"&gt;
+      &lt;div class="sidebar"&gt;
+        ...
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--/ Sidebar Detached to Left --&gt;
+
+    &lt;!-- Content Detached to Right --&gt;
+    &lt;div class="content-detached content-right"&gt;
+      &lt;div class="content-body"&gt;
+        ...
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--/ Content Detached to Right --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- END: Content --&gt;
+</code>
+        </pre>
+      </div>
+    </div>
+  </section>
+  <!--/ HTML Markup -->
+</section>
+<!--/ Content Detached Left Sidebar -->

@@ -1,0 +1,49 @@
+//- =========================================================================================
+  File Name: card-statistics.pug
+  Description: Card Statistics
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: PIXINVENT
+  Author URL: http://www.themeforest.net/user/pixinvent
+  ==========================================================================================
+
+extends template
+
+block pageVars
+  - var pageTitle   = "Statistics Cards"
+  - var pageSubTitle = "Statistics cards"
+  - var description = "Extending default bootstrap card functionality."
+  - var activeMenu  = "card-statistics"
+
+block breadcrumbs
+  +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Cards"}, {name:"Statistics Cards"}])
+
+//- Include page content in page block
+append content
+  include ../contents/card-statistics.html
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+  link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/charts/apexcharts.css')
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+  link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/charts/chart-apex.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+  //- Apex Chart JS
+  script(src=app_assets_path+'/vendors/js/charts/apexcharts.min.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+  //- Advance cards JS
+  script(src=app_assets_path+'/js/scripts/cards/card-statistics.js')

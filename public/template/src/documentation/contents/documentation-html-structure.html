@@ -1,0 +1,668 @@
+<!-- Html Folder Structure -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="folder-structure" class="card-title">Folder Structure</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <div class="card-text">
+        <p>General HTML structure is the same throughout the template. Here is the Folder structure.</p>
+      </div>
+      <h4 class="mt-3">HTML Folder structure for vuexy assets.</h4>
+      <hr />
+      <pre>
+<code class="language-treeview">
+vuexy-html-bootstrap-admin-template/
+├── html/
+|   ├── ltr/
+|   |   ├── vertical-menu-template/
+|   |   ├── vertical-menu-template-dark/
+|   |   ├── vertical-menu-template-semi-dark/
+|   |   ├── vertical-menu-template-bordered/
+|   |   ├── vertical-collapsed-menu-template/
+|   |   ├── horizontal-menu-template/
+|   |   ├── horizontal-menu-template-dark/
+</code>
+      </pre>
+      <p class="mt-2">Following is the details of what all html folders.</p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Folder/Files</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/"
+                  target="_blank"
+                  >vertical-menu-template</a
+                >
+              </td>
+              <td><code>vertical-menu-template/</code> folder contains classic layout for Vuexy admin.</td>
+            </tr>
+            <tr>
+              <td><strong>2</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template-dark/"
+                  target="_blank"
+                  >vertical-menu-template-dark</a
+                >
+              </td>
+              <td><code>vertical-menu-template-dark/</code> folder contains dark layout for Vuexy admin.</td>
+            </tr>
+            <tr>
+              <td><strong>3</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template-semi-dark/"
+                  target="_blank"
+                  >vertical-menu-template-semi-dark</a
+                >
+              </td>
+              <td><code>vertical-menu-template-semi-dark/</code> folder contains semi-dark layout for Vuexy admin.</td>
+            </tr>
+            <tr>
+              <td><strong>4</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template-bordered/"
+                  target="_blank"
+                  >vertical-menu-template-bordered</a
+                >
+              </td>
+              <td><code>vertical-menu-template-bordered/</code> folder contains bordered layout for Vuexy admin.</td>
+            </tr>
+            <tr>
+              <td><strong>5</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-collapsed-menu-template/"
+                  target="_blank"
+                  >vertical-collapsed-menu-template</a
+                >
+              </td>
+              <td>
+                <code>vertical-collapsed-menu-template/</code> folder contains collapsed menu layout for Vuexy admin.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>6</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/horizontal-menu-template/"
+                  target="_blank"
+                  >horizontal-menu-template</a
+                >
+              </td>
+              <td><code>horizontal-menu-template/</code> folder contains classic horizontal layout for Vuexy admin.</td>
+            </tr>
+            <tr>
+              <td><strong>7</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/horizontal-menu-template-dark/"
+                  target="_blank"
+                  >horizontal-menu-template-dark</a
+                >
+              </td>
+              <td>
+                <code>horizontal-menu-template-dark/</code> folder contains horizontal dark layout for Vuexy admin.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Html Folder Structure -->
+
+<div id="html-structure" class="row">
+  <div class="col-12">
+    <h2 class="mt-2 mb-1">HTML Structure</h2>
+    <p>Following are the structures of basic HTML, header, menu, content and footer.</p>
+  </div>
+
+  <!-- Basic HTML -->
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 id="basic-html" class="card-title">Basic HTML</h4>
+        <div class="heading-elements">
+          <ul class="list-inline mb-0">
+            <li>
+              <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-content collapse show" aria-expanded="true">
+        <div class="card-body">
+          <p>General HTML structure is same for all template pages.</p>
+          <pre class="language-markup">
+<code class="language-markup">
+&lt;!DOCTYPE html&gt;
+&lt;html class="loading" lang="en" data-textdirection="ltr"&gt;
+  &lt;!-- BEGIN: Head--&gt;
+
+  &lt;head&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"&gt;
+    &lt;meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities."&gt;
+    &lt;meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app"&gt;
+    &lt;meta name="author" content="PIXINVENT"&gt;
+    &lt;title&gt;Layout Empty - Vuexy - Bootstrap HTML admin template&lt;/title&gt;
+    &lt;link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png"&gt;
+    &lt;link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico"&gt;
+    &lt;link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet"&gt;
+
+    &lt;!-- BEGIN: Vendor CSS--&gt;
+    &lt;link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/vendors.min.css"&gt;
+    &lt;!-- END: Vendor CSS--&gt;
+
+    &lt;!-- BEGIN: Theme CSS--&gt;
+    &lt;link rel="stylesheet" type="text/css" href="../../../app-assets/css/bootstrap.css"&gt;
+    &lt;link rel="stylesheet" type="text/css" href="../../../app-assets/css/bootstrap-extended.css"&gt;
+    &lt;link rel="stylesheet" type="text/css" href="../../../app-assets/css/colors.css"&gt;
+    &lt;link rel="stylesheet" type="text/css" href="../../../app-assets/css/components.css"&gt;
+    &lt;link rel="stylesheet" type="text/css" href="../../../app-assets/css/themes/dark-layout.css"&gt;
+    &lt;link rel="stylesheet" type="text/css" href="../../../app-assets/css/themes/bordered-layout.css"&gt;
+    &lt;link rel="stylesheet" type="text/css" href="../../../app-assets/css/themes/semi-dark-layout.css"&gt;
+
+    &lt;!-- BEGIN: Page CSS--&gt;
+    &lt;link rel="stylesheet" type="text/css" href="../../../app-assets/css/core/menu/menu-types/vertical-menu.css"&gt;
+    &lt;!-- END: Page CSS--&gt;
+
+    &lt;!-- BEGIN: Custom CSS--&gt;
+    &lt;link rel="stylesheet" type="text/css" href="../../../assets/css/style.css"&gt;
+    &lt;!-- END: Custom CSS--&gt;
+
+  &lt;/head&gt;
+  &lt;!-- END: Head--&gt;
+
+  &lt;!-- BEGIN: Body--&gt;
+
+  &lt;body class="vertical-layout vertical-menu-modern navbar-floating footer-static " data-open="click" data-menu="vertical-menu-modern" data-col=""&gt;
+
+    &lt;!-- BEGIN: Header--&gt;
+    &lt;nav class="header-navbar navbar navbar-expand-lg align-items-center floating-nav navbar-light navbar-shadow"&gt;
+      ...
+    &lt;/nav&gt;
+    &lt;!-- END: Header--&gt;
+
+
+    &lt;!-- BEGIN: Main Menu--&gt;
+    &lt;div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true"&gt;
+      ...
+    &lt;/div&gt;
+    &lt;!-- END: Main Menu--&gt;
+
+    &lt;!-- BEGIN: Content--&gt;
+    &lt;div class="app-content content"&gt;
+      ...
+    &lt;/div&gt;
+    &lt;!-- END: Content--&gt;
+
+    &lt;!-- BEGIN: Footer--&gt;
+    &lt;footer class="footer footer-static footer-light"&gt;
+      ...
+    &lt;/footer&gt;
+    &lt;!-- END: Footer--&gt;
+
+
+    &lt;!-- BEGIN: Vendor JS--&gt;
+    &lt;script src="../../../app-assets/vendors/js/vendors.min.js"&gt;&lt;/script&gt;
+    &lt;!-- BEGIN Vendor JS--&gt;
+
+    &lt;!-- BEGIN: Page Vendor JS--&gt;
+    &lt;!-- END: Page Vendor JS--&gt;
+
+    &lt;!-- BEGIN: Theme JS--&gt;
+    &lt;script src="../../../app-assets/js/core/app-menu.js"&gt;&lt;/script&gt;
+    &lt;script src="../../../app-assets/js/core/app.js"&gt;&lt;/script&gt;
+    &lt;script src="../../../app-assets/js/scripts/customizer.js"&gt;&lt;/script&gt;
+    &lt;!-- END: Theme JS--&gt;
+
+    &lt;!-- BEGIN: Page JS--&gt;
+    &lt;!-- END: Page JS--&gt;
+
+    &lt;script&gt;
+      $(window).on('load', function() {
+        if (feather) {
+          feather.replace({
+            width: 14,
+            height: 14
+          });
+        }
+      });
+    &lt;/script&gt;
+  &lt;/body&gt;
+  &lt;!-- END: Body--&gt;
+
+&lt;/html&gt;
+</code>
+          </pre>
+
+          <h5 class="mt-2">Body Options</h5>
+          <p><code>&lt;body&gt;</code> tag has the following page customization options:</p>
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>Values / Classes</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>vertical-menu-modern</code></td>
+                  <td>
+                    <code>data-menu</code> attribute is used for the reference to know the menu type. Set
+                    <code>data-menu</code> attribute value as <code>vertical-menu-modern</code> for vertical menu type.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>1-column</code>, <code>content-left-sidebar</code>, <code>content-right-sidebar</code>,
+                    <code>content-detached-left-sidebar</code>,
+                    <code>content-detached-right-sidebar</code>
+                  </td>
+                  <td>
+                    <code>data-col</code> attribute is used for the reference to know the page columns. Set
+                    <code>data-col</code> attribute value based on your column structure requirement, for demo please
+                    check the template layout sections.
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>.vertical-layout.vertical-menu-modern</code></td>
+                  <td>Use these classes for vertical layout and menu.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h5 class="mt-2">Layout Options</h5>
+          <p><code>&lt;body&gt;</code> tag has the following layout customization options:</p>
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>Layouts</th>
+                  <th>Layout Classes</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Dark Layout</strong></td>
+                  <td><code>.dark-layout</code></td>
+                  <td>
+                    To Create a Dark Layout, you need to add <code>.dark-layout</code> class with
+                    <code>&lt;html&gt;</code> tag, <code>.menu-dark</code> class with <code>.main-menu</code> class and
+                    <code>.navbar-dark</code> class with <code>&lt;nav&gt;</code> tag.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Semo Dark Layout</strong></td>
+                  <td><code>.semi-dark-layout</code></td>
+                  <td>
+                    To Create a Semi Dark Layout, you need to add <code>.semi-dark-layout</code> class with
+                    <code>&lt;html&gt;</code> tag, <code>.menu-dark</code> class with <code>.main-menu</code> class.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Bordered Layout</strong></td>
+                  <td><code>.bordered-layout</code></td>
+                  <td>
+                    To Create a Bordered Layout, you need to add <code>.bordered-layout</code> class with
+                    <code>&lt;html&gt;</code> tag, <code>.menu-light</code> class with <code>.main-menu</code> class and
+                    <code>.navbar-light</code> class with <code>&lt;nav&gt;</code> tag.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Default Menu Collapsed</strong></td>
+                  <td><code>.menu-collapsed</code></td>
+                  <td>
+                    To Create a collapsed Layout, you need to add <code>.menu-collapsed</code> class and remove
+                    <code>.menu-expanded</code> class from <code>&lt;body&gt;</code> tag.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Basic HTML -->
+
+  <!-- Navbar Structure -->
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 id="navbar" class="card-title">Navbar Structure</h4>
+        <div class="heading-elements">
+          <ul class="list-inline mb-0">
+            <li>
+              <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-content collapse show" aria-expanded="true">
+        <div class="card-body">
+          <div class="card-text">
+            <p>General HTML structure is the same throughout the template. Here is the header structure.</p>
+          </div>
+          <pre class="language-markup">
+<code class="language-markup">
+&lt;nav class="header-navbar navbar navbar-expand-lg align-items-center floating-nav navbar-light navbar-shadow"&gt;
+  &lt;div class="navbar-container d-flex content"&gt;
+    &lt;div class="bookmark-wrapper d-flex align-items-center"&gt;
+      &lt;!-- Menu toggler for small screen sizes --&gt;
+      &lt;ul class="nav navbar-nav d-xl-none"&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link menu-toggle is-active" href="#"&gt;
+            ...
+          &lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;!-- Bookmarked items --&gt;
+      &lt;ul class="nav navbar-nav bookmark-icons"&gt;
+        ...
+      &lt;/ul&gt;
+      &lt;!-- Icon to bookmark other items --&gt;
+      &lt;ul class="nav navbar-nav"&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link bookmark-star"&gt;
+            ...
+          &lt;/a&gt;
+          &lt;div class="bookmark-input search-input"&gt;
+            ...
+          &lt;/div&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Use the following code to add shadow below the navbar for Floating Navbar only --&gt;
+    &lt;div class="app-content content"&gt;
+      &lt;div class="header-navbar-shadow"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+</code>
+          </pre>
+
+          <h5 class="mt-2">Navbar Options</h5>
+          <p><code>&lt;nav&gt;</code> tag has the following navbar customization options:</p>
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>Navbar Options</th>
+                  <th>Navbar Classes</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Floating Navbar</strong></td>
+                  <td><code>.navbar-floating</code> & <code>.floating-nav</code></td>
+                  <td>
+                    To create a navbar with margin and fixed at top, you need to add
+                    <code>.navbar-floating</code> class with <code>&lt;body&gt;</code> tag and
+                    <code>.floating-nav</code> class with <code>&lt;nav&gt;</code> tag.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Sticky Navbar</strong></td>
+                  <td><code>.navbar-sticky</code> & <code>.fixed-top</code></td>
+                  <td>
+                    To create a navbar with full width (without margin) and fixed at top, you need to add
+                    <code>.navbar-sticky</code> class with <code>&lt;body&gt;</code> tag and
+                    <code>.fixed-top</code> class with <code>&lt;nav&gt;</code> tag.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Static Navbar</strong></td>
+                  <td><code>.navbar-static</code> & <code>.navbar-static-top</code></td>
+                  <td>
+                    To create a full-width navbar that scrolls away with the page, you need to add
+                    <code>.navbar-static</code> class with <code>&lt;body&gt;</code> tag and add
+                    <code>.navbar-static-top</code> class with <code>&lt;nav&gt;</code> tag.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Hidden Navbar</strong></td>
+                  <td><code>.navbar-hidden</code> & <code>.d-none</code></td>
+                  <td>
+                    If you do not want a navbar on your page, you need to add
+                    <code>.navbar-hidden</code> class with <code>&lt;body&gt;</code> tag and <code>.d-none</code> class
+                    with <code>&lt;nav&gt;</code> tag.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Navbar Structure -->
+
+  <!-- Navigation (Menu) Structure -->
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 id="menu" class="card-title">Navigation (Menu) Structure</h4>
+        <div class="heading-elements">
+          <ul class="list-inline mb-0">
+            <li>
+              <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-content collapse show" aria-expanded="true">
+        <div class="card-body">
+          <div class="card-text">
+            <p>Generate Vuexy menu using below menu structure:</p>
+          </div>
+          <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true"&gt;
+  &lt;!-- Main Menu Header--&gt;
+  &lt;div class="navbar-header"&gt;
+    ...
+  &lt;/div&gt;
+  &lt;!-- / Main Menu Header--&gt;
+
+  &lt;!-- Add the following div to add shadow below the main header --&gt;
+  &lt;div class="shadow-bottom" style="display: block;"&gt;&lt;/div&gt;
+
+  &lt;!-- Main Menu Content--&gt;
+  &lt;div class="main-menu-content"&gt;
+    &lt;ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation"&gt;
+      ...
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;!--/ Main Menu Content--&gt;
+&lt;/div&gt;
+</code>
+          </pre>
+          <p>Below table contain vertical navigation customization options.</p>
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>Navigation Options</th>
+                  <th>Navigation Classes</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Fixed Menu</th>
+                  <th scope="row"><code>.menu-fixed</code></th>
+                  <td>
+                    To create vertical fixed navigation, you need to add <code>.menu-fixed</code> class in navigation
+                    <code>&lt;div&gt;</code> tag.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Menu Light</th>
+                  <th scope="row"><code>.menu-light</code></th>
+                  <td>
+                    To create light vertical navigation, you need to add <code>.menu-light</code> class in navigation
+                    <code>&lt;div&gt;</code> tag.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Menu Dark</th>
+                  <th scope="row"><code>.menu-dark</code></th>
+                  <td>
+                    To create dark vertical navigation, you need to add <code>.menu-dark</code> class in navigation
+                    <code>&lt;div&gt;</code> tag.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Menu with Shadow</th>
+                  <th scope="row"><code>.menu-shadow</code></th>
+                  <td>
+                    You can also apply navigation shadow bottom by adding <code>.menu-shadow</code> class in navigation
+                    <code>&lt;div&gt;</code> tag. This navigation class is optional.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Navigation (Menu) Structure -->
+
+  <!-- Content Structure -->
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 id="content" class="card-title">Content Structure</h4>
+        <div class="heading-elements">
+          <ul class="list-inline mb-0">
+            <li>
+              <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-content collapse show" aria-expanded="true">
+        <div class="card-body">
+          <div class="card-text">
+            <p>Generate Vuexy content area using following structure:</p>
+          </div>
+          <pre class="language-markup">
+<code class="language-markup">
+&lt;div class="app-content content"&gt;
+  &lt;div class="content-wrapper"&gt;
+    &lt;div class="content-header row"&gt;
+      ...
+    &lt;/div&gt;
+    &lt;div class="content-body"&gt;
+      ...
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+          </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Content Structure -->
+
+  <!-- Footer Structure -->
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 id="footer" class="card-title">Footer Structure</h4>
+        <div class="heading-elements">
+          <ul class="list-inline mb-0">
+            <li>
+              <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-content collapse show" aria-expanded="true">
+        <div class="card-body">
+          <div class="card-text">
+            <p>Generate Vuexy footer using following structure:</p>
+          </div>
+          <pre class="language-markup">
+<code class="language-markup">
+&lt;footer class="footer footer-light"&gt;
+  ...
+&lt;/footer&gt;
+</code>
+          </pre>
+
+          <h5 class="mt-2">Footer Options</h5>
+          <p>Below table contains footer customization options:</p>
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>Footer Options</th>
+                  <th>Footer Classes</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Sticky Footer</strong></td>
+                  <td><code>.footer-fixed</code></td>
+                  <td>
+                    To set footer fixed on content, you need to add <code>.footer-fixed</code> class with
+                    <code>&lt;body&gt;</code> tag.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Static Footer</strong></td>
+                  <td><code>.footer-static</code></td>
+                  <td>
+                    To set footer scrolled with content, you need to add <code>.footer-static</code> class with
+                    <code>&lt;body&gt;</code>tag as well as <code>&lt;footer&gt;</code>tag.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Hidden Footer</strong></td>
+                  <td><code>.footer-hidden</code></td>
+                  <td>
+                    To hide your footer, you need to add <code>.d-none</code> class with
+                    <code>&lt;footer&gt;</code> tag.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Footer Structure -->
+</div>

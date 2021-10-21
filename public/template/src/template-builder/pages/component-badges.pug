@@ -1,0 +1,23 @@
+//- =========================================================================
+    File Name: component-badges.pug
+    Description: Small and adaptive tag for adding context to just about any content..
+    --------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================
+
+extends template
+
+block pageVars
+    - var pageTitle   = "Badges"
+    - var pageSubTitle = "Badge for adding context about any content"
+    - var description = "Badges are used to provide additional information about something."
+    - var activeMenu  = "component-badges"
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Components"}, {name:"Badges"}])
+
+//- Include page content in page block
+append content
+    include ../contents/component-badges.html

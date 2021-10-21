@@ -1,0 +1,27 @@
+//- =========================================================================================
+    File Name: component-modals.pug
+    Description: Modals are streamlined, but flexible, dialog prompts with the minimum required functionality and smart defaults.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: Pixinvent
+    Author URL: hhttp://www.themeforest.net/user/pixinvent
+    ==========================================================================================
+
+extends template
+
+block pageVars
+    - var pageTitle = "Modals"
+    - var pageSubTitle = "Modals is a dialog box/popup"
+    - var description  = "Modals are streamlined, but flexible, dialog prompts with the minimum required functionality and smart defaults."
+    - var activeMenu = "component-modals"
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Components"}, {name:"Modals"}])
+
+//- Include page content in page block
+append content
+    include ../contents/component-modals.html
+
+append pagejs
+    //- Template js file
+    script(src=app_assets_path+'/js/scripts/components/components-modals.js')

@@ -1,0 +1,27 @@
+//- =========================================================================================
+    File Name: documentation-charts-chartjs.pug
+    Description: ChartsJS Documentation page
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+
+extends template
+
+block pageVars
+    - var pageTitle    = "Chart Js"
+    - var activeMenu   = "charts-chartjs"
+
+
+
+append pageConfig
+
+append breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"}, {name:"Charts"}, {name:"Chartjs"}])
+
+
+
+//- Include page content in content block
+append content
+    include ../contents/documentation-charts-chartjs.html

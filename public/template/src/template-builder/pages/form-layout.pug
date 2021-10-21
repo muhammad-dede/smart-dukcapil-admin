@@ -1,0 +1,23 @@
+//- =========================================================================================
+    File Name: form-layout.pug
+    Description: Bootstrap 4 basic forms with examples
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================
+
+extends template
+
+block pageVars
+    - var pageTitle = "Form Layouts"
+    - var pageSubTitle = "Basic Form Layout"
+    - var description = "Basic form labels have inline block styling where form controls are below its label. This is the default bootstrap and most basic style for displaying forms. You can always add more stuff like form sections, form control borders, tooltips, icons, round form controls, square form controls."
+    - var activeMenu = "form-layout"
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"}, {url:"#",name:"Forms"}, {url:"#",name:"Form Layouts"}])
+
+//- Include page content in page block
+append content
+    include ../contents/form-layout.html

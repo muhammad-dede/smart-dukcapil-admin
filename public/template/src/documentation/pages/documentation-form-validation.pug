@@ -1,0 +1,33 @@
+//- =========================================================================================
+    File Name: documentation-form-validation.pug
+    Description: Form Validation Documentation page
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+
+extends template
+
+block pageVars
+    - var pageTitle    = "Form Validation"
+    - var activeMenu   = "form-validation"
+
+
+
+append pageConfig
+    - var contentLayout = 'content-right-sidebar'
+    - var sidebarSticky = true
+
+
+append breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"}, {name:"Forms"}, {name:"Form Validation"}])
+
+
+
+//- Include page content in content block
+append content
+    include ../contents/documentation-form-validation.html
+
+append sidebar
+    include ../contents/sidebar/documentation-form-validation-sidebar.html

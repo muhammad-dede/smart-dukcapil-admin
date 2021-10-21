@@ -1,0 +1,29 @@
+//- =========================================================================================
+    File Name: page-coming-soon.pug
+    Description: Coming Soon Background Image.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+extends template
+
+block pageVars
+    - var pageTitle    = "Coming Soon"
+    - var description  = "Temporary text"
+    - var activeMenu   = "coming-soon"
+    - var isContainer  = false
+
+append pageConfig
+    - var contentLayout = 'blank-page'
+    - var navbarFixed = false
+
+//- Include page content in page block
+append content
+    include ../contents/page-misc-coming-soon.pug
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/pages/page-misc.css')

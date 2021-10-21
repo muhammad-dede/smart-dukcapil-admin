@@ -1,0 +1,25 @@
+//- =========================================================================================
+    File Name: form-input-groups.pug
+    Description: Form Fields Input Groups.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================
+
+extends template
+
+block pageVars
+    - var pageTitle = "Input Groups"
+    - var pageSubTitle = "Input Groups with diffrent elements and styles."
+    - var description  = "Enhance form controls using buttons, icons, text to before, after, or on both sides of any <input>. Use .input-group class with an .input-group-text class to prepend or append elements to a .form-control. Place one add-on or button on either side of an input. You may also place one on both sides of an input. It does not support multiple add-ons on a single side, nor multiple form-controls in a single input group."
+    - var activeMenu = "form-input-groups"
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Form Elements"}, {name:"Input Groups"}])
+
+//- Include page content in page block
+append content
+    include ../contents/form-input-groups.html
+
+append pagecss

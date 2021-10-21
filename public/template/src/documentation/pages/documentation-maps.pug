@@ -1,0 +1,23 @@
+//- =========================================================================================
+    File Name: documentation-maps.pug
+    Description: Google Maps Documentation page
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+
+extends template
+
+block pageVars
+    - var pageTitle    = "Maps"
+    - var activeMenu   = "maps"
+
+
+append breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"}, {name:"Maps"}])
+
+
+//- Include page content in content block
+append content
+    include ../contents/documentation-maps.html

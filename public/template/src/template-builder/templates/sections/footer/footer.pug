@@ -1,0 +1,16 @@
+//-
+  Modifiers :
+  .footer-fixed : For fixed footer
+  .footer-dark, .footer-dark, footer-transparent : For footer light, dark & transparent option
+
+footer(class="footer " + footerType +' ' + footerColor, class=(footerBorder == true ? 'footer-border' : ''), class=(footerShadow == true ? 'footer-shadow' : ''))
+  p.clearfix.mb-0(class= (centerLayout == true ? 'container center-layout' : ''))
+    span.float-md-start.d-block.d-md-inline-block.mt-25
+      | COPYRIGHT  &copy; #{new Date().getFullYear()}
+      a(href='https://1.envato.market/pixinvent_portfolio', target='_blank', class="ms-25") Pixinvent
+      | #[span.d-none.d-sm-inline-block , All rights Reserved]
+    span.float-md-end.d-none.d-md-block
+      | Hand-crafted & Made with
+      i(data-feather="heart")
+button.btn.btn-primary.btn-icon.scroll-top(type='button')
+  i(data-feather="arrow-up")

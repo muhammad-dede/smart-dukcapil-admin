@@ -1,0 +1,116 @@
+//- ===============================================================================================
+    File Name: base.pug
+    Description: A base file for all templates, each template will inherit base template blocks
+                 to append the content.
+    ----------------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ================================================================================================ -//
+
+
+- var menuFlipped        = false            //-Default menu left aligned
+- var boxedLayout        = false            //-Default boxedLayout is false
+- var isContentMenu      = false            //- Default isContentMenu is false
+- var navbarFixed        = true         //- OPTIONS:- true, false
+- var contentLayout      = ""  //- Default contentLayout is 2-columns
+- var pageClass          = ''
+- var logoType           = 'dark'       //- Default dark.
+- var menuOpen           = "click"          //- OPTIONS: click, hover
+- var navbarHideOnScroll = false
+- var footerHideOnScroll = false
+- var bodyCustom         = ''
+- var bodyStyle          = ''
+- var starterKit         = false
+- var navbarType         = "navbar-floating"
+- var footerType         = "footer-static"
+- var navbarPosition     = "floating-nav"
+- var isContainer        = true
+
+
+
+
+include includes/mixins
+
+
+//-Template name class to support tamplates specific scss
+block templateConfig
+block pageConfig
+block navbarConfig
+block verticalMenuConfig
+block horizontalMenuConfig
+block footerConfig
+
+
+doctype html
+if dist == false
+    //
+        Template Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+        Author: PixInvent
+        Website: http://www.pixinvent.com/
+        Contact: hello@pixinvent.com
+        Follow: www.twitter.com/pixinvents
+        Like: www.facebook.com/pixinvents
+        Purchase: https://1.envato.market/vuexy_admin
+        Renew Support: https://1.envato.market/vuexy_admin
+        License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+
+html(class="loading", class=dataLayout, lang="en", data-layout=dataLayout, data-textdirection=useDirection)
+    // BEGIN: Head
+    head
+        block meta
+            include includes/head.pug
+        block styles
+            if starterKit == false
+                include includes/styles.pug
+            else
+                include includes/sk-styles.pug
+    // END: Head
+    = '\n'
+    // BEGIN: Body
+    body(class=templateCustom + ' ' + contentLayout + ' ' + navbarType + ' ' + footerType + ' ' + bodyCustom +' ', class=(menuFlipped == true ? 'menu-flipped' : ''), class=(menuCollapsed == true ? 'menu-collapsed' : ''), class=(boxedLayout == true ? 'container boxed-layout' : '') , data-open=menuOpen, data-menu=dataMenu, data-col=contentLayout, style=bodyStyle)
+
+
+        //- Show header, footer & menu if blank page equals to false
+        if contentLayout != 'blank-page'
+            = '\n'
+            // BEGIN: Header
+            block header
+            // END: Header
+            = '\n'
+
+
+        //-Call page layouts mixins
+        +pageLayouts(contentLayout, sidebarSticky, sidebarFixed, isContentMenu)
+
+        = '\n'
+
+        if contentLayout != 'blank-page'
+
+            if starterKit == false && dist == false
+              block customizer
+                include includes/customizer.pug
+              include includes/buy-now.pug
+
+            .sidenav-overlay
+            .drag-target
+
+            = '\n'
+            // BEGIN: Footer
+            block footer
+            // END: Footer
+            = '\n'
+
+        block scripts
+            if starterKit == false
+                include includes/scripts.pug
+            else
+                include includes/sk-scripts.pug
+
+        script.
+          $(window).on('load',  function(){
+            if (feather) {
+              feather.replace({ width: 14, height: 14 });
+            }
+          })
+    // END: Body

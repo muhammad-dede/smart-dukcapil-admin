@@ -1,0 +1,129 @@
+- var sk_path = "../../../starter-kit/"+ useDirection +"/"+ useLayout +"/"
+//- - var dashLink = "../../../html/"+ useDirection +"/"+ useLayout +"/"+ "index.html"
+- var dashLink =  "index.html"
+
+//- main menu
+.main-menu(class=menuType + ' ' + menuColor + ' ' + menuOpenType, class=(menuNativeScroll == true ? 'menu-native-scroll' : ''), class=(menuIconRight == true ? 'menu-icon-right' : ''), class=(menuDevider == true ? 'menu-bordered' : ''), class=(menuShadow == true ? 'menu-shadow' : ''), class=(menuBorder == true ? 'menu-border' : '') data-scroll-to-active="true")
+
+  //- main menu header
+  //- include includes/menu-header
+  //- / main menu header
+
+  //- Menu header logo area
+  .navbar-header
+    ul.nav.navbar-nav.flex-row
+      li.nav-item.me-auto
+        a.navbar-brand(href=dashLink)
+          span.brand-logo
+              svg(viewbox='0 0 139 95' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' height='24')
+                defs
+                  lineargradient#linearGradient-1(x1='100%' y1='10.5120544%' x2='50%' y2='89.4879456%')
+                    stop(stop-color='#000000' offset='0%')
+                    stop(stop-color='#FFFFFF' offset='100%')
+                  lineargradient#linearGradient-2(x1='64.0437835%' y1='46.3276743%' x2='37.373316%' y2='100%')
+                    stop(stop-color='#EEEEEE' stop-opacity='0' offset='0%')
+                    stop(stop-color='#FFFFFF' offset='100%')
+                g#Page-1(stroke='none' stroke-width='1' fill='none' fill-rule='evenodd')
+                  g#Artboard(transform='translate(-400.000000, -178.000000)')
+                    g#Group(transform='translate(400.000000, 178.000000)')
+                      path#Path.text-primary(d='M-5.68434189e-14,2.84217094e-14 L39.1816085,2.84217094e-14 L69.3453773,32.2519224 L101.428699,2.84217094e-14 L138.784583,2.84217094e-14 L138.784199,29.8015838 C137.958931,37.3510206 135.784352,42.5567762 132.260463,45.4188507 C128.736573,48.2809251 112.33867,64.5239941 83.0667527,94.1480575 L56.2750821,94.1480575 L6.71554594,44.4188507 C2.46876683,39.9813776 0.345377275,35.1089553 0.345377275,29.8015838 C0.345377275,24.4942122 0.230251516,14.560351 -5.68434189e-14,2.84217094e-14 Z' style='fill:currentColor')
+                      path#Path1(d='M69.3453773,32.2519224 L101.428699,1.42108547e-14 L138.784583,1.42108547e-14 L138.784199,29.8015838 C137.958931,37.3510206 135.784352,42.5567762 132.260463,45.4188507 C128.736573,48.2809251 112.33867,64.5239941 83.0667527,94.1480575 L56.2750821,94.1480575 L32.8435758,70.5039241 L69.3453773,32.2519224 Z' fill='url(#linearGradient-1)' opacity='0.2')
+                      polygon#Path-2(fill='#000000' opacity='0.049999997' points='69.3922914 32.4202615 32.8435758 70.5039241 54.0490008 16.1851325')
+                      polygon#Path-21(fill='#000000' opacity='0.099999994' points='69.3922914 32.4202615 32.8435758 70.5039241 58.3683556 20.7402338')
+                      polygon#Path-3(fill='url(#linearGradient-2)' opacity='0.099999994' points='101.428699 0 83.0667527 94.1480575 130.378721 47.0740288')
+          h2.brand-text Vuexy
+      li.nav-item.nav-toggle
+        a.nav-link.modern-nav-toggle.pe-0(data-bs-toggle='collapse')
+          i.d-block.d-xl-none.text-primary.toggle-icon(data-feather="x" class="font-medium-4")
+          i.d-none.d-xl-block.collapse-toggle-icon(data-feather="disc" class = 'font-medium-4 ' class= (logoType == 'dark' ? 'blue-grey darken-3' : 'text-primary' ), data-ticon='disc')
+  .shadow-bottom
+  //- main menu content
+  .main-menu-content
+    +verticalMenu([
+        {url:"index.html",name:"Introduction",slug:"index",icon:"home"},
+        {url:"documentation-license.html",name:"License",slug:"license",icon:"shield"},
+        {url:"documentation-folder-structure.html",name:"Folder Structure",slug:"folder-structure",icon:"folder"},
+        {url:"documentation-gulp.html",name:"Building Tools",slug:"gulp",icon:"settings"},
+        {url:"documentation-styles-customization.html",name:"Styles Customization",slug:"styles-customization",
+        icon:"check-square"},
+        {url:"documentation-javascript-customization.html",name:"JavaScript Customization",slug:"javascript-customization",icon:"file"},
+        {url:"documentation-html-structure.html",name:"HTML Structure",slug:"html-structure",icon:"code"},
+        {url:"documentation-starter-kit.html",name:"Starter Kit",slug:"starter-kit", icon:"zap"},
+        {url:"#",name:"Layouts",slug:"general",icon:"layout",
+          submenu:[
+            {url:"documentation-layout-empty.html",name:"Layout Empty",slug:"layout-empty"},
+            {url:"documentation-layout-collapsed-menu.html",name:"Collapsed Menu",slug:"layout-collapsed-menu"},
+            {url:"documentation-layout-full.html",name:"Layout Full",slug:"layout-full"},
+            {url:"documentation-layout-without-menu.html",name:"Without Menu",slug:"layout-without-menu"},
+            {url:"documentation-layout-blank.html",name:"Layout Blank",slug:"layout-blank"},
+            {url:"documentation-content-detached-left-sidebar.html",name:"Content Detached Left Sidebar",slug:"content-detached-left-sidebar"},
+            {url:"documentation-content-detached-right-sidebar.html",name:"Content Detached Right Sidebar",slug:"content-detached-right-sidebar"},
+          ]
+        },
+        {url:"documentation-faq.html",name:"FAQs",slug:"faq",icon:"help-circle"},
+        {url:"#",name:"Laravel",slug:"laravel-documentation",icon:"edit-2",
+          submenu:[
+            {url:"documentation-laravel-folder-structure.html",name:"Laravel Folder Structure",slug:"laravel-folder",icon:"edit"},
+            {url:"documentation-laravel-installation.html",name:"Laravel Installation",slug:"laravel-installation",icon:"edit"},
+            {url:"documentation-laravel-integration.html",name:"Laravel Integration",slug:"laravel-integration",icon:"edit"},
+            {url:"documentation-laravel-passport.html",name:"Laravel Passport",slug:"laravel-passport",icon:"lock"},
+            {url:"documentation-laravel-sanctum.html",name:"Laravel Sanctum",slug:"laravel-sanctum",icon:"lock"},
+            {url:"documentation-laravel-localization.html",name:"Laravel Localization",slug:"laravel-localization",icon:"globe"},
+            {url:"documentation-laravel-ui.html",name:"Laravel UI",slug:"laravel-ui",icon:"unlock"},
+            {url:"documentation-laravel-menu.html",name:"Laravel Menu",slug:"laravel-menu",icon:"unlock"},
+            {url:"documentation-laravel-search.html",name:"Laravel Search",slug:"laravel-search",icon:"unlock"},
+            {url:"documentation-laravel-homestead.html",name:"Laravel Homestead",slug:"laravel-homestead",icon:"box"},
+            {url:"documentation-laravel-acl.html",name:"Laravel ACL",slug:"laravel-acl",icon:"unlock"},
+            {url:"documentation-laravel-migration.html",name:"Laravel Migration",slug:"laravel-migrate",icon:"box"},
+            {url:"documentation-laravel-sail-docker.html",name:"Laravel Sail & Docker",slug:"laravel-sail-docker",icon:"box"},
+            {url:"documentation-laravel-deployment.html",name:"Laravel Deployment",slug:"laravel-deployment",icon:"box"},
+            {url:"documentation-laravel-faq.html",name:"Laravel FAQs",slug:"laravel-faq",icon:"box"},
+          ]
+        },
+        {url:"documentation-apps.html",name:"Apps",slug:"apps",icon:"server"},
+        {url:"#",name:"UI",slug:"ui",icon:"grid",
+          submenu:[
+            {url:"documentation-card.html",name:"Cards",slug:"card", icon:"circle"},
+            {url:"documentation-colors.html",name:"Colors",slug:"colors", icon:"circle"},
+            {url:"documentation-icons.html",name:"Icons",slug:"icons", icon:"circle"},
+            {url:"documentation-utilities.html",name:"Utilities",slug:"utilities", icon:"circle"}
+          ]
+        },
+        {url:"documentation-components.html",name:"Components",slug:"components", icon:"box"},
+        {url:"documentation-extensions.html",name:"Extensions",slug:"extensions",icon:"edit"},
+        {url:"#",name:"Forms",slug:"forms", icon:"copy",
+          submenu:[
+            {url:"documentation-form-elements.html",name:"Form Elements",slug:"form-elements",icon:"circle"},
+            {url:"documentation-form-layouts.html",name:"Form Layouts",slug:"form-layouts",icon:"circle"},
+            {url:"documentation-form-wizard.html",name:"Form Wizard",slug:"form-wizard",icon:"circle"},
+            {url:"documentation-form-validation.html",name:"Form Validation",slug:"form-validation",icon:"circle"},
+            {url:"documentation-form-repeater.html",name:"Form Repeater",slug:"form-repeater",icon:"circle"},
+          ]
+        },
+        {url:"#",name:"Tables",slug:"tables", icon:"server",
+          submenu:[
+            {url:"documentation-bootstrap-tables.html",name:"Tables",slug:"bootstrap-tables",icon:"circle"},
+            {url:"documentation-datatables.html",name:"Data Tables",slug:"datatables",icon:"circle"},
+          ]
+        },
+        {url:"#.html",name:"Charts",slug:"charts", icon:"pie-chart",
+          submenu:[
+            {url:"documentation-charts-apex.html",name:"Apex Chart",slug:"charts-apex",icon:"circle"},
+            {url:"documentation-charts-chartjs.html",name:"Chart JS",slug:"charts-chartjs",icon:"circle"}
+          ]
+        },
+        {url:"documentation-maps.html",name:"Maps",slug:"maps",icon:"map"},
+        {url:"#",name:"Other",slug:"other",icon:"layers",
+          submenu:[
+            {url:"documentation-sources-credits.html",name:"Sources & Credits",slug:"sources-credits",icon:"codepen"},
+            {url:"https://pixinvent.ticksy.com/",name:"Support",slug:"support",icon:"life-buoy"}
+          ]
+        }
+    ])
+
+  //- /main menu content
+
+  //- main menu footer
+  //- include includes/menu-footer
+  //- main menu footer
+//- / main menu

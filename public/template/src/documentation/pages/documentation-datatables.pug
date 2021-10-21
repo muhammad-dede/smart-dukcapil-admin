@@ -1,0 +1,24 @@
+//- =========================================================================================
+    File Name: documentation-datatables.pug
+    Description: Datatables Documentation page
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+
+extends template
+
+block pageVars
+    - var pageTitle    = "Datatables"
+    - var activeMenu   = "datatables"
+
+
+append breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"}, {name:"Tables"}, {name:"Datatables"}])
+
+
+
+//- Include page content in content block
+append content
+    include ../contents/documentation-datatables.html

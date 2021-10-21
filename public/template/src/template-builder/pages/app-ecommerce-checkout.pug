@@ -1,0 +1,51 @@
+//- =========================================================================================
+    File Name: app-ecommerce-checkout.pug
+    Description: checkout for products
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================
+
+extends template
+
+block pageVars
+    - var pageTitle   = "Checkout"
+    - var pageSubTitle = "Checkout"
+    - var description = "Checkout."
+    - var activeMenu  = "app-ecommerce-checkout"
+
+append pageConfig
+    - var pageClass = 'ecommerce-application'
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"eCommerce"}, {name:"Checkout"}])
+
+//- Include page content in page block
+append content
+    include ../contents/app-ecommerce-checkout.html
+
+append vendorcss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/forms/wizard/bs-stepper.min.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/forms/spinner/jquery.bootstrap-touchspin.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/extensions/toastr.min.css')
+
+//- Page CSS
+append pagecss
+    link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/app-ecommerce.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/forms/pickers/form-pickadate.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/forms/form-wizard.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/extensions/ext-component-toastr.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/forms/form-number-input.css')
+
+//- Vendor JS
+append vendorjs
+    script(src=app_assets_path+'/vendors/js/forms/wizard/bs-stepper.min.js')
+    script(src=app_assets_path + '/vendors/js/forms/spinner/jquery.bootstrap-touchspin.js')
+    script(src=app_assets_path + '/vendors/js/extensions/toastr.min.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+    script(src=app_assets_path + '/js/scripts/pages/app-ecommerce-checkout.js')

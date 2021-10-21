@@ -1,0 +1,23 @@
+//- =========================================================================================
+    File Name: component-offcanvas.pug
+    Description: Build hidden sidebars into your project for navigation, shopping carts, and more with a few classes and our JavaScript plugin.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================
+
+extends template
+
+block pageVars
+    - var pageTitle = "OffCanvas"
+    - var pageSubTitle = "Offcanvas is a sidebar component"
+    - var description  = "Build hidden sidebars into your project for navigation, shopping carts, and more with a few classes and our JavaScript plugin."
+    - var activeMenu = "component-offcanvas"
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Components"}, {name:"OffCanvas"}])
+
+//- Include page content in page block
+append content
+    include ../contents/component-offcanvas.html

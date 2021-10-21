@@ -1,0 +1,78 @@
+<!-- Leaflet Maps -->
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Leaflet Maps</h4>
+  </div>
+  <div class="card-body">
+    <p>
+      Leaflet is the leading open-source JavaScript library for mobile-friendly interactive maps. Leaflet is designed
+      with simplicity, performance and usability in mind. It works efficiently across all major desktop and mobile
+      platforms, can be extended with lots of plugins, has a beautiful, easy to use and well-documented API.<br />Read
+      the official <a href="https://leafletjs.com/" target="_blank">Leaflet Documentation</a> for a full list of
+      instructions and other options.
+    </p>
+    <h6>1. Initialize the plugin by referencing the necessary files:</h6>
+    <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;!-- Vendor files --&gt;
+&lt;script src="leaflet.min.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="leaflet.min.css"&gt;
+
+&lt;!-- Template files --&gt;
+&lt;link rel="stylesheet" type="text/css" href="app-assets/css/plugins/maps/map-leaflet.css"&gt;
+</code>
+    </pre>
+
+    <h6>2. Binding to existing DOM element.</h6>
+    <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;div class="leaflet-map" id="basic-map"&gt;&lt;/div&gt;
+</code>
+    </pre>
+
+    <h6>3. Basic usage looks something like this:</h6>
+    <pre class="language-javascript my-1">
+<code class="language-javascript">
+var basicMap = L.map('basic-map').setView([42.35, -71.08], 10);
+L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+attribution: 'Map data &copy; &lt;a href="https://www.openstreetmap.org/"&gt;OpenStreetMap&lt;/a&gt;',
+maxZoom: 18
+}).addTo(basicMap);
+</code>
+    </pre>
+    <p class="mt-2">
+      <strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong>
+    </p>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>URL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Plugin Link</strong></td>
+            <td><a href="https://leafletjs.com/" target="_blank">https://leafletjs.com/</a></td>
+          </tr>
+          <tr>
+            <td><strong>Github Page</strong></td>
+            <td><a href="https://github.com/Leaflet/Leaflet" target="_blank">https://github.com/Leaflet/Leaflet</a></td>
+          </tr>
+          <tr>
+            <td><strong>Template Page</strong></td>
+            <td>
+              <a
+                href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/maps-leaflet.html"
+                target="_blank"
+                >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/maps-leaflet.html</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!--/ Leaflet Maps -->

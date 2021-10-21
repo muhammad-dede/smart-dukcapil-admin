@@ -1,0 +1,58 @@
+//- =========================================================================================
+  File Name: app-file-manager.pug
+  Description: app-file-manager page
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: PIXINVENT
+  Author URL: http://www.themeforest.net/user/pixinvent
+  ==========================================================================================-//
+
+extends template
+
+block pageVars
+  - var pageTitle   = "File Manager"
+  - var pageSubTitle = "file manager application"
+  - var description  = "file manager application"
+  - var activeMenu   = "app-file-manager"
+
+append pageConfig
+  - var pageClass = 'file-manager-application'
+  - var contentLayout = 'content-left-sidebar'
+
+block page-header
+
+//- include sidebar of file manager
+append sidebar
+  include ../contents/app-file-manager-sidebar.html
+
+//- Include file manager content
+append content
+  include ../contents/app-file-manager.html
+
+//- vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+
+append vendorcss
+  link(rel='stylesheet', type='text/css', href=app_assets_path+'/fonts/font-awesome/css/font-awesome.min.css')
+  link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/extensions/jstree.min.css')
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+  link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/extensions/ext-component-tree.css')
+  link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/pages/app-file-manager.css')
+
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+  script(src=app_assets_path+'/vendors/js/extensions/jstree.min.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+  script(src=app_assets_path+'/js/scripts/pages/app-file-manager.js')

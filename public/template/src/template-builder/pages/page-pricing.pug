@@ -1,0 +1,32 @@
+//- =========================================================================================
+    File Name: page-pricing.pug
+    Description: pricing table
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+
+extends template
+
+block pageVars
+    - var pageTitle    = "Pricing"
+    - var pageSubTitle = "Pricing Table"
+    - var description  = "Pricing page"
+    - var activeMenu   = "pricing"
+
+block page-header
+
+//- Include page content in page block
+append content
+    include ../contents/page-pricing.html
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/pages/page-pricing.css')
+
+//- Add custom page specific JS
+append pagejs
+    script(src=app_assets_path+'/js/scripts/pages/page-pricing.js')

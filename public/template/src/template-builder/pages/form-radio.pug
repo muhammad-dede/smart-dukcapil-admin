@@ -1,0 +1,23 @@
+//- =========================================================================================
+    File Name: form-radio.pug
+    Description: Form Fields checkboxes and radios.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================
+
+extends template
+
+block pageVars
+    - var pageTitle = "Radio"
+    - var pageSubTitle = "Form Fields checkboxes and radios with diffrent elements and styles."
+    - var description  = "Standard form controls supported in all example form elements. Form controls automatically receives global styling. The .mb-1 class is the easiest way to add some structure to form elements like <input>, <textarea>, and <select>"
+    - var activeMenu = "form-radio"
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Form Elements"}, {name:"Radio"}])
+
+//- Include page content in page block
+append content
+    include ../contents/form-radio.html

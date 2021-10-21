@@ -1,0 +1,269 @@
+- var sk_path = "../../../starter-kit/"+ useDirection +"/"+ useLayout +"/"
+- var dashLink = "../../../html/"+ useDirection +"/"+ useLayout +"/"+ "index.html"
+
+//- main menu
+.main-menu(class=menuType + ' ' + menuColor + ' ' + menuOpenType, class=(menuNativeScroll == true ? 'menu-native-scroll' : ''), class=(menuIconRight == true ? 'menu-icon-right' : ''), class=(menuDevider == true ? 'menu-bordered' : ''), class=(menuShadow == true ? 'menu-shadow' : ''), class=(menuBorder == true ? 'menu-border' : '') data-scroll-to-active="true")
+
+  //- main menu header
+  //- include includes/menu-header
+  //- / main menu header
+
+  //- Menu header logo area
+  .navbar-header
+    ul.nav.navbar-nav.flex-row
+      li.nav-item.me-auto
+        a.navbar-brand(href=dashLink)
+          span.brand-logo
+              svg(viewbox='0 0 139 95' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' height='24')
+                defs
+                  lineargradient#linearGradient-1(x1='100%' y1='10.5120544%' x2='50%' y2='89.4879456%')
+                    stop(stop-color='#000000' offset='0%')
+                    stop(stop-color='#FFFFFF' offset='100%')
+                  lineargradient#linearGradient-2(x1='64.0437835%' y1='46.3276743%' x2='37.373316%' y2='100%')
+                    stop(stop-color='#EEEEEE' stop-opacity='0' offset='0%')
+                    stop(stop-color='#FFFFFF' offset='100%')
+                g#Page-1(stroke='none' stroke-width='1' fill='none' fill-rule='evenodd')
+                  g#Artboard(transform='translate(-400.000000, -178.000000)')
+                    g#Group(transform='translate(400.000000, 178.000000)')
+                      path#Path.text-primary(d='M-5.68434189e-14,2.84217094e-14 L39.1816085,2.84217094e-14 L69.3453773,32.2519224 L101.428699,2.84217094e-14 L138.784583,2.84217094e-14 L138.784199,29.8015838 C137.958931,37.3510206 135.784352,42.5567762 132.260463,45.4188507 C128.736573,48.2809251 112.33867,64.5239941 83.0667527,94.1480575 L56.2750821,94.1480575 L6.71554594,44.4188507 C2.46876683,39.9813776 0.345377275,35.1089553 0.345377275,29.8015838 C0.345377275,24.4942122 0.230251516,14.560351 -5.68434189e-14,2.84217094e-14 Z' style='fill:currentColor')
+                      path#Path1(d='M69.3453773,32.2519224 L101.428699,1.42108547e-14 L138.784583,1.42108547e-14 L138.784199,29.8015838 C137.958931,37.3510206 135.784352,42.5567762 132.260463,45.4188507 C128.736573,48.2809251 112.33867,64.5239941 83.0667527,94.1480575 L56.2750821,94.1480575 L32.8435758,70.5039241 L69.3453773,32.2519224 Z' fill='url(#linearGradient-1)' opacity='0.2')
+                      polygon#Path-2(fill='#000000' opacity='0.049999997' points='69.3922914 32.4202615 32.8435758 70.5039241 54.0490008 16.1851325')
+                      polygon#Path-21(fill='#000000' opacity='0.099999994' points='69.3922914 32.4202615 32.8435758 70.5039241 58.3683556 20.7402338')
+                      polygon#Path-3(fill='url(#linearGradient-2)' opacity='0.099999994' points='101.428699 0 83.0667527 94.1480575 130.378721 47.0740288')
+          h2.brand-text Vuexy
+      li.nav-item.nav-toggle
+        a.nav-link.modern-nav-toggle.pe-0(data-bs-toggle='collapse')
+          i.d-block.d-xl-none.text-primary.toggle-icon(data-feather="x" class="font-medium-4")
+          i.d-none.d-xl-block.collapse-toggle-icon(data-feather="disc" class = 'font-medium-4 ' class= (logoType == 'dark' ? 'text-secondary' : 'text-primary' ), data-ticon='disc')
+  .shadow-bottom
+  //- main menu content
+  .main-menu-content
+    +verticalMenu([
+
+      {url:"index.html",name:"Dashboards", i18n:"Dashboards" ,slug:"dashboards", icon:"home", tag:"2" , tagcustom: "badge badge-light-warning rounded-pill ms-auto me-1",
+        submenu:[
+          {url:"dashboard-analytics.html", name:"Analytics", i18n:"Analytics" , icon:"circle", slug:"dashboard-analytics"},
+          {url:"dashboard-ecommerce.html", name:"eCommerce", i18n:"eCommerce" , icon:"circle", slug:"dashboard-ecommerce"},
+        ]
+      },
+
+      {navheader:"Apps & Pages",icon:"", i18n:"Apps & Pages"},
+
+        {url:"app-email.html",name:"Email", i18n:"Email" ,icon:"mail",slug:"app-email"},
+
+        {url:"app-chat.html",name:"Chat", i18n:"Chat" ,icon:"message-square",slug:"app-chat"},
+
+        {url:"app-todo.html",name:"Todo", i18n:"Todo" ,icon:"check-square",slug:"app-todo"},
+
+        {url:"app-calendar.html",name:"Calendar", i18n:"Calendar" ,icon:"calendar",slug:"app-calendar"},
+
+        {url:"app-kanban.html",name:"Kanban", i18n:"Kanban" ,icon:"grid",slug:"app-kanban"},
+
+        {url:"#", name:"Invoice", i18n:"Invoice" , icon:"file-text", slug:"",
+          submenu:[
+            {url:"app-invoice-list.html", name:"List", i18n:"List" , icon:"circle", slug:"app-invoice-list"},
+            {url:"app-invoice-preview.html", name:"Preview", i18n:"Preview" , icon:"circle", slug:"app-invoice-preview"},
+            {url:"app-invoice-edit.html", name:"Edit", i18n:"Edit" , icon:"circle", slug:"app-invoice-edit"},
+            {url:"app-invoice-add.html", name:"Add", i18n:"Add" , icon:"circle", slug:"app-invoice-add"}
+          ]
+        },
+        {url:"app-file-manager.html",name:"File Manager", i18n:"File Manager" ,icon:"save",slug:"app-file-manager"},
+        {url:"#", name:"eCommerce", i18n:"eCommerce" , icon:"shopping-cart", slug:"",
+          submenu:[
+            {url:"app-ecommerce-shop.html", name:"Shop", i18n:"Shop" , icon:"circle", slug:"app-ecommerce-shop"},
+            {url:"app-ecommerce-details.html", name:"Details", i18n:"Details", icon:"circle", slug:"app-ecommerce-details"},
+            {url:"app-ecommerce-wishlist.html", name:"Wish List", i18n:"Wish List" ,icon:"circle", slug:"app-ecommerce-wishlist"},
+            {url:"app-ecommerce-checkout.html", name:"Checkout", i18n:"Checkout", icon:"circle", slug:"app-ecommerce-checkout"}
+          ]
+        },
+
+        {url:"#", name:"User", i18n:"User" ,slug:"", icon:"user",
+          submenu:[
+            {url:"app-user-list.html", name:"List", i18n:"List" ,icon:"circle", slug:"app-user-list"},
+            {url:"app-user-view.html", name:"View", i18n:"View" ,icon:"circle", slug:"app-user-view"},
+            {url:"app-user-edit.html", name:"Edit", i18n:"Edit" ,icon:"circle", slug:"app-user-edit"},
+          ]
+        },
+        {url:"#", name:"Pages", i18n:"Pages" ,slug:"", icon:"file-text",
+          submenu:[
+            {url:"#", name:"Authentication", i18n:"Authentication" ,icon:"circle", slug:"",
+              submenu:[
+                {url:"page-auth-login-v1.html", name:"Login v1", i18n:"LoginV1" ,icon:"circle", slug:"login-v1", newTab:"_blank"},
+                {url:"page-auth-login-v2.html", name:"Login v2", i18n:"LoginV2" ,icon:"circle", slug:"login-v2", newTab:"_blank"},
+                {url:"page-auth-register-v1.html", name:"Register v1", i18n:"RegisterV1" ,icon:"circle", slug:"register-v1", newTab:"_blank"},
+                {url:"page-auth-register-v2.html", name:"Register v2", i18n:"RegisterV2" ,icon:"circle", slug:"register-v2", newTab:"_blank"},
+                {url:"page-auth-forgot-password-v1.html", name:"Forgot Password v1", i18n:"ForgotPasswordV1" , icon:"circle", slug:"forgot-password-v1", newTab:"_blank"},
+                {url:"page-auth-forgot-password-v2.html", name:"Forgot Password v2", i18n:"ForgotPasswordV2" , icon:"circle", slug:"forgot-password-v2", newTab:"_blank"},
+                {url:"page-auth-reset-password-v1.html", name:"Reset Password v1", i18n:"ResetPasswordV1" , icon:"circle", slug:"reset-password-v1", newTab:"_blank"},
+                {url:"page-auth-reset-password-v2.html", name:"Reset Password v2", i18n:"ResetPasswordV2" , icon:"circle", slug:"reset-password-v2", newTab:"_blank"},
+              ]
+            },
+            {url:"page-account-settings.html",name:"Account Settings", i18n:"Account Settings" ,icon:"circle",slug:"account-settings"},
+            {url:"page-profile.html",name:"Profile", i18n:"Profile" ,icon:"circle",slug:"profile"},
+            {url:"page-faq.html",name:"FAQ", i18n:"FAQ" ,icon:"circle",slug:"faq"},
+            {url:"page-knowledge-base.html",name:"Knowledge Base", i18n:"Knowledge Base" ,icon:"circle",slug:"knowledge-base"},
+            {url:"page-pricing.html",name:"Pricing", i18n:"Pricing" ,icon:"circle",slug:"pricing"},
+            {url:"#", name:"Blog", i18n:"Blog" ,slug:"", icon:"circle",
+              submenu:[
+                {url:"page-blog-list.html",name:"List", i18n:"List" ,icon:"circle", slug:"blog-list"},
+                {url:"page-blog-detail.html", name:"Detail", i18n:"Detail" ,icon:"circle",  slug:"blog-detail"},
+                {url:"page-blog-edit.html",name:"Edit", i18n:"Edit" ,icon:"circle", slug:"blog-edit"},
+              ]
+            },
+            {url:"#", name:"Mail Template", i18n:"Mail Template" ,icon:"circle", slug:"",
+              submenu:[
+                {url:"https://pixinvent.com/demo/vuexy-mail-template/mail-welcome.html", name:"Welcome", i18n:"Welcome" ,icon:"circle", slug:"", newTab:"_blank"},
+                {url:"https://pixinvent.com/demo/vuexy-mail-template/mail-reset-password.html", name:"Reset Password", i18n:"Reset Password" ,icon:"circle", slug:"", newTab:"_blank"},
+                {url:"https://pixinvent.com/demo/vuexy-mail-template/mail-verify-email.html", name:"Verify Email", i18n:"Verify Email" ,icon:"circle", slug:"", newTab:"_blank"},
+                {url:"https://pixinvent.com/demo/vuexy-mail-template/mail-deactivate-account.html", name:"Deactivate Account", i18n:"Deactivate Account" ,icon:"circle", slug:"", newTab:"_blank"},
+                {url:"https://pixinvent.com/demo/vuexy-mail-template/mail-invoice.html", name:"Invoice", i18n:"Invoice" ,icon:"circle", slug:"", newTab:"_blank"},
+                {url:"https://pixinvent.com/demo/vuexy-mail-template/mail-promotional.html", name:"Promotional", i18n:"Promotional" ,icon:"circle", slug:"", newTab:"_blank"},
+              ]
+            },
+            {url:"#", name:"Miscellaneous", i18n:"Miscellaneous" ,icon:"circle", slug:"",
+              submenu:[
+                {url:"page-misc-coming-soon.html",name:"Coming Soon", i18n:"Coming Soon" ,icon:"circle",slug:"coming-soon", newTab:"_blank"},
+                {url:"page-misc-not-authorized.html",name:"Not Authorized",i18n:"Not Authorized",icon:"circle",slug:"not-authorized", newTab:"_blank"},
+                {url:"page-misc-under-maintenance.html",name:"Maintenance", i18n:"Maintenance" ,icon:"circle",slug:"maintenance", newTab:"_blank"},
+                {url:"page-misc-error.html", name:"Error", i18n:"Error" ,icon:"circle", slug:"error", newTab:"_blank"},
+              ]
+            },
+          ]
+        },
+
+      {navheader:"User Interface",icon:"", i18n:"User Interface"},
+
+        {url:"ui-typography.html", name:"Typography", i18n:"Typography" , icon:"type", slug:"ui-typography"},
+        {url:"ui-feather.html", name:"Feather", i18n:"Feather" , icon:"eye", slug:"ui-feather"},
+        {url:"#", name:"Card", i18n:"Card" ,icon:"credit-card", slug:"", tag:"New" , tagcustom: "badge badge-light-success rounded-pill ms-auto me-1",
+          submenu:[
+            {url:"card-basic.html", name:"Basic", i18n:"Basic" ,icon:"circle", slug:"card-basic"},
+            {url:"card-advance.html", name:"Advance", i18n:"Advance" ,icon:"circle", slug:"card-advance"},
+            {url:"card-statistics.html", name:"Statistics", i18n:"Statistics" ,icon:"circle", slug:"card-statistics"},
+            {url:"card-analytics.html", name:"Analytics", i18n:"Analytics" ,icon:"circle", slug:"card-analytics"},
+            {url:"card-actions.html", name:"Card Actions", i18n:"Card Actions" ,icon:"circle", slug:"card-actions"},
+          ]
+        },
+
+        {url:"#", name:"Components", i18n:"Components" , icon:"briefcase", slug:"",
+          submenu:[
+            {url:"component-accordion.html", name:"Accordion", i18n:"Accordion" ,icon:"circle", slug:"component-accordion"},
+            {url:"component-alerts.html", name:"Alerts", i18n:"Alerts" ,icon:"circle", slug:"component-alerts"},
+            {url:"component-avatar.html", name:"Avatar", i18n:"Avatar" ,icon:"circle", slug:"component-avatar"},
+            {url:"component-badges.html", name:"Badges", i18n:"Badges" ,icon:"circle", slug:"component-badges"},
+            {url:"component-breadcrumbs.html", name:"Breadcrumbs", i18n:"Breadcrumbs" ,icon:"circle", slug:"component-breadcrumbs"},
+            {url:"component-buttons.html", name:"Buttons", i18n:"Buttons" ,icon:"circle", slug:"component-buttons"},
+            {url:"component-carousel.html", name:"Carousel", i18n:"Carousel" ,icon:"circle", slug:"component-carousel"},
+            {url:"component-collapse.html", name:"Collapse", i18n:"Collapse" ,icon:"circle", slug:"component-collapse"},
+            {url:"component-divider.html", name:"Divider", i18n:"Divider" ,icon:"circle", slug:"component-divider"},
+            {url:"component-dropdowns.html", name:"Dropdowns", i18n:"Dropdowns" ,icon:"circle", slug:"component-dropdowns"},
+            {url:"component-list-group.html", name:"List Group", i18n:"List Group" ,icon:"circle", slug:"component-list-group"},
+            {url:"component-modals.html", name:"Modals", i18n:"Modals" ,icon:"circle", slug:"component-modals"},
+            {url:"component-navs-component.html", name:"Navs Component", i18n:"Navs Component" ,icon:"circle", slug:"component-navs-component"},
+            {url:"component-offcanvas.html", name:"Offcanvas", i18n:"Offcanvas" ,icon:"circle", slug:"component-offcanvas"},
+            {url:"component-pagination.html", name:"Pagination", i18n:"Pagination" ,icon:"circle", slug:"component-pagination"},
+            {url:"component-pill-badges.html", name:"Pill Badges", i18n:"Pill Badges" ,icon:"circle", slug:"component-pill-badges"},
+            {url:"component-pills-component.html", name:"Pills Component", i18n:"Pills Component" ,icon:"circle", slug:"component-pills-component"},
+            {url:"component-popovers.html", name:"Popovers", i18n:"Popovers" ,icon:"circle", slug:"component-popovers"},
+            {url:"component-progress.html", name:"Progress", i18n:"Progress" ,icon:"circle", slug:"component-progress"},
+            {url:"component-spinner.html", name:"Spinner", i18n:"Spinner" ,icon:"circle", slug:"component-bs-spinner"},
+            {url:"component-tabs-component.html", name:"Tabs Component", i18n:"Tabs Component" ,icon:"circle", slug:"component-tabs-component"},
+            {url:"component-timeline.html", name:"Timeline", i18n:"Timeline" ,icon:"circle", slug:"component-timeline"},
+            {url:"component-bs-toast.html", name:"Toasts", i18n:"Toasts" ,icon:"circle", slug:"component-bs-toast"},
+            {url:"component-tooltips.html", name:"Tooltips", i18n:"Tooltips" ,icon:"circle", slug:"component-tooltips"},
+          ]
+        },
+
+        {url:"#", name:"Extensions", i18n:"Extensions" ,icon:"box", slug:"",
+          submenu:[
+            {url:"ext-component-sweet-alerts.html", name:"Sweet Alert", i18n:"Sweet Alert" ,icon:"circle", slug:"ext-component-sweet-alerts"},
+            {url:"ext-component-blockui.html", name:"BlockUI", i18n:"Block UI" ,icon:"circle", slug:"ext-component-blockui"},
+            {url:"ext-component-toastr.html", name:"Toastr",i18n:"Toastr",icon:"circle", slug:"ext-component-toastr"},
+            {url:"ext-component-sliders.html", name:"Sliders", i18n:"Sliders" ,icon:"circle", slug:"ext-component-sliders"},
+            {url:"ext-component-drag-drop.html", name:"Drag & Drop", i18n:"Drag & Drop" ,icon:"circle", slug:"ext-component-drag-drop"},
+            {url:"ext-component-tour.html", name:"Tour", i18n:"Tour" ,icon:"circle", slug:"ext-component-tour"},
+            {url:"ext-component-clipboard.html", name:"Clipboard", i18n:"Clipboard" ,icon:"circle", slug:"ext-component-clipboard"},
+            {url:"ext-component-media-player.html", name:"Media Player", i18n:"Media player" ,icon:"circle", slug:"ext-component-media-player"},
+            {url:"ext-component-context-menu.html", name:"Context Menu", i18n:"Context Menu", icon:"circle", slug:"ext-component-context-menu"},
+            {url:"ext-component-swiper.html", name:"Swiper", i18n:"swiper", icon:"circle", slug:"ext-component-swiper"},
+            {url:"ext-component-tree.html", name:"Tree", i18n:"Tree", icon:"circle", slug:"ext-component-tree"},
+            {url:"ext-component-ratings.html", name:"Ratings", i18n:"Ratings", icon:"circle", slug:"ext-component-ratings"},
+            {url:"ext-component-i18n.html", name:"l18n", i18n:"l18n", icon:"circle", slug:"ext-component-i18n"},
+          ]
+        },
+
+        {url:"#", name:"Page Layouts", i18n:"Page Layouts" ,icon:"layout", slug:"",
+          submenu:[
+            {url:"layout-collapsed-menu.html", name:"Collapsed Menu", i18n:"Collapsed Menu" ,icon:"circle", slug:"layout-collapsed-menu"},
+            {url:"layout-full.html", name:"Layout Full", i18n:"Layout Full" ,icon:"circle", slug:"layout-full"},
+            {url:"layout-without-menu.html", name:"Without Menu", i18n:"Without Menu" ,icon:"circle", slug:"layout-without-menu"},
+            {url:"layout-empty.html", name:"Layout Empty",i18n:"Layout Empty",icon:"circle", slug:"layout-empty"},
+            {url:"layout-blank.html", name:"Layout Blank", i18n:"Layout Blank" ,icon:"circle", slug:"layout-blank"},
+          ]
+        },
+
+      {navheader:"Forms & Tables",icon:"", i18n:"Forms & Tables"},
+
+        {url:"#", name:"Form Elements", i18n:"Form Elements" ,icon:"copy", slug:"",
+          submenu:[
+            {url:"form-input.html", name:"Input", i18n:"Input" ,icon:"circle", slug:"form-input"},
+            {url:"form-input-groups.html", name:"Input Groups", i18n:"Input Groups" ,icon:"circle", slug:"form-input-groups"},
+            {url:"form-input-mask.html", name:"Input Mask", i18n:"Input Mask" ,icon:"circle", slug:"form-input-mask"},
+            {url:"form-textarea.html", name:"Textarea", i18n:"Textarea", icon:"circle", slug:"form-textarea"},
+            {url:"form-checkbox.html", name:"Checkbox", i18n:"Checkbox" ,icon:"circle", slug:"form-checkbox"},
+            {url:"form-radio.html", name:"Radio", i18n:"Radio" ,icon:"circle", slug:"form-radio"},
+            {url:"form-switch.html", name:"Switch", i18n:"Switch" ,icon:"circle", slug:"form-switch"},
+            {url:"form-select.html", name:"Select", i18n:"Select" ,icon:"circle", slug:"form-select"},
+            {url:"form-number-input.html", name:"Number Input", i18n:"Number Input" ,icon:"circle", slug:"form-number-input"},
+            {url:"form-file-uploader.html", name:"File Uploader", i18n:"File Uploader" ,icon:"circle", slug:"form-file-uploader"},
+            {url:"form-quill-editor.html", name:"Quill Editor", i18n:"Quill Editor" ,icon:"circle", slug:"form-quill-editor"},
+            {url:"form-date-time-picker.html", name:"Date & Time Picker", i18n:"Date & Time Picker" ,icon:"circle", slug:"form-date-time-picker"},
+          ]
+        },
+
+        {url:"form-layout.html",name:"Form Layout", i18n:"Form Layout" ,icon:"box",slug:"form-layout"},
+        {url:"form-wizard.html",name:"Form Wizard", i18n:"Form Wizard" ,icon:"package",slug:"form-wizard"},
+        {url:"form-validation.html",name:"Form Validation", i18n:"Form Validation" ,icon:"check-circle",slug:"form-validation"},
+        {url:"form-repeater.html",name:"Form Repeater", i18n:"Form Repeater" ,icon:"rotate-cw",slug:"form-repeater"},
+        {url:"table-bootstrap.html",name:"Table", i18n:"Table" ,icon:"server",slug:"table-bootstrap"},
+        {url:"#", name:"Datatable", i18n:"Datatable" ,slug:"", icon:"grid",
+          submenu:[
+            {url:"table-datatable-basic.html",name:"Basic", i18n:"Basic" ,icon:"circle", slug:"table-datatable-basic"},
+            {url:"table-datatable-advanced.html", name:"Advanced", i18n:"Advanced" ,icon:"circle",  slug:"table-datatable-advanced"},
+          ]
+        },
+
+      {navheader:"Charts & Maps",icon:"", i18n:"Charts & Maps"},
+        {url:"#", name:"Charts", i18n:"Charts" , icon:"pie-chart", slug:"", tag:"2" , tagcustom: "badge badge-light-danger rounded-pill ms-auto me-2",
+          submenu:[
+            {url:"chart-apex.html",name:"Apex", i18n:"Apex" ,icon:"circle",slug:"chart-apex"},
+            {url:"chart-chartjs.html",name:"Chartjs", i18n:"Chartjs" ,icon:"circle",slug:"chart-chartjs"},
+          ]
+        },
+
+      {url:"maps-leaflet.html",name:"Leaflet Maps", i18n:"Leaflet Maps" ,icon:"map",slug:"maps-leaflet"},
+
+      {navheader:"Misc",icon:"", i18n:"Misc"},
+
+        {url:"#",name:"Menu Levels", i18n:"Menu Levels",icon:"menu",slug:"",
+          submenu:[
+            {url:"#",name:"Second Level 2.1",i18n:"Second Level",icon:"circle",slug:""},
+            {url:"#",name:"Second Level 2.2",i18n:"Second Level",icon:"circle",slug:"",
+              submenu:[
+                {url:"#",name:"Third Level 3.1",i18n:"Third Level",icon:"circle",slug:""},
+                {url:"#",name:"Third Level 3.2",i18n:"Third Level",icon:"circle",slug:""},
+              ]
+            },
+          ]
+        },
+        {url:"#" ,name:"Disabled Menu", i18n:"Disabled Menu" ,icon:"eye-off",slug:"", classlist:"disabled"},
+        {url:"https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/documentation",name:"Documentation",i18n:"Documentation" ,slug:"documentation",icon:"folder", newTab:"_blank"},
+        {url:"https://pixinvent.ticksy.com/",name:"Raise Support", i18n:"Raise Support" ,slug:"support-raise-support",icon:"life-buoy", newTab:"_blank"},
+    ])
+
+  //- /main menu content
+
+  //- main menu footer
+  //- include includes/menu-footer
+  //- main menu footer
+//- / main menu

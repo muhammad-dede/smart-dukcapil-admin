@@ -1,0 +1,23 @@
+//- =========================================================================================
+    File Name: component-timeline.pug
+    Description: Tabs
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================
+
+extends template
+
+block pageVars
+    - var pageTitle   = "Timeline"
+    - var pageSubTitle = "Timeline"
+    - var description = "Timeline"
+    - var activeMenu  = "component-timeline"
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Components"}, {name:"Timeline"}])
+
+//- Include page content in page block
+append content
+    include ../contents/component-timeline.html

@@ -1,0 +1,32 @@
+//- =========================================================================================
+    File Name: form-input-mask.pug
+    Description: Date picker widget based on twitter bootstrap.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================
+
+extends template
+
+block pageVars
+    - var pageTitle = "Input Mask"
+    - var pageSubTitle = "Input Mask"
+    - var description  = "Input Mask"
+    - var activeMenu = "form-input-mask"
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Form Elements"}, {name:"Input Mask"}])
+
+//- Include page content in page block
+append content
+    include ../contents/form-input-mask.html
+
+append vendorjs
+    //- Pick-a-date -//
+    script(src=app_assets_path+'/vendors/js/forms/cleave/cleave.min.js')
+    script(src=app_assets_path+'/vendors/js/forms/cleave/addons/cleave-phone.us.js')
+
+append pagejs
+    //- Template JS for DateTimePicker
+    script(src=app_assets_path+'/js/scripts/forms/form-input-mask.js')

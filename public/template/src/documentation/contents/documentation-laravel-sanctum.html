@@ -1,0 +1,319 @@
+<!-- intro -->
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title" id="intro">Laravel API Authentication Using Sanctum</h4>
+  </div>
+  <div class="card-body">
+    <h6>Introduction</h6>
+    <p class="card-text">
+      Laravel <a href="https://laravel.com/docs/8.x/sanctum" target="_blank">Sanctum</a> provides a featherweight
+      authentication system for SPAs (single page applications), mobile applications, and simple, token based APIs.
+      Sanctum allows each user of your application to generate multiple API tokens for their account. These tokens may
+      be granted abilities / scopes which specify which actions the tokens are allowed to perform.
+    </p>
+  </div>
+</div>
+
+<!-- installation -->
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title" id="installation">Installation</h4>
+  </div>
+  <div class="card-body">
+    <!-- step 1 -->
+    <h6>Step 1: Install Sanctum</h6>
+    <p class="card-text">You may install Laravel Sanctum via the Composer package manager:</p>
+    <pre class="language-php">
+    <code class="language-php">
+      composer require laravel/sanctum
+    </code>
+  </pre>
+
+    <!-- step 2 -->
+    <h6 class="mt-2">Step 2: Publish the Sanctum configuration and migration</h6>
+    <p class="card-text">
+      Next, you should publish the Sanctum configuration and migration files using the vendor:publish Artisan command.
+      The sanctum configuration file will be placed in your application's config directory:
+    </p>
+    <pre class="language-php">
+    <code class="language-php">
+      php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+    </code>
+  </pre>
+    <p class="card-text">
+      Next, if you plan to utilize Sanctum to authenticate an SPA, you should add Sanctum's middleware to your
+      <code>api</code> middleware group within your application's <code>app/Http/Kernel.php</code> file:
+    </p>
+    <pre class="language-php">
+    <code class="language-php">
+      'api' => [
+          \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
+          'throttle:api',
+          \Illuminate\Routing\Middleware\SubstituteBindings::class,
+      ],
+    </code>
+  </pre>
+
+    <!-- step 3 -->
+    <h6 class="mt-2">Step 3: Sanctum Config</h6>
+    <p class="card-text">
+      Sanctum allows you to issue API tokens / personal access tokens that may be used to authenticate API requests to
+      your application. When making requests using API tokens, the token should be included in the Authorization header
+      as a Bearer token.
+    </p>
+    <p class="card-text">
+      To begin issuing tokens for users, your <code>User</code> model should use the
+      <code>Laravel\Sanctum\HasApiTokens</code> trait:
+    </p>
+    <pre class="language-php">
+    <code class="language-php">
+      use Laravel\Sanctum\HasApiTokens;
+
+      class User extends Authenticatable
+      {
+          use HasApiTokens, HasFactory, Notifiable;
+      }
+    </code>
+  </pre>
+    <p class="card-text">
+      Finally, you should run your database migrations. Sanctum will create one database table in which to store API
+      tokens:
+    </p>
+    <pre class="language-php">
+    <code class="language-php">
+      php artisan migrate
+    </code>
+  </pre>
+  </div>
+</div>
+
+<!-- sanctum authentication -->
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title" id="auth-sanctum">Laravel Sanctum Authentication</h4>
+  </div>
+  <div class="card-body">
+    <p class="card-text">Below are some authentications sample code to authenticate users via Laravel Sanctum</p>
+
+    <!-- step 1 -->
+    <h6 class="mt-2">Step 1: Create Route</h6>
+    <p class="card-text">
+      Open <code>api.php</code> from routes folder , and replace the code of route with the following:
+    </p>
+    <pre class="language-php">
+      <code class="language-php">
+        &lt;?php
+
+          use Illuminate\Http\Request;
+          use Illuminate\Support\Facades\Route;
+          use App\Http\Controllers\AuthController;
+          /*
+          |--------------------------------------------------------------------------
+          | API Routes
+          |--------------------------------------------------------------------------
+          |
+          | Here is where you can register API routes for your application. These
+          | routes are loaded by the RouteServiceProvider within a group which
+          | is assigned the "api" middleware group. Enjoy building your API!
+          |
+          */
+
+          Route::group(['prefix' => 'auth'], function () {
+          Route::post('login', [AuthController::class, 'login']);
+          Route::post('register', [AuthController::class, 'register']);
+
+          Route::group(['middleware' => 'auth:sanctum'], function() {
+            Route::get('logout', [AuthController::class, 'logout']);
+            Route::get('user', [AuthController::class, 'user']);
+          });
+        });
+      </code>
+    </pre>
+
+    <!-- step 2 -->
+    <h6 class="mt-2">Step 2: Create Controller</h6>
+    <p class="card-text">Create new controller in Http/Controllers/AuthController.php by the following command:</p>
+    <pre class="language-php">
+      <code class="language-php">
+        php artisan make:controller AuthController
+      </code>
+    </pre>
+    <div class="alert bg-rgba-warning mb-0">
+      NOTE - Now, We will create APIs and to test those APIs one can use tools like
+      <a href="https://www.postman.com/downloads/" target="_blank"> POSTMAN</a>. We have attached images showing the API
+      test results using POSTMAN.
+    </div>
+
+    <!-- step 3 -->
+    <h6 class="mt-2">Step 3: Register User API</h6>
+    <p class="card-text">Open <code>Http/Controllers/AuthController.php</code> and replace the code with below code:</p>
+    <pre class="language-php">
+      <code class="language-php">
+      &lt;php
+
+      namespace App\Http\Controllers;
+      use Illuminate\Http\Request;
+      use Illuminate\Support\Facades\Auth;
+      use App\Models\User;
+      use Validator;
+
+      class AuthController extends Controller
+      {
+      /**
+      * Create user
+      *
+      * @param  [string] name
+      * @param  [string] email
+      * @param  [string] password
+      * @param  [string] password_confirmation
+      * @return [string] message
+      */
+      public function register(Request $request)
+      {
+          $request->validate([
+              'name' => 'required|string',
+              'email'=>'required|string|unique:users',
+              'password'=>'required|string',
+              'c_password' => 'required|same:password'
+          ]);
+
+          $user = new User([
+              'name'  => $request->name,
+              'email' => $request->email,
+              'password' => bcrypt($request->password),
+          ]);
+
+          if($user->save()){
+              $tokenResult = $user->createToken('Personal Access Token');
+              $token = $tokenResult->plainTextToken;
+
+              return response()->json([
+              'message' => 'Successfully created user!',
+              'accessToken'=> $token,
+              ],201);
+          }
+          else{
+              return response()->json(['error'=>'Provide proper details']);
+          }
+        }
+      </code>
+    </pre>
+    <!-- image -->
+    <h6 class="mt-2">TEST register user API using postman</h6>
+    <div class="row">
+      <div class="col-12 d-flex justify-content-center">
+        <img src="../../../app-assets/images/docs/sanctum-register-api.jpg" alt="register api" />
+      </div>
+    </div>
+
+    <!-- step 4 -->
+    <h6 class="mt-2">Step 4: Login User API</h6>
+    <p class="card-text">
+      In the same file <code>Http/Controllers/AuthController.php</code>, add below code after register method:
+    </p>
+    <pre class="language-php">
+      <code class="language-php">
+        /**
+        * Login user and create token
+        *
+        * @param  [string] email
+        * @param  [string] password
+        * @param  [boolean] remember_me
+        */
+
+        public function login(Request $request)
+        {
+          $request->validate([
+          'email' => 'required|string|email',
+          'password' => 'required|string',
+          'remember_me' => 'boolean'
+          ]);
+
+          $credentials = request(['email','password']);
+          if(!Auth::attempt($credentials))
+          {
+          return response()->json([
+              'message' => 'Unauthorized'
+          ],401);
+          }
+
+          $user = $request->user();
+          $tokenResult = $user->createToken('Personal Access Token');
+          $token = $tokenResult->plainTextToken;
+
+          return response()->json([
+          'accessToken' =>$token,
+          'token_type' => 'Bearer',
+          ]);
+        }
+      </code>
+    </pre>
+
+    <!-- image -->
+    <h6 class="mt-2">TEST Login user API using postman</h6>
+    <div class="row">
+      <div class="col-12 d-flex justify-content-center">
+        <img src="../../../app-assets/images/docs/sanctum-login-api.png" alt="login api" />
+      </div>
+    </div>
+
+    <!-- step 5 -->
+    <h6 class="mt-2">Step 5: Get User API</h6>
+    <p class="card-text">
+      In the same file <code>Http/Controllers/AuthController.php</code>, add below code after Login method:
+    </p>
+    <pre class="language-php">
+      <code class="language-php">
+        /**
+        * Get the authenticated User
+        *
+        * @return [json] user object
+        */
+        public function user(Request $request)
+        {
+            return response()->json($request->user());
+        }
+      </code>
+    </pre>
+
+    <!-- image -->
+    <h6 class="mt-2">TEST get user API using postman</h6>
+    <div class="row">
+      <div class="col-12 d-flex justify-content-center">
+        <img src="../../../app-assets/images/docs/sanctum-get-user-api.png" alt="user api" />
+      </div>
+    </div>
+
+    <!-- step 6 -->
+    <h6 class="mt-2">Step 6: Logout User API</h6>
+    <p class="card-text">
+      In the same file <code>Http/Controllers/AuthController.php</code>, add below code after User method:
+    </p>
+    <pre class="language-php">
+      <code class="language-php">
+      /**
+      * Logout user (Revoke the token)
+      *
+      * @return [string] message
+      */
+      public function logout(Request $request)
+      {
+          $request->user()->tokens()->delete();
+
+          return response()->json([
+          'message' => 'Successfully logged out'
+          ]);
+
+      }
+      </code>
+    </pre>
+
+    <!-- image -->
+    <h6 class="mt-2">TEST get user API using postman</h6>
+    <div class="row">
+      <div class="col-12 d-flex justify-content-center">
+        <img src="../../../app-assets/images/docs/sanctum-logout-api.png" alt="logout api" />
+      </div>
+    </div>
+  </div>
+</div>

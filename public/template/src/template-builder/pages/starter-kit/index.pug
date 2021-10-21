@@ -1,0 +1,27 @@
+//- =========================================================================================
+  File Name: index.pug
+  Description: Sample starter kit page.
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: PIXINVENT
+  Author URL: http://www.themeforest.net/user/pixinvent
+  ==========================================================================================-//
+
+extends template
+
+block pageVars
+  - var pageTitle    = "Home"
+  - var pageSubTitle = "Sample starter kit page."
+  - var description  = "Sample starter kit page."
+  - var activeMenu   = "home"
+
+append pageConfig
+  - var starterKit    = true
+  - var navbarType = "navbar-floating"
+
+block breadcrumbs
+  +breadcrumbs([{url:"index.html",name:"Home"}, {name:"Index"}])
+
+//- Include page content in page block
+append content
+  include ../../contents/starter-kit/index.html

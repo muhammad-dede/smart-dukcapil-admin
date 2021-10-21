@@ -1,0 +1,367 @@
+<!-- Configuration -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="configuration" class="card-title">Configuration</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <div class="card-text">
+        <p>Configuration Options in details:</p>
+        <div class="alert alert-primary mb-2" role="alert">
+          <div class="alert-body">
+            Global configurations can be configured via <code>custom.php</code> file found at
+            <code>config -> custom.php</code> path. To override these global configurations on a page, you can add page
+            configurations via <code>App -> Http -> Controller -> {Controller File}</code> file.
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-striped mb-0">
+            <thead>
+              <tr>
+                <th>Key</th>
+                <th>Possible Options</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>mainLayoutType</td>
+                <td>vertical(default), horizontal</td>
+                <td>To switch vertical/horizontal layout. By defaul this will work with vertical layout.</td>
+              </tr>
+              <tr>
+                <td>theme</td>
+                <td>light (default) / dark / bordered</td>
+                <td>Set between light theme, dark theme & bordered theme.</td>
+              </tr>
+              <tr>
+                <td>sidebarCollapsed</td>
+                <td>true / false (default)</td>
+                <td>Toggle display of collapse or expand.</td>
+              </tr>
+              <tr>
+                <td>navbarColor</td>
+                <td>bg-{primary/info/success/danger/warning}</td>
+                <td>Change the color of the navbar using available options.</td>
+              </tr>
+              <tr>
+                <td>horizontalMenuType</td>
+                <td>floating (default), static,sticky</td>
+                <td>Change how the menu is displayed only in Horizontal-menu Template.</td>
+              </tr>
+              <tr>
+                <td>verticalMenuNavbarType</td>
+                <td>floating (default), static, sticky, hidden</td>
+                <td>Change how the navbar is displayed only in Vertical-menu Template.</td>
+              </tr>
+              <tr>
+                <td>footerType</td>
+                <td>static (default), sticky, hidden</td>
+                <td>Change how the footer is displayed.</td>
+              </tr>
+              <tr>
+                <td>layoutWidth</td>
+                <td>full (default), boxed</td>
+                <td>Change how the layout is displayed.</td>
+              </tr>
+              <tr>
+                <td>showMenu</td>
+                <td>true (default), false</td>
+                <td>Toggle the main menu. (Warning: if set to false it will hide the main menu)</td>
+              </tr>
+              <tr>
+                <td>bodyClass</td>
+                <td>''(default)</td>
+                <td colspan="2">
+                  Using this variable, you can add your own custom class to include in <code>&lt;body&gt;</code> tag.
+                </td>
+              </tr>
+              <tr>
+                <td>pageHeader</td>
+                <td>true(default), false</td>
+                <td>This option is used to show breadcrumb.</td>
+              </tr>
+              <tr>
+                <td>contentLayout</td>
+                <td>
+                  default(default), content-left-sidebar, content-right-sidebar, content-detached-left-sidebar,
+                  content-detached-right-sidebar
+                </td>
+                <td>
+                  Use 'default' options for default layout and sidebar. Only use these options except 'default' if your
+                  whole Project has the same layout otherwise override these options as page level.
+                </td>
+              </tr>
+              <tr>
+                <td>blankPage</td>
+                <td>true, false(default)</td>
+                <td>
+                  Pages that don't require to show header, footer, sidebar will be done by "blankPage" value to "true".
+                  For example: Login, register, etc pages need this option value to be true on page level.
+                </td>
+              </tr>
+              <tr>
+                <td>defaultLanguage</td>
+                <td>en(default),fr,pt,de</td>
+                <td>To change the default language in whole Template.</td>
+              </tr>
+              <tr>
+                <td>direction</td>
+                <td>env('MIX_CONTENT_DIRECTION', 'ltr')(default), env('MIX_CONTENT_DIRECTION', 'rtl')</td>
+                <td>To switch ltr/rtl direction of the layout. By defaul this will work with LTR layout.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="control-config" class="mt-2">
+          <h6>Change for Page Level Configuration :</h6>
+          <p>
+            If you want to add Page level configuration for layout, you need to to set array for page configuration in
+            <code>app -> Http -> Controller -> {Controller file}</code> and send it to your view.
+          </p>
+        </div>
+        <pre class="language-php">
+          <code class="language-php">
+          public function {functionName}(){
+              $pageConfigs = [
+                  'theme' => 'dark',
+                  'navbarColor' => 'bg-primary',
+                  'navbarType' => 'static',
+                  'footerType' => 'sticky',
+                  'bodyClass' => 'testClass'
+              ];
+
+              return view('/pages/testPage', [
+                  'pageConfigs' => $pageConfigs
+              ]);
+          }
+          </code>
+      </pre>
+        <p class="mt-2">
+          We have provided <code>'pageClass' => '',</code> options to add page specific class with
+          <code>.app-content</code> . You can only override this options in page level.
+        </p>
+        <pre class="language-php">
+          <code class="language-php">
+public function {functionName}(){
+    $pageConfigs = [
+        'pageClass' => 'email-application'
+    ];
+
+    return view('/pages/testPage', ['pageConfigs' => $pageConfigs]);
+}
+          </code>
+        </pre>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Configuration -->
+
+<!-- custome css for user -->
+<div class="card" id="custom-css">
+  <div class="card-header">
+    <h4 class="card-title">Custom Css for User</h4>
+  </div>
+  <div class="card-body">
+    <p>We have provided custom scss files for user to override themes styles and variable.</p>
+    <h6>Folder Structure</h6>
+    <pre>
+      <code class="language-treeview">
+        ── resources/
+        ├── assets/
+        |   ├── scss/
+        |   ├── variable/
+        |   |   ├── _variable-components.scss
+        |   |   ├── _variable.scss
+        |   ├── style-rtl.scss
+        |   ├── style.scss
+      </code>
+    </pre>
+    <ul class="mt-2">
+      <li>We have provided <code>style.scss</code> for user override.</li>
+      <li>Also, we have provided <code>style-rtl.scss</code> for RTL version specific style.</li>
+      <li>These two files added in <code>style.blade.php</code> file.</li>
+      <li>You can override bootstrap variable in <code>_variable.scss</code> file.</li>
+      <li>Also, you can override theme variable in <code>_variable-components.scss</code> file.</li>
+    </ul>
+  </div>
+</div>
+<!--/ custome css for user -->
+
+<!-- Create New Page Steps -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="create-new-page" class="card-title">Create New Page</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <div class="card-text">
+        <h6>How to add a New Page:</h6>
+        <ul>
+          <li>Create New View with <code>blade.php</code> extenstion.</li>
+          <li>
+            Create Controller for different methods related to page. (Optional. You can use default controller also.)
+          </li>
+          <li>Set Path in <code>routes/web.php</code> file to serve the page on the browser.</li>
+          <li>
+            Add page link to
+            <code>resources -> data -> menu-data -> verticalMenu.json & horizontalMenu.json</code> files to display menu
+            item in sidebar/menu.
+          </li>
+          <li>
+            Add page link to <code>resources -> data -> search.json</code> file to display in navbar search option.
+          </li>
+          <li>
+            Add page name to <code>resources -> lang -> en{all language folder} -> locale.php</code> file to display in
+            multi language.
+          </li>
+        </ul>
+        <h5>Steps to add a new page :</h5>
+        <hr />
+        <p class="mt-2">
+          <strong>Step 1: </strong> Create a file with the <code>extension.blade.php</code> under the
+          <code>resources -> views -> pages </code> directory. Let's create a testPage for an example with filename
+          testPage.blade.php and placing the below code in that file.
+        </p>
+        <pre class="language-php">
+          <code class="language-php">
+            @extends('layouts/contentLayoutMaster') // choose any one option {contentLayoutMaster/fullLayoutMaster}
+
+            @section('title', 'Test Page')  // change title accrodingly
+
+            @section('content')
+              &lt;div&gt;
+                  .....
+              &lt;/div&gt;
+            @endsection
+          </code>
+        </pre>
+        <p class="mt-2"><strong>Step 2: </strong> To add new controller, use below command :</p>
+        <pre class="language-php">
+          <code class="language-php">
+            php artisan make:controller {ControllerName} {-r}
+          </code>
+        </pre>
+        <p>
+          <code>Add Configuration in controller as described <a href="#control-config">here</a>.</code>
+        </p>
+        <p><code>To add breadcrumbs :</code></p>
+        <pre class="language-php">
+          <code class="language-php">
+            $breadcrumbs = [
+                ['link'=>"/",'name'=>"Home"],['link'=>"/",'name'=>"Page"], ['name'=>"Test Page"]
+            ];
+
+            return view('/pages/test-page', [
+                'breadcrumbs' => $breadcrumbs
+            ]);
+          </code>
+        </pre>
+        <p class="mt-2">
+          <strong>Step 3: </strong> After creating file and controller you need to declare its route where it can be
+          served on the browser, suppose you want created page to be serve on the route http://localhost:8080/testPage .
+          To access this page define its routes in the <code>resources -> web.php</code> file.
+        </p>
+        <pre class="language-php">
+          <code class="language-php">
+          Route::get('/testPage', function () {
+              return view('pages/testPage');
+          });
+          </code>
+        </pre>
+        <p class="mt-2">
+          <strong>Step 4: </strong> After defining the route, add page link to sidebar at
+          <code>resources -> data -> menu-data -> verticalMenu.json / horizontalMenu.json</code> file.
+        </p>
+        <p class="mt-1"><strong>Option 1:</strong> To add item in menu.</p>
+        <pre class="language-php">
+          <code class="language-php">
+          {"url": "/testPage","name": "Test Page","icon": "circle","slug": "test-page"}
+          </code>
+       </pre>
+        <p class="mt-1"><strong>Option 2:</strong> To add item as a sub menu item.</p>
+        <pre class="language-php">
+          <code class="language-php">
+         {
+          "url": "#","name": "Dashboards","badge": "2","badgeClass": "badge badge-light-warning rounded-pill ms-auto me-1","icon": "home","slug": "",
+          "submenu": [{"url": "/testPage","name": "Test Page","icon": "circle","slug": "test-page"}]
+          },
+          </code>
+       </pre>
+        <p class="mt-2">
+          <strong>Step 5: </strong> For page searching options in navbar search box, add page link in
+          <code>resources -> data -> search.json</code> file.
+        </p>
+        <pre class="language-php">
+          <code class="language-php">
+           { "name": "Test Page", "url": "/testPage", "icon": "circle" },
+          </code>
+        </pre>
+        <p class="mt-2">
+          <strong>Step 6: </strong> Add page name to
+          <code>resources -> lang -> en{all language folder} -> locale.php</code> file to display in multi language.
+        </p>
+        <pre class="language-php">
+          <code class="language-php">
+            "Dashboard"=> "Instrumententafel",
+            "Modern"=> "Modern",
+          </code>
+        </pre>
+        <p class="mt-2">
+          After completing these above steps you need to run the command <code>yarn dev</code> or
+          <code>yarn watch</code> command in the project directory. After running this process you need to run the
+          command <code>php artisan serve</code> . It will serve your app on the localhost.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Create New Page Steps -->
+
+<!-- RTL -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="rtl" class="card-title">RTL</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <div class="card-text">
+        <p>To create RTL layout. There are two way to do this.</p>
+        <h5>First way</h5>
+        <p>
+          Change <code>MIX_CONTENT_DIRECTION</code> variable value from <code>ltr</code> to <code>rtl</code> in .env
+          file
+        </p>
+        <h5>Second way</h5>
+        <p>Change configuration option from <code>config -> custom.php</code> file.</p>
+        <p>
+          Update <code>direction</code> value from <code> 'direction' => env('MIX_CONTENT_DIRECTION', 'ltr')</code>, to
+          <code>'direction' => env('MIX_CONTENT_DIRECTION', 'rtl'),</code>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ RTL -->

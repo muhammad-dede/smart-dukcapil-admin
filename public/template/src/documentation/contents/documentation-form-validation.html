@@ -1,0 +1,280 @@
+<!-- jQuery Validation -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="jquery-validation" class="card-title">jQuery Validation</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <p>
+        The jQuery Validation Plugin provides drop-in validation for your existing forms, while making all kinds of
+        customizations to fit your application really easy.<br />Read the official
+        <a href="https://jqueryvalidation.org/" target="_blank">jQuery Validation Documentation</a> for a full list of
+        instructions and other options.
+      </p>
+      <h6>1. Initialize the plugin by referencing the necessary files:</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;!-- Vendor files --&gt;
+&lt;script src="jquery.validate.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- Template files --&gt;
+&lt;link rel="stylesheet" type="text/css" href="app-assets/css/plugins/forms/form-validation.css"&gt;
+</code>
+      </pre>
+
+      <h6>2. Binding to existing DOM element.</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;form id="jquery-val-form" method="post"&gt;...&lt;/div&gt;
+</code>
+      </pre>
+
+      <h6>3. Basic usage looks something like this:</h6>
+      <pre class="language-javascript my-1">
+<code class="language-javascript">
+$('#jquery-val-form').validate({
+    rules: { ... },
+    messages: { ... }
+});
+</code>
+      </pre>
+      <p>
+        To read and understand more about <code>rules</code> property, go to
+        <a href="https://jqueryvalidation.org/rules/" target="_blank">rules documentation</a>.
+      </p>
+      <p>
+        To read and understand more about <code>messages</code> property, go to
+        <a href="https://jqueryvalidation.org/validate/#messages" target="_blank">messages documentation</a>.
+      </p>
+      <h5>Validate Flatpickr</h5>
+      <pre class="language-javascript my-1">
+<code class="language-javascript">
+var picker = $('#dob');
+
+picker.flatpickr({
+  onReady: function (selectedDates, dateStr, instance) {
+    if (instance.isMobile) {
+      $(instance.mobileInput).attr('step', null);
+    }
+  }
+});
+</code>
+      </pre>
+      <h5>Validate Select2</h5>
+      <pre class="language-javascript my-1">
+<code class="language-javascript">
+var select = $('.select2');
+
+select.each(function () {
+  var $this = $(this);
+  $this.wrap('&lt;div class="position-relative"&gt;&lt;/div&gt;');
+  $this
+    .select2({
+      placeholder: 'Select value',
+      dropdownParent: $this.parent()
+    })
+    .change(function () {
+      $(this).valid();
+    });
+});
+</code>
+      </pre>
+      <h5>Default jQuery Validation is applied Globally</h5>
+      <p>
+        The following code is applied globally in <code>app-assets/js/core/app.js</code> file. If you want to change
+        anything globally, you can change it in the following function but if you want to change or add something, you
+        can also do for any specific page js file.
+      </p>
+      <pre class="language-javascript my-1">
+<code class="language-javascript">
+// jQuery Validation Global Defaults
+if (typeof jQuery.validator === 'function') {
+  jQuery.validator.setDefaults({
+    errorElement: 'span',
+    errorPlacement: function (error, element) {
+      if (
+        element.parent().hasClass('input-group') ||
+        element.hasClass('select2') ||
+        element.attr('type') === 'checkbox'
+      ) {
+        error.insertAfter(element.parent());
+      } else if (element.hasClass('form-check-input')) {
+        error.insertAfter(element.parent().siblings(':last'));
+      } else {
+        error.insertAfter(element);
+      }
+
+      if (element.parent().hasClass('input-group')) {
+        element.parent().addClass('is-invalid');
+      }
+    },
+    highlight: function (element, errorClass, validClass) {
+      $(element).addClass('error');
+      if ($(element).parent().hasClass('input-group')) {
+        $(element).parent().addClass('is-invalid');
+      }
+    },
+    unhighlight: function (element, errorClass, validClass) {
+      $(element).removeClass('error');
+      if ($(element).parent().hasClass('input-group')) {
+        $(element).parent().removeClass('is-invalid');
+      }
+    }
+  });
+}
+</code>
+      </pre>
+      <p class="mt-2">
+        <strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong>
+      </p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Plugin Link</strong></td>
+              <td>
+                <a href="https://jqueryvalidation.org/" target="_blank">https://jqueryvalidation.org/</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Github Link</strong></td>
+              <td>
+                <a href="https://github.com/jquery-validation/jquery-validation" target="_blank"
+                  >https://github.com/jquery-validation/jquery-validation</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-validation.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-validation.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ jQuery Validation -->
+
+<!-- Bootstrap Validation -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="bs-validation" class="card-title">Bootstrap Validation</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <p>
+        Provide valuable, actionable feedback to your users with HTML5 form validation. For Bootstrap form validation
+        messages, you’ll need to add the novalidate boolean attribute to your <code>&lt;form&gt;</code>. This disables
+        the browser default feedback tooltips, but still provides access to the form validation APIs in JavaScript. When
+        attempting to submit, you’ll see the <code>:invalid</code> and <code>:valid</code> styles applied to your form
+        controls.
+      </p>
+      <p>
+        Read the official
+        <a href="https://getbootstrap.com/docs/5.0/components/forms/#validation" target="_blank"
+          >Bootstrap Validation Documentation</a
+        >
+        for a full list of instructions and other options.
+      </p>
+      <h6>1. Binding to existing DOM element.</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;form class="needs-validation" novalidate&gt;
+  &lt;div class="mb-1"&gt;
+    &lt;label for="validationCustom01"&gt;First name&lt;/label&gt;
+    &lt;input
+      type="text"
+      id="validationCustom01"
+      class="form-control"
+      placeholder="Name"
+      aria-label="Name"
+      required
+    /&gt;
+    &lt;div class="valid-feedback"&gt;Looks good!&lt;/div&gt;
+    &lt;div class="invalid-feedback"&gt;Please enter your name.&lt;/div&gt;
+  &lt;/div&gt;
+  ...
+&lt;/div&gt;
+</code>
+      </pre>
+
+      <h6>2. Basic usage looks something like this:</h6>
+      <pre class="language-javascript my-1">
+<code class="language-javascript">
+var bootstrapForm = $('.needs-validation');
+
+Array.prototype.filter.call(bootstrapForm, function (form) {
+  form.addEventListener('submit', function (event) {
+    if (form.checkValidity() === false) {
+      form.classList.add('invalid');
+    }
+    form.classList.add('was-validated');
+    event.preventDefault();
+  });
+});
+</code>
+      </pre>
+      <p class="mt-2">
+        <strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong>
+      </p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Plugin Link</strong></td>
+              <td>
+                <a href="https://getbootstrap.com/docs/5.0/components/forms/#validation" target="_blank"
+                  >https://getbootstrap.com/docs/5.0/components/forms/#validation</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-validation.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-validation.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Bootstrap Validation-->

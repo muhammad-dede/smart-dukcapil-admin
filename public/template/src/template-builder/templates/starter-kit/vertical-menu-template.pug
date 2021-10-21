@@ -1,0 +1,80 @@
+//- ===============================================================================================
+    File Name: vertical-menu-template.pug
+    Description: A template file for generating template with modern vertical menu.
+    ----------------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ================================================================================================ -//
+
+extends ../../base
+
+//- Template customization
+//------------------------
+block templateConfig
+    - var templateCustom = "vertical-layout vertical-menu-modern"
+    - var dataMenu = "vertical-menu-modern"
+
+//- Page level customization
+//------------------------
+block pageConfig
+    - var logoType = 'light'
+
+block navbarConfig
+    - var navbarPosition = "floating-nav"
+    - var navbarColor = "navbar-light"
+    - var navbarShadow = true
+    - var navbarType = "navbar-floating"
+
+block verticalMenuConfig
+    - var menuType = "menu-fixed"
+    - var menuColor = "menu-light"
+    - var menuOpenType = "menu-accordion"
+    - var menuShadow = true
+    - var menuCollapsed = false
+
+block footerConfig
+    - var footerType = "footer-static"
+    - var footerColor = "footer-light"
+    - var footerBorder = false
+
+//- Template includes
+//-------------------
+
+block header
+    include ../../templates/sections/header/sk-header
+
+block main-menu
+    include ../sections/menu/starter-kit/vertical-menu
+
+block page-header
+    if contentLayout != 'blank-page'
+        include ../../pages/page-headers/sk-breadcrumbs-with-round-button
+
+block footer
+    include ../sections/footer/footer
+
+//- Template specific dependency
+//------------------------------
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+block vendorcss
+
+//- Page CSS
+//------------------------------
+
+//- Add custom page specific CSS
+block pagecss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/core/menu/menu-types/vertical-menu.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+block vendorjs
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+block pagejs

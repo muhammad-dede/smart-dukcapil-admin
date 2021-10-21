@@ -1,0 +1,120 @@
+<!--Layout Full -->
+<section id="layout-full">
+  <!-- CSS Classes -->
+  <section id="layout-full-css" class="card">
+    <div class="card-header">
+      <h4 class="card-title">CSS Classes</h4>
+      <div class="heading-elements">
+        <ul class="list-inline mb-0">
+          <li>
+            <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-content collapse show" aria-expanded="true">
+      <div class="card-body">
+        <p>
+          For full layout, you need to remove <code>.container-xxl</code> class that included with
+          <code>.content-wrapper</code> class.
+        </p>
+        <p>All these options can be set via following classes:</p>
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Classes</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>.container-xxl.p-0</code></td>
+                <td>
+                  You can create layout full by removing <code>.container-xxl.p-0</code> classes along with
+                  <code>.content-wrapper</code> and <code>.content-area-wrapper</code> classes.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ CSS Classes -->
+
+  <!-- HTML Markup -->
+  <section id="layout-full-html" class="card">
+    <div class="card-header">
+      <h4 class="card-title">HTML Markup</h4>
+      <div class="heading-elements">
+        <ul class="list-inline mb-0">
+          <li>
+            <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-content collapse show" aria-expanded="true">
+      <div class="card-body">
+        <p>
+          This section contains HTML Markup to create layout full. You need to remove the
+          <code>.container-xxl.p-0</code> classes along with <code>.content-wrapper</code> and
+          <code>.content-area-wrapper</code> classes. Default layout of the template comes with boxed layout but you can
+          create full layout with below changes.
+        </p>
+        <p>
+          Vuexy has a ready to use starter kit, you can use this layout directly by using
+          <a
+            href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template-new/starter-kit/ltr/vertical-menu-template/layout-full.html"
+            ><code>layout-full.html</code></a
+          >.
+        </p>
+        <pre class="language-markup">
+<code class="language-markup">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    ...
+  &lt;/head&gt;
+  &lt;body class="vertical-layout vertical-menu-modern navbar-floating footer-static" data-menu="vertical-menu-modern"&gt;
+
+    &lt;!-- BEGIN: Navbar --&gt;
+    &lt;nav class="header-navbar navbar navbar-expand-lg align-items-center floating-nav navbar-light navbar-shadow"&gt;
+      ...
+    &lt;/nav&gt;
+    &lt;!-- END: Navbar --&gt;
+
+    &lt;!-- BEGIN: Main Menu --&gt;
+    &lt;div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true"&gt;
+      ...
+    &lt;/div&gt;
+    &lt;!-- END: Main Menu --&gt;
+
+    &lt;!-- BEGIN: Content --&gt;
+    &lt;div class="app-content content"&gt;
+
+        &lt;!-- Content-wrapper --&gt;
+        &lt;div class="content-wrapper <s>container-xxl</s> p-0"&gt;   &lt;!-- Remove from here --&gt;
+          ...
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+    &lt;!-- END: Content --&gt;
+
+    &lt;!-- Begin: Footer --&gt;
+    &lt;footer class="footer footer-static footer-light"&gt;
+      ...
+    &lt;/footer&gt;
+    &lt;!-- END: Footer --&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</code>
+        </pre>
+      </div>
+    </div>
+  </section>
+  <!--/ HTML Markup -->
+</section>
+<!--/ Layout Full -->

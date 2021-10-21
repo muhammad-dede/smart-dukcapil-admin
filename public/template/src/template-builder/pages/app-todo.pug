@@ -1,0 +1,72 @@
+//- =========================================================================================
+  File Name: app-todo.pug
+  Description: ToDo page
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: PIXINVENT
+  Author URL: http://www.themeforest.net/user/pixinvent
+  ==========================================================================================-//
+
+extends template
+
+block pageVars
+  - var pageTitle    = "ToDo"
+  - var pageSubTitle = "App todo"
+  - var activeMenu   = "app-todo"
+
+append pageConfig
+  - var pageClass = 'todo-application'
+  - var contentLayout = 'content-left-sidebar'
+
+block page-header
+
+//- Include page sidebar
+append sidebar
+  include ../contents/app-todo-sidebar.html
+
+//- Include page content
+append content
+  include ../contents/app-todo.html
+
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+  link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/editors/quill/katex.min.css')
+  link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/editors/quill/monokai-sublime.min.css')
+  link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/editors/quill/quill.snow.css')
+  link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/forms/select/select2.min.css')
+  link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/pickers/flatpickr/flatpickr.min.css')
+  link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/extensions/dragula.min.css')
+  link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/extensions/toastr.min.css')
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+  link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/forms/form-quill-editor.css')
+  link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/forms/pickers/form-flat-pickr.css')
+  link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/extensions/ext-component-toastr.css')
+  link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/forms/form-validation.css')
+  link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/app-todo.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+  //- Quill
+  script(src=app_assets_path + '/vendors/js/editors/quill/katex.min.js')
+  script(src=app_assets_path + '/vendors/js/editors/quill/highlight.min.js')
+  script(src=app_assets_path + '/vendors/js/editors/quill/quill.min.js')
+  script(src=app_assets_path + '/vendors/js/forms/select/select2.full.min.js')
+  script(src=app_assets_path + '/vendors/js/pickers/flatpickr/flatpickr.min.js')
+  script(src=app_assets_path + '/vendors/js/extensions/dragula.min.js')
+  script(src=app_assets_path + '/vendors/js/forms/validation/jquery.validate.min.js')
+  script(src=app_assets_path + '/vendors/js/extensions/toastr.min.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+  script(src=app_assets_path + '/js/scripts/pages/app-todo.js')

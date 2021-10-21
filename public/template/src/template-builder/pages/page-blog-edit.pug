@@ -1,0 +1,52 @@
+//- =========================================================================================
+    File Name: blog-edit.pug
+    Description: blog edit page.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+extends template
+
+block pageVars
+    - var pageTitle    = "Blog Edit"
+    - var pageSubTitle = "Blog edit page"
+    - var description  = "Blog edit page to show edit about blog post"
+    - var activeMenu   = "blog-edit"
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Pages"},{url:"#",name:"Blog"}, {name:"Edit"}])
+
+//- Include page content in page block
+append content
+    include ../contents/page-blog-edit.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+    script(src=app_assets_path + '/vendors/js/forms/select/select2.full.min.js')
+    script(src=app_assets_path + '/vendors/js/editors/quill/katex.min.js')
+    script(src=app_assets_path + '/vendors/js/editors/quill/highlight.min.js')
+    script(src=app_assets_path + '/vendors/js/editors/quill/quill.min.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+    script(src=app_assets_path+'/js/scripts/pages/page-blog-edit.js')
+
+append pagecss
+  link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/forms/form-quill-editor.css')
+  link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/pages/page-blog.css')
+
+
+//- vender CSS
+//------------------------------
+//- Add custom page specific CSS
+append vendorcss
+    //- Select2 CSS
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/forms/select/select2.min.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/editors/quill/katex.min.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/editors/quill/monokai-sublime.min.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/editors/quill/quill.snow.css')

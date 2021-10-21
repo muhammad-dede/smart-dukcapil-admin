@@ -1,0 +1,27 @@
+//- =========================================================================================
+    File Name: documentation-charts-apex.pug
+    Description: Apex Charts Documentation page
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+
+extends template
+
+block pageVars
+    - var pageTitle    = "Apex Charts"
+    - var activeMenu   = "charts-apex"
+
+
+
+append pageConfig
+
+append breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"}, {name:"Charts"}, {name:"Apex Chart"}])
+
+
+
+//- Include page content in content block
+append content
+    include ../contents/documentation-charts-apex.html

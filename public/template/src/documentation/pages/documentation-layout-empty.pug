@@ -1,0 +1,21 @@
+//- =========================================================================================
+    File Name: documentation-layout-empty.pug
+    Description: Empty Layout
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+
+extends template
+
+block pageVars
+    - var pageTitle    = "Layout Empty"
+    - var activeMenu   = "layout-empty"
+
+append breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"}, {name:"Layouts"}, {name:"Layout Empty"}])
+
+//- Include page content in content block
+append content
+    include ../contents/documentation-layout-empty.html

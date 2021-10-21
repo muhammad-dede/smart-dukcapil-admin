@@ -1,0 +1,146 @@
+<!-- Installing Node.js -->
+<section id="installing-node" class="card">
+  <div class="card-header">
+    <h4 class="card-title">Installing Node.js</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <p>
+        First, you must download and install node.js. NPM stands for node packaged modules and is a way to manage
+        development dependencies through Node.js.
+      </p>
+      <p>
+        Download the Node.js source code or a pre-built installer for your platform, and start developing, you can
+        download it from <a href="https://nodejs.org/en/download/" target="_blank">nodejs.org</a>
+      </p>
+      <p>
+        You can check it in your terminal window using these commands <code>node --version</code> and
+        <code>yarn --version</code>.
+      </p>
+    </div>
+  </div>
+</section>
+<!--/ Installing Node.js -->
+
+<!-- Installing Gulp -->
+<section id="installing-gulp" class="card">
+  <div class="card-header">
+    <h4 class="card-title">Installing Gulp</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <p>
+        <a href="http://gulpjs.com/" target="_blank">GulpJS</a> is a JavaScipt task runner. In one word: automation. The
+        less work you have to do when performing repetitive tasks like minification, compilation, unit testing, linting,
+        etc...
+      </p>
+      <p>Vuexy Build System use the gulp task to generate the different templates.</p>
+      <p>From the command line:</p>
+      <ul>
+        <li>Install <span class="fw-bolder">gulp</span> globally with <code>yarn add gulp-cli -g</code></li>
+        <li>
+          To install node packages, navigate to the root <code>vuexy-html-bootstrap-admin-template/</code>directory.
+          Then run <code>yarn</code>. Yarn use the <code>package.json</code> file and automatically install the
+          required local dependencies listed in it.
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!--/ Installing Gulp -->
+
+<!-- Gulp Commands -->
+<section id="gulp-commands" class="card">
+  <div class="card-header">
+    <h4 class="card-title">Gulp Commands</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <p>
+        <code>gulpfile.js</code> file contain all the predefined task. Below template contain all the gulp task and
+        usage.
+      </p>
+      <p>You can modify or add your task in <code>gulpfile.js</code> file.</p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th width="250">Command</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th><code>gulp dist</code></th>
+              <td>Gulp task to generate css and js files in app-assets folder.</td>
+            </tr>
+            <tr>
+              <th><code>gulp monitor</code></th>
+              <td>
+                Watch all scss and compile it accordingly. In this command you need to pass the Layout, LayoutName &
+                TextDirection.
+              </td>
+            </tr>
+            <tr>
+              <th><code>gulp sass-compile</code></th>
+              <td>Compile core, main(app), pages and plugins scss files.</td>
+            </tr>
+            <tr>
+              <th><code>gulp dist-css</code></th>
+              <td>
+                Clean css folder, compile all scss files, auto prefix them, organize them and finally minify them in
+                app-assets/css folder.
+              </td>
+            </tr>
+            <tr>
+              <th><code>gulp dist-js</code></th>
+              <td>Gulp task to clean js folder from app-assets, copy js files from src folder and minify them.</td>
+            </tr>
+            <tr>
+              <th><code>gulp dist-vendor-js</code></th>
+              <td>
+                Gulp task to generate combined vendor js file in <code>app-assets/vendors/js/vendors.min.js</code>. It
+                includes all required JS vendors for this template. Use <code>config.json</code> file vendors object to
+                manage vendors.
+              </td>
+            </tr>
+            <tr>
+              <th><code>gulp dist-vendor-css</code></th>
+              <td>
+                Gulp task to generate combined vendor CSS file in <code>app-assets/vendors/css/vendors.min.css</code>.
+                It includes all required CSS vendors for this template. Use <code>config.json</code> file vendors object
+                to manage vendors.
+              </td>
+            </tr>
+            <tr>
+              <th><code>gulp dist-clean</code></th>
+              <td>Clean js and css folders from app-assets.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/ Gulp Commands -->

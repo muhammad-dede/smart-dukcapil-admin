@@ -1,0 +1,47 @@
+//- =========================================================================================
+    File Name:table-datatable-advanced.pug
+    Description: Advanced DataTables
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+extends template
+
+block pageVars
+    - var pageTitle    = "DataTables"
+    - var pageSubTitle = "Advanced initialization of DataTables"
+    - var description  = "DataTables is very simple to use as a jQuery plug-in with a huge range of customizable option. The examples in this section demonstrate basic initialisation of DataTables and how it can be easily customised by passing an object with the options you want."
+    - var activeMenu   = "table-datatable-advanced"
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:'#', name:'Datatable'},{name:"Advanced"}])
+
+//- Include page content in page block
+append content
+    include ../contents/table-datatable-advanced.html
+
+//- Page specific dependency
+//------------------------------
+
+//- Add vendor specific CSS
+append vendorcss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/tables/datatable/dataTables.bootstrap5.min.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/tables/datatable/responsive.bootstrap4.min.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/pickers/flatpickr/flatpickr.min.css')
+
+//- Add vendor specific JS
+append vendorjs
+    script(src=app_assets_path+'/vendors/js/tables/datatable/jquery.dataTables.min.js')
+    script(src=app_assets_path+'/vendors/js/tables/datatable/dataTables.bootstrap5.min.js')
+    script(src=app_assets_path+'/vendors/js/tables/datatable/dataTables.responsive.min.js')
+    script(src=app_assets_path+'/vendors/js/tables/datatable/responsive.bootstrap4.js')
+    script(src=app_assets_path+'/vendors/js/pickers/flatpickr/flatpickr.min.js')
+
+//- Add custom page specific JS
+append pagejs
+    script(src=app_assets_path+'/js/scripts/tables/table-datatables-advanced.js')
+
+
+append pagecss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/forms/pickers/form-flat-pickr.css')

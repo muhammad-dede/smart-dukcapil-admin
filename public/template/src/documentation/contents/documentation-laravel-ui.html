@@ -1,0 +1,135 @@
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Laravel UI</h4>
+  </div>
+  <div class="card-body">
+    <p>
+      While Laravel does not dictate which JavaScript or CSS pre-processors you use, it does provide a basic starting
+      point using <code>Bootstrap</code>, <code>React</code>, and / or <code>Vue</code> that will be helpful for many
+      applications. By default, Laravel uses <code>NPM</code> to install both of these frontend packages.
+    </p>
+    <p>
+      The Bootstrap and Vue scaffolding provided by Laravel is located in the <code>laravel/ui</code> Composer package,
+      which may be installed using Composer:
+    </p>
+    <pre class="language-php">
+      <code class="language-php">
+        composer require laravel/ui:^3.0
+      </code>
+    </pre>
+    <p class="mt-2">
+      Once the <code>laravel/ui</code> package has been installed, you may install the frontend scaffolding using the
+      <code>ui</code>. <strong>Note:</strong> We have already installed bootstrap scaffolding and provided in the package with our UI integrated on top of it.
+      You can access those pages on following Routes:
+
+      <ul>
+        <li>/login</li>
+        <li>/register</li>
+        <li>/password/reset</li>
+      </ul>
+
+      Artisan commands to generate scaffolding:
+    </p>
+    <pre class="language-php">
+      <code class="language-php">
+// Generate basic scaffolding...
+php artisan ui bootstrap
+php artisan ui vue
+php artisan ui react
+
+// Generate login / registration scaffolding...
+php artisan ui bootstrap --auth
+php artisan ui vue --auth
+php artisan ui react --auth
+      </code>
+    </pre>
+    <div class="alert alert-primary mb-0">
+      <div class="alert-body">
+        We have already installed bootstrap scaffolding and provided in the package with our UI integrated on top of it. You can find the view pages into
+        <code>views/auth/</code> .
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Authenticating</h4>
+  </div>
+  <div class="card-body">
+    <p>
+      Now that you have routes and views setup for the included authentication controllers, you are ready to register
+      and authenticate new users for your application! You may access your application in a browser since the
+      authentication controllers already contain the logic (via their traits) to authenticate existing users and store
+      new users in the database.
+    </p>
+    <h6>Path Customization</h6>
+    <p>
+      When a user is successfully authenticated, they will be redirected to the <code>/home</code> URI. You can
+      customize the post-authentication redirect path using the <code>HOME</code> constant defined in your
+      <code>RouteServiceProvider</code>:
+    </p>
+    <pre class="language-php">
+      <code class="language-php">
+        public const HOME = '/home';
+      </code>
+    </pre>
+    <p>
+      If you need more robust customization of the response returned when a user is authenticated, Laravel provides an
+      empty <code>authenticated(Request $request, $user)</code> method within the <code>AuthenticatesUsers</code> trait.
+      This trait is used by the <code>LoginController</code> class that is installed into your application when using
+      the <code>laravel/ui</code> package. Therefore, you can define your own <code>authenticated</code> method within
+      the <code>LoginController</code> class:
+    </p>
+    <pre class="language-php">
+      <code class="language-php">
+        /**
+ * The user has been authenticated.
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @param  mixed  $user
+ * @return mixed
+ */
+protected function authenticated(Request $request, $user)
+{
+    return response([
+        //
+    ]);
+}
+      </code>
+    </pre>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Protecting Routes</h4>
+  </div>
+  <div class="card-body">
+    <p>
+      Route middleware can be used to only allow authenticated users to access a given route. Laravel ships with an
+      <code>auth</code>
+      middleware, which is defined at <code>Illuminate\Auth\Middleware\Authenticate</code>. Since this middleware is
+      already registered in your HTTP kernel, all you need to do is attach the middleware to a route definition:
+    </p>
+    <pre class="language-php">
+      <code class="language-php">
+Route::get('profile', function () {
+    // Only authenticated users may enter...
+})->middleware('auth');
+      </code>
+    </pre>
+    <p>
+      If you are using controllers, you may call the <code>middleware</code> method from the controller's constructor
+      instead of attaching it in the route definition directly:
+    </p>
+    <pre class="language-php">
+      <code class="language-php">
+public function __construct()
+{
+$this->middleware('auth');
+}
+      </code>
+    </pre>
+  </div>
+</div>

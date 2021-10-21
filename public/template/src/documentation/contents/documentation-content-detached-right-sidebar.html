@@ -1,0 +1,138 @@
+<!-- Content Detached Right Sidebar -->
+<section id="content-detached-right-sidebar">
+  <!-- CSS Classes -->
+  <section id="content-detached-right-sidebar-css" class="card">
+    <div class="card-header">
+      <h4 class="card-title">CSS Classes</h4>
+      <div class="heading-elements">
+        <ul class="list-inline mb-0">
+          <li>
+            <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-content collapse show" aria-expanded="true">
+      <div class="card-body">
+        <p>
+          This table contains all classes related to the content detached right sidebar layout. This is a custom layout
+          classes for content detached right sidebar layout page requirements.
+        </p>
+        <p>All these options can be set via following classes:</p>
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Classes</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>.content-detached.content-left</code></td>
+                <td>
+                  Use these classes as a child of <code>.content-wrapper</code> class to float the content on left side
+                  so that right sidebar floats to the right side of the content section.
+                </td>
+              </tr>
+              <tr>
+                <td><code>.content-body</code></td>
+                <td>
+                  Use this class as a child of <code>.content-detached.content-left</code> classes to create some margin
+                  on the right side of the content section so that content and sidebar doesn't overlap.
+                </td>
+              </tr>
+              <tr>
+                <td><code>.sidebar-detached.sidebar-right</code></td>
+                <td>
+                  Use these classes as a child of <code>.content-wrapper</code> class to float the sidebar on right side
+                  of the content section.
+                </td>
+              </tr>
+              <tr>
+                <td><code>.sidebar</code></td>
+                <td>
+                  Use this class as a child of <code>.sidebar-detached.sidebar-right</code> class to float the sidebar
+                  on right side of the content section.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ CSS Classes -->
+
+  <!-- HTML Markup -->
+  <section id="content-detached-right-sidebar-html" class="card">
+    <div class="card-header">
+      <h4 class="card-title">HTML Markup</h4>
+      <div class="heading-elements">
+        <ul class="list-inline mb-0">
+          <li>
+            <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-content collapse show" aria-expanded="true">
+      <div class="card-body">
+        <p>
+          This section contains HTML Markup to create 3 column detached right sidebar layout. This layout has a
+          navigation, content and right detached sidebar sections with common header and footer sections.
+        </p>
+        <ul>
+          <li>
+            Add <code>.content-detached.content-left</code> classes for adjusting detached content section to left side.
+          </li>
+          <li>
+            Add <code>.content-body</code> class as a child of <code>.content-detached.content-left</code> classes to
+            create some margin on the right side of the content section.
+          </li>
+          <li>
+            Add <code>.sidebar-detached.sidebar-right</code> classes for adjusting detached sidebar section to right
+            side.
+          </li>
+          <li>
+            Add <code>.sidebar</code> class as a child of <code>.sidebar-detached.sidebar-right</code> classes for
+            adjusting detached sidebar section to right side.
+          </li>
+        </ul>
+        <pre class="language-markup mb-0">
+<code class="language-markup">
+&lt;!-- BEGIN: Content --&gt;
+&lt;div class="app-content content"&gt;
+  &lt;div class="content-wrapper"&gt;
+    &lt;!-- Content Header --&gt;
+    &lt;div class="content-header row"&gt;
+      ...
+    &lt;/div&gt;
+    &lt;!--/ Content Header --&gt;
+
+    &lt;!-- Content Detached to Left --&gt;
+    &lt;div class="content-detached content-left"&gt;
+      &lt;div class="content-body"&gt;
+        ...
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--/ Content Detached to Left --&gt;
+
+    &lt;!-- Sidebar Detached to Right --&gt;
+    &lt;div class="sidebar-detached sidebar-right"&gt;
+      &lt;div class="sidebar"&gt;
+        ...
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--/ Sidebar Detached to Right --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- END: Content --&gt;
+</code>
+        </pre>
+      </div>
+    </div>
+  </section>
+  <!--/ HTML Markup -->
+</section>
+<!--/ Content Detached Right Sidebar -->

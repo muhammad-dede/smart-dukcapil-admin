@@ -1,0 +1,64 @@
+//- =========================================================================================
+    File Name: app-ecommerce-shop.pug
+    Description: E-commerce shop page
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================
+
+extends template
+
+block pageVars
+    - var pageTitle = "Shop"
+    - var pageSubTitle = "Shop"
+    - var description  = "Shop"
+    - var activeMenu = "app-ecommerce-shop"
+
+append pageConfig
+    - var contentLayout = 'content-detached-left-sidebar'
+    - var pageClass = 'ecommerce-application'
+
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"eCommerce"}, {name:"Shop"}])
+
+
+//- Include page content in page block
+append content
+    include ../contents/app-ecommerce-shop.html
+
+//- Include page content in Sidebar block
+append sidebar
+    include ../contents/app-ecommerce-shop-sidebar.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+    link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/extensions/nouislider.min.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/extensions/toastr.min.css')
+
+//- Page CSS
+//------------------------------
+
+//- Add custom page specific CSS
+append pagecss
+    link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/plugins/extensions/ext-component-sliders.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/app-ecommerce.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/plugins/extensions/ext-component-toastr.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+    //- No Ui Slider
+    script(src=app_assets_path + '/vendors/js/extensions/wNumb.min.js')
+    script(src=app_assets_path + '/vendors/js/extensions/nouislider.min.js')
+    script(src=app_assets_path + '/vendors/js/extensions/toastr.min.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+    script(src=app_assets_path + '/js/scripts/pages/app-ecommerce.js')

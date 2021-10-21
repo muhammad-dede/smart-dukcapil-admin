@@ -1,0 +1,29 @@
+//- =========================================================================================
+    File Name: form-input.pug
+    Description: All Basic form Input Elements.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================
+
+extends template
+
+block pageVars
+    - var pageTitle = "Input"
+    - var pageSubTitle = "Basic Form elements with diffrent styles."
+    - var description  = "Standard form controls supported in all example form elements. Form controls automatically receives global styling."
+    - var activeMenu = "form-input"
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Form Elements"}, {name:"Input"}])
+
+
+//- Include page content in page block
+append content
+    include ../contents/form-input.html
+
+
+append pagejs
+    //- Template js for Tooltip-validation
+    script(src=app_assets_path + '/js/scripts/forms/form-tooltip-valid.js')

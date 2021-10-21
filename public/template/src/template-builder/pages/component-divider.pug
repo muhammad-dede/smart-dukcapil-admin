@@ -1,0 +1,22 @@
+//- =========================================================================
+    File Name: component-divider.pug
+    Description: This Page contains divider styles.
+    --------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================
+
+extends template
+
+block pageVars
+    - var pageTitle   = "Divider"
+    - var pageSubTitle = "Divider"
+    - var description  = "Divider with different styles."
+    - var activeMenu  = "component-divider"
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Components"}, {name:"Divider"}])
+
+//- Include page content in page block
+append content
+    include ../contents/component-divider.html

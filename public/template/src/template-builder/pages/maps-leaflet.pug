@@ -1,0 +1,39 @@
+//-=========================================================================================
+    File Name: maps-leaflet.pug
+    Description: Leaflet maps examples.
+    ---------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+
+extends template
+
+block pageVars
+    - var pageTitle    = "Leaflet Maps"
+    - var pageSubTitle = "Leaflet maps examples"
+    - var description = "Basic maps examples include maps events and markers maps."
+    - var activeMenu   = "maps-leaflet"
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Maps"}, {name:"Leaflet Maps"}])
+append content
+    include ../contents/maps-leaflet.html
+
+append vendorcss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/maps/leaflet.min.css')
+
+append pagecss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/maps/map-leaflet.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+    script(src=app_assets_path+'/vendors/js/maps/leaflet.min.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+    script(src=app_assets_path+'/js/scripts/maps/map-leaflet.js')

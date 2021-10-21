@@ -1,0 +1,34 @@
+//- =========================================================================================
+    File Name: documentation-form-wizard.pug
+    Description: Form Wizard Documentation page
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+
+extends template
+
+block pageVars
+    - var pageTitle    = "Form Wizard"
+    - var activeMenu   = "form-wizard"
+    - var description  = "There are two styles given to display form wizard. Circle style and notification style. There are also two styles to display wizard tabs horizontal and vertical. You can display numbers or icons as wizard steps. You can also validate form fields on each wizard step."
+
+
+
+append pageConfig
+    - var contentLayout = 'content-right-sidebar'
+    - var sidebarSticky = true
+    //-OPTIONS:- true, false | For sticky(floating) sidebar, will affect only if there is a sidebar
+
+append breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{name:"Forms"}, {name:"Form Wizard"}])
+
+
+
+//- Include page content in content block
+append content
+    include ../contents/documentation-form-wizard.html
+
+append sidebar
+    include ../contents/sidebar/documentation-form-wizard-sidebar.html

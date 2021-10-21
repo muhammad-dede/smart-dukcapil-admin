@@ -1,0 +1,34 @@
+//- =========================================================================================
+    File Name: documentation-icons.pug
+    Description: Icons Documentation page
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+
+extends template
+
+block pageVars
+    - var pageTitle    = "Icons"
+    - var activeMenu   = "icons"
+    - var description  = "All the icon - fonts are generated using IcoMoon app look crisp, and the font-size you specify will directly translate to the size of the icon. Please refer template pages in order to know the fonticon class names and fonticon units. We have also given original link of the fonts if you want to check that out as well."
+
+
+
+append pageConfig
+    - var contentLayout = 'content-right-sidebar'
+    - var sidebarSticky = true
+    //-OPTIONS:- true, false | For sticky(floating) sidebar, will affect only if there is a sidebar
+
+append breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"}, {name:"UI"}, {name:"Icons"}])
+
+
+
+//- Include page content in content block
+append content
+    include ../contents/documentation-icons.html
+
+append sidebar
+    include ../contents/sidebar/documentation-icons-sidebar.html

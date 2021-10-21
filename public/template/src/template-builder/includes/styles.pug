@@ -1,0 +1,30 @@
+= '\n'
+// BEGIN: Vendor CSS
+link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/vendors'+rtl+'.min.css')
+
+block vendorcss
+// END: Vendor CSS
+= '\n'
+// BEGIN: Theme CSS
+link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/bootstrap.css')
+link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/bootstrap-extended.css')
+link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/colors.css')
+link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/components.css')
+link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/themes/dark-layout.css')
+link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/themes/bordered-layout.css')
+link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/themes/semi-dark-layout.css')
+
+
+
+= '\n'
+// BEGIN: Page CSS
+block pagecss
+// END: Page CSS
+= '\n'
+// BEGIN: Custom CSS
+if (useDirection == 'rtl')
+	link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/custom'+rtl+'.css')
+
+link(rel='stylesheet', type='text/css', href=assets_path+'/css/style'+rtl+'.css')
+// END: Custom CSS
+= '\n'

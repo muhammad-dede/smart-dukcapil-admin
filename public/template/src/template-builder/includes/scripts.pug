@@ -1,0 +1,23 @@
+= '\n'
+// BEGIN: Vendor JS
+script(src=app_assets_path+'/vendors/js/vendors.min.js')
+// BEGIN Vendor JS
+= '\n'
+// BEGIN: Page Vendor JS
+block vendorjs
+// END: Page Vendor JS
+= '\n'
+
+// BEGIN: Theme JS
+script(src=app_assets_path+'/js/core/app-menu.js')
+script(src=app_assets_path+'/js/core/app.js')
+
+if contentLayout != 'blank-page'
+  if dist == false
+    script(src=app_assets_path + '/js/scripts/customizer.js')
+// END: Theme JS
+= '\n'
+// BEGIN: Page JS
+block pagejs
+// END: Page JS
+= '\n'

@@ -1,0 +1,24 @@
+//- =========================================================================================
+    File Name: form-textarea.pug
+    Description: Form Text Area Elements.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ========================================================================================== -//
+
+extends template
+
+block pageVars
+    - var pageTitle = "Textarea"
+    - var pageSubTitle = "Basic Form Textarea Input"
+    - var description  = "Standard form controls supported in all example form elements. Form controls automatically receives global styling."
+    - var activeMenu = "form-textarea"
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Form Elements"}, {name:"Textarea"}])
+
+
+//- Include page content in page block
+append content
+    include ../contents/form-textarea.html

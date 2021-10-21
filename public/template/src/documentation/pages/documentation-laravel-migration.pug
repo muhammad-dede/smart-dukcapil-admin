@@ -1,0 +1,37 @@
+//- =========================================================================================
+    File Name: documentation-laravel.pug
+    Description: Laravel Documentation page
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Version: 1.0
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+
+extends template
+
+block pageVars
+    - var pageTitle    = "Laravel Migrate"
+    - var activeMenu   = "laravel-migrate"
+
+
+append breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"}, {name:"Laravel"}, {name:"Laravel Migrate"}])
+
+
+//- Include page content in content block
+append content
+    include ../contents/documentation-laravel-migration.html
+
+
+//- Page specific dependency
+//------------------------------
+
+//- Add custom page specific CSS
+append pagecss
+  link(rel='stylesheet', type='text/css', href='../../../app-assets/vendors/css/ui/prism-treeview.css')
+
+
+//- Add custom page specific JS
+append pagejs
+  script(src='../../../app-assets/vendors/js/ui/prism-treeview.js', type='text/javascript')

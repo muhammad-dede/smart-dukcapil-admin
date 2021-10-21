@@ -1,0 +1,46 @@
+//- =========================================================================================
+    File Name: form-quill-editor.pug
+    Description: Quill is a modern rich text editor built for compatibility and extensibility.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================
+
+extends template
+
+block pageVars
+    - var pageTitle = "Quill Editor"
+    - var pageSubTitle = "Rich text editor"
+    - var description  = "Quill is a modern rich text editor built for compatibility and extensibility."
+    - var activeMenu = "form-quill-editor"
+
+
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Form Elements"}, {name:"Quill Editor"}])
+
+
+
+//- Include page content in page block
+append content
+    include ../contents/form-quill-editor.html
+
+append vendorcss
+    link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/editors/quill/katex.min.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/editors/quill/monokai-sublime.min.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/editors/quill/quill.snow.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/editors/quill/quill.bubble.css')
+    link(rel='preconnect', href='https://fonts.gstatic.com')
+    link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css2?family=Inconsolata&family=Roboto+Slab&family=Slabo+27px&family=Sofia&family=Ubuntu+Mono&display=swap')
+
+append pagecss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/forms/form-quill-editor.css')
+
+append vendorjs
+    script(src=app_assets_path + '/vendors/js/editors/quill/katex.min.js')
+    script(src=app_assets_path + '/vendors/js/editors/quill/highlight.min.js')
+    script(src=app_assets_path + '/vendors/js/editors/quill/quill.min.js')
+
+append pagejs
+    script(src=app_assets_path + '/js/scripts/forms/form-quill-editor.js')

@@ -1,0 +1,28 @@
+//- =========================================================================
+    File Name: component-bs-toast.pug
+    Description: This Page contains Icon toast and Progress bars.
+    --------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================
+
+extends template
+
+block pageVars
+    - var pageTitle   = "Toasts"
+    - var pageSubTitle = "Toast"
+    - var description  = "Toasts with different styles."
+    - var activeMenu  = "component-bs-toast"
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Components"}, {name:"Toasts"}])
+
+//- Include page content in page block
+append content
+    include ../contents/component-bs-toast.html
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+    script(src=app_assets_path+'/js/scripts/components/components-bs-toast.js')

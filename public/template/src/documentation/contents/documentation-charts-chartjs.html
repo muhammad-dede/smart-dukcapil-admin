@@ -1,0 +1,98 @@
+<!-- Chart JS -->
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Chart JS</h4>
+  </div>
+  <div class="card-body">
+    <p>
+      Developer features allow extending and enhancing Chart.js in many different ways.<br />Read the official
+      <a href="https://www.chartjs.org/" target="_blank">ChartJs Documentation</a> for a full list of instructions and
+      other options.
+    </p>
+    <h6>1. Initialize the plugin by referencing the necessary files:</h6>
+    <pre class="language-markup">
+<code class="language-markup">
+&lt;script src="chart.min.js"&gt;&lt;/script&gt;
+</code>
+    </pre>
+    <h6>2. Binding to existing DOM element.</h6>
+    <pre class="language-markup">
+<code class="language-markup">
+&lt;canvas id="myChart" class="chartjs" data-height="400"&gt;&lt;/canvas&gt;
+</code>
+    </pre>
+    <h6>3. Basic usage looks something like this:</h6>
+    <pre class="language-javascript">
+<code class="language-javascript">
+// Wrap charts with div of height according to their data-height
+var chartWrapper = $('.chartjs')
+if (chartWrapper.length) {
+  chartWrapper.each(function () {
+    $(this).wrap($('&lt;div style="height:' + this.getAttribute('data-height') + 'px"&gt;&lt;/div&gt;'));
+  });
+}
+
+// Initialization
+var chart = $("#myChart");
+
+// Chart options
+var chartOptions = { ... };
+
+// Chart data
+var chartData = { ... };
+
+// Configuration
+var config = {
+  type: 'line',
+  // Chart Options
+  options : chartOptions,
+  data : chartData
+};
+// Create the chart
+var lineChart = new Chart(chart, config);
+</code>
+    </pre>
+    <p>
+      <strong
+        >Refer <a href="https://www.chartjs.org/docs/latest/" target="_blank">here</a> for more chart configuration
+        options.</strong
+      >
+    </p>
+    <p class="mt-2">
+      <strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong>
+    </p>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>URL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Plugin Link</strong></td>
+            <td><a href="https://www.chartjs.org/" target="_blank">https://www.chartjs.org/</a></td>
+          </tr>
+          <tr>
+            <td><strong>Github Page</strong></td>
+            <td>
+              <a href="https://github.com/chartjs/Chart.js" target="_blank">https://github.com/chartjs/Chart.js</a>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Template Page</strong></td>
+            <td>
+              <a
+                href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/chart-chartjs.html"
+                target="_blank"
+                >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/chart-chartjs.html</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!--/ Chart JS -->

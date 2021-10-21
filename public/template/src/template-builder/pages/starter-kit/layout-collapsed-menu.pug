@@ -1,0 +1,27 @@
+//- =========================================================================================
+  File Name: layout-collapsed-menu.pug
+  Description: Layout with collapsed menu
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: PIXINVENT
+  Author URL: http://www.themeforest.net/user/pixinvent
+  ==========================================================================================-//
+
+extends template
+
+block pageVars
+  - var pageTitle    = "Layout collapsed menu"
+  - var pageSubTitle = "layout collapsed menu"
+  - var description  = "Layout with collapsed menu"
+  - var activeMenu   = "layout-collapsed-menu"
+
+block breadcrumbs
+  +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Layouts"}, {name:"Collapsed menu"}])
+
+append verticalMenuConfig
+  - var menuCollapsed = true
+
+
+//- Include page content in page block
+append content
+  include ../../contents/starter-kit/layout-collapsed-menu.html

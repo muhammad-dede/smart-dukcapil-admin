@@ -1,0 +1,58 @@
+//- =========================================================================================
+    File Name: page-account-settings.pug
+    Description: Settings
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================
+
+extends template
+
+block pageVars
+    - var pageTitle    = "Account Settings"
+    - var pageSubTitle = "account settings"
+    - var description  = "page user account settings"
+    - var activeMenu   = "account-settings"
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Pages"}, {name:" Account Settings"}])
+
+//- Include page content in page block
+append content
+    include ../contents/page-account-settings.html
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+    //- Select2 CSS
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/forms/select/select2.min.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/pickers/flatpickr/flatpickr.min.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+    //- select2 min js
+    script(src=app_assets_path+'/vendors/js/forms/select/select2.full.min.js')
+    //- jQuery Validation JS
+    script(src=app_assets_path+'/vendors/js/forms/validation/jquery.validate.min.js')
+    script(src=app_assets_path+'/vendors/js/file-uploaders/dropzone.min.js')
+    script(src=app_assets_path+'/vendors/js/pickers/flatpickr/flatpickr.min.js')
+
+//- Page css
+//------------------------------
+//- Add custom page specific css
+append pagecss
+    //- Validation CSS
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/forms/pickers/form-pickadate.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/forms/pickers/form-flat-pickr.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/forms/form-validation.css')
+
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+    script(src=app_assets_path+'/js/scripts/pages/page-account-settings.js')

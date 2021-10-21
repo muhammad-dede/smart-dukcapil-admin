@@ -1,0 +1,24 @@
+//- =========================================================================================
+    File Name: documentation-form-repeater.pug
+    Description: Form Repeater Documentation page
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+
+extends template
+
+block pageVars
+    - var pageTitle    = "Form Repeater"
+    - var activeMenu   = "form-repeater"
+    - var description  = "Add form using form repeater plugin."
+
+append breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"}, {name:"Forms"}, {name:"Form Repeater"}])
+
+
+
+//- Include page content in content block
+append content
+    include ../contents/documentation-form-repeater.html

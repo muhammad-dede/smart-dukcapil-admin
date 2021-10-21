@@ -1,0 +1,22 @@
+//- =========================================================================
+    File Name: component-avatar.pug
+    Description: This Page contains avatars options
+    --------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================
+
+extends template
+
+block pageVars
+    - var pageTitle   = "Avatar"
+    - var pageSubTitle = "Avatar"
+    - var description  = "Avatar with different styles."
+    - var activeMenu  = "component-avatar"
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Components"}, {name:"Avatar"}])
+
+//- Include page content in page block
+append content
+    include ../contents/component-avatar.html

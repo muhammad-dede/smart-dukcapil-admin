@@ -1,0 +1,79 @@
+//- ===============================================================================================
+    File Name: horizontal-menu-template.pug
+    Description: A template file for generating template with classic horizontal menu with semi light layout.
+    ----------------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ================================================================================================ -//
+
+extends ../base
+
+//- Template customization
+//------------------------
+
+block templateConfig
+    - var templateCustom = "horizontal-layout horizontal-menu"
+    - var dataMenu = "horizontal-menu"
+
+//- Page level customization
+//------------------------
+block pageConfig
+    - var navbarFixed = false
+    - var menuOpen = "hover"
+    - var logoType = 'light'
+
+block navbarConfig
+    - var navbarShadow = true
+    - var navbarBrandCenter = true
+
+block horizontalMenuConfig
+    - var horizontalMenuType = "floating-nav"
+    - var horizontalMenuColor = "navbar-light"
+    - var menuWithoutDDArrow = true
+    - var menuShadow = true
+    - var menuBorder = true
+
+block footerConfig
+    - var footerType = "footer-static"
+    - var footerColor = "footer-light"
+
+//- Template includes
+//-------------------
+
+block header
+    if(headerType == 'sk-header')
+        include ../templates/sections/header/sk-header
+    else
+        include sections/header/horizontal-menu-header
+
+block page-header
+    if contentLayout != 'blank-page'
+        include ../pages/page-headers/breadcrumbs-with-round-button
+
+block main-menu
+    include sections/menu/horizontal-menu
+
+block footer
+    include sections/footer/footer
+
+//- Template specific dependency
+//------------------------------
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+block vendorcss
+
+//- Page CSS
+//------------------------------
+
+//- Add custom page specific CSS
+block pagecss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/core/menu/menu-types/horizontal-menu.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+block vendorjs
+    script(src=app_assets_path+'/vendors/js/ui/jquery.sticky.js')

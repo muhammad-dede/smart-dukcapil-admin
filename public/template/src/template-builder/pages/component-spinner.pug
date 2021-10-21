@@ -1,0 +1,22 @@
+//- =========================================================================
+    File Name: component-spinners.pug
+    Description: This Page contains Icon spinners and Progress bars.
+    --------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================
+
+extends template
+
+block pageVars
+    - var pageTitle   = "Spinner"
+    - var pageSubTitle = "Icon Spinners"
+    - var description  = "Spinners contains Icon spinners with different styles."
+    - var activeMenu  = "component-bs-spinner"
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Components"}, {name:"Spinner"}])
+
+//- Include page content in page block
+append content
+    include ../contents/component-spinner.html

@@ -1,0 +1,248 @@
+mixin breadcrumbs(items)
+    .breadcrumb-wrapper
+        ol.breadcrumb
+            each obj, i in items
+                if (i === items.length - 1)
+                    li.breadcrumb-item.active
+                        if (obj.url)
+                            a(href=obj.url)= obj.name
+                        else
+                            = obj.name
+                else
+                    li.breadcrumb-item
+                        if (obj.url)
+                            a(href=obj.url)= obj.name
+                        else
+                            a(href='#')= obj.name
+
+mixin verticalMenu(items)
+    ul#main-menu-navigation.navigation.navigation-main(data-menu="menu-navigation")
+        //- Loop through each menu item
+        each menu, i in items
+            //- check if classlist exist for list item
+            - var classlist = (menu.classlist !== undefined) ? menu.classlist : ''
+            - var translation = (menu.i18n !== undefined) ? menu.i18n : ''
+            //- If menu item is navigation header
+            if (menu.navheader)
+                li(class=classlist + " navigation-header")
+                  if (translation != '')
+                      span(data-i18n=translation)= menu.navheader
+                  else
+                      span= menu.navheader
+                  i(data-feather="more-horizontal")
+            else
+                if (activeMenu == menu.slug)
+                    - var menuActive = true
+                else
+                    - var menuActive = false
+
+                li(class=menuActive ? 'active' + classlist + " nav-item" : '' + classlist + " nav-item")
+                    a(href=menu.url, target =  menu.newTab ? '_blank' : null, class="d-flex align-items-center")
+                        i(data-feather=menu.icon)
+                        if (trasnlation != '')
+                            span(class="menu-title text-truncate" data-i18n=translation)= menu.name
+                            if (menu.tag)
+                                if (menu.tagcustom)
+                                    span(class=menu.tagcustom)= menu.tag
+                        else
+                            span(class="menu-title text-truncate")= menu.name
+                            if (menu.tag)
+                                if (menu.tagcustom)
+                                    span(class=menu.tagcustom)= menu.tag
+                        if (menu.menuSubtitle)
+                            span.tag.menu-sub-title= menu.menuSubtitle
+
+                    //- 1st Level submenu HTML
+                    if (menu.submenu)
+                        +verticalSubMenu(menu.submenu)
+
+mixin verticalSubMenu(items, indicator= true)
+    ul.menu-content
+        each submenu, j in items
+            //- check if classlist exist for list item
+            - var classlist1 = (submenu.classlist !== undefined) ? submenu.classlist : ''
+            - var translation1 = (submenu.i18n !== undefined) ? submenu.i18n : ''
+            if (submenu.divider)
+                li(class="navigation-divider")
+            else
+                if (activeMenu == submenu.slug)
+                    - var submenuActive1 = true
+                else
+                    - var submenuActive1 = false
+
+                li(class=submenuActive1 ? 'active' : '' + classlist1)
+                    if (translation1 != '')
+                        a(href=submenu.url, target =  submenu.newTab ? '_blank' : null,  class="d-flex align-items-center")
+                          if(indicator === true)
+                            i(data-feather=submenu.icon)
+                          span(data-i18n=translation1 class="menu-item text-truncate")= submenu.name
+                    else
+                        a(href=submenu.url, target =  submenu.newTab ? '_blank' : null,  class="d-flex align-items-center")
+                          if(indicator === true)
+                            i(data-feather=submenu.icon)
+                          span(class="menu-item")= submenu.name
+                          if (submenu.menuSubtitle)
+                            span.tag.menu-sub-title= submenu.menuSubtitle
+
+                    if (submenu.submenu)
+                        +verticalSubMenu(submenu.submenu, false)
+
+mixin horizontalMenu(items)
+    ul(id="main-menu-navigation" class="nav navbar-nav" data-menu="menu-navigation")
+        //- Loop through each menu item
+        each menu, i in items
+            //- check if classlist exist for list item
+            - var classlist = (menu.classlist !== undefined) ? menu.classlist : ''
+            - var translation = (menu.i18n !== undefined) ? menu.i18n : ''
+            if (activeMenu == menu.slug)
+                - var menuActive = true
+            else
+                - var menuActive = false
+
+            if (menu.dropdown)
+                //- If dropdown menu
+                li(class="dropdown nav-item" class=classlist class=menuActive ? 'active' : '' data-menu="dropdown")
+                    a(href=menu.url data-bs-toggle='dropdown' class="dropdown-toggle nav-link d-flex align-items-center", target = menu.newTab ? '_blank' : null)
+                        i(data-feather=menu.icon)
+                        if (translation != '')
+                            span(data-i18n=translation)= menu.name
+                        else
+                            span= menu.name
+                        if (menu.tag)
+                            if (menu.tagcustom)
+                                span(class=menu.tagcustom)= menu.tag
+                        if (menu.menuSubtitle)
+                            span.tag.menu-sub-title= menu.menuSubtitle
+                    //- 1st Level submenu HTML
+                    if (menu.submenu)
+                        +dropdownMenuSubItems(menu.submenu)
+            else
+                li(class="nav-item" class=classlist class=menuActive ? 'active' : '')
+                    a(href=menu.url class="nav-link d-flex align-items-center", target = menu.newTab ? '_blank' : null)
+                        i(data-feather=menu.icon)
+                        if (translation != '')
+                            span(data-i18n=translation)= menu.name
+                        else
+                            span= menu.name
+                        if (menu.tag)
+                            if (menu.tagcustom)
+                                span(class=menu.tagcustom)= menu.tag
+                        if (menu.menuSubtitle)
+                            span.tag.menu-sub-title= menu.menuSubtitle
+
+mixin dropdownMenuSubItems(items)
+    ul.dropdown-menu
+        each submenu, j in items
+            //- check if classlist exist for list item
+            - var classlist1 = (submenu.classlist !== undefined) ? submenu.classlist : ''
+            - var translation = (submenu.i18n !== undefined) ? submenu.i18n : ''
+            if (submenu.divider)
+                li(class="dropdown-divider")
+            else if (submenu.navheader)
+                //- If menu item is navigation header
+                li(class=classlist1 + " navigation-header")
+                    span= submenu.navheader
+            else
+                if (activeMenu == submenu.slug)
+                    - var submenuActive = true
+                else
+                    - var submenuActive = false
+                li(class=submenuActive ? 'active' : '' class=classlist1 class=submenu.submenu ? 'dropdown dropdown-submenu' : '' data-menu=submenu.submenu ? 'dropdown-submenu' : '')
+                    a(href=submenu.url class="dropdown-item d-flex align-items-center" class=submenu.submenu ? 'dropdown-toggle' : '' data-bs-toggle=submenu.submenu ? "dropdown" : '' data-i18n=translation, target =  submenu.newTab ? '_blank' : null)
+                        if (submenu.icon)
+                            i(data-feather=submenu.icon)
+                        if (submenu.name)
+                            span(data-i18n=translation)= submenu.name
+                        if (submenu.menuSubtitle)
+                            span.tag.menu-sub-title= submenu.menuSubtitle
+                    if (submenu.submenu)
+                        +dropdownMenuSubItems(submenu.submenu)
+
+
+
+//- Layout Blocks
+
+//- Main Content Wrapper
+mixin mainContentWrap
+    // BEGIN: Content
+    .app-content(class= (centerLayout == true ? 'container center-layout mt-2' : 'content') + ' ' +pageClass)
+      .content-overlay
+      .header-navbar-shadow
+      block
+    // END: Content
+//- Content Wrapper
+mixin contentWrapper
+    .content-wrapper(class= (isContainer == true ? 'container-xxl p-0' : ''))
+        .content-header.row
+            block page-header
+        block
+
+//- Menu
+mixin menuBlock
+    = '\n'
+    // BEGIN: Main Menu
+    block main-menu
+    // END: Main Menu
+    = '\n'
+    block
+
+//- Content
+mixin contentBlock()
+    .content-body
+        block content
+
+//- Fix block positions
+mixin blockPositions(isContentMenu, contentLayout, sidebarPosition, sidebarSticky, sidebarFixed)
+    if (isContentMenu == false && contentLayout != '1-column' && contentLayout != 'blank-page')
+        +menuBlock
+
+    +mainContentWrap
+
+        if (contentLayout == '')
+            +contentWrapper
+                if (isContentMenu == true)
+                    +menuBlock
+                +contentBlock
+
+        if (contentLayout == '1-column' || contentLayout == 'blank-page')
+            +contentWrapper
+                +contentBlock
+
+        if (contentLayout == 'content-left-sidebar' || contentLayout == 'content-right-sidebar')
+          .content-area-wrapper(class= (isContainer == true ? 'container-xxl p-0' : ''))
+            div(class= (sidebarPosition == 'left') ? 'sidebar-left' : 'sidebar-right', class= (sidebarSticky == true ? 'sidebar-sticky' : ''), class= (sidebarFixed == true ? 'sidebar-fixed' : ''))
+                .sidebar
+                    block sidebar
+            div(class= (sidebarPosition == 'left') ? 'content-right' : 'content-left')
+
+                +contentWrapper
+                    if (isContentMenu == true)
+                        +menuBlock
+                    +contentBlock
+
+        if (contentLayout == 'content-detached-left-sidebar' || contentLayout == 'content-detached-right-sidebar')
+            +contentWrapper
+                if (pageClass == 'file-manager-application')
+                    .file-manager-content-overlay
+                if (isContentMenu == true)
+                    +menuBlock
+                div.content-detached(class= (sidebarPosition == 'left') ? 'content-right' : 'content-left')
+                    .content-body
+                        block content
+                div.sidebar-detached(class= (sidebarPosition == 'left') ? 'sidebar-left' : 'sidebar-right', class= (sidebarSticky == true) ? 'sidebar-sticky' : '', class= (sidebarFixed == true) ? 'sidebar-fixed' : '')
+                    div.sidebar
+                        block sidebar
+
+//- Page Layouts
+mixin pageLayouts(contentLayout, sidebarSticky, sidebarFixed, isContentMenu)
+
+    if ( contentLayout == 'content-left-sidebar' )
+        +blockPositions(isContentMenu, contentLayout, 'left', sidebarSticky, sidebarFixed)
+    else if ( contentLayout == 'content-right-sidebar' )
+        +blockPositions(isContentMenu, contentLayout, 'right', sidebarSticky, sidebarFixed)
+    else if ( contentLayout == 'content-detached-left-sidebar' )
+        +blockPositions(isContentMenu, contentLayout, 'left', sidebarSticky, sidebarFixed)
+    else if ( contentLayout == 'content-detached-right-sidebar' )
+        +blockPositions(isContentMenu, contentLayout, 'right', sidebarSticky, sidebarFixed)
+    else
+        +blockPositions(isContentMenu, contentLayout)

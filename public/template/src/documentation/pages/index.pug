@@ -1,0 +1,25 @@
+//- =========================================================================================
+    File Name: documentation-index.pug
+    Description: Index Documentation page
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+
+extends template
+
+block pageVars
+    - var pageTitle    = "Overview"
+    - var activeMenu   = "index"
+
+
+
+append breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"}])
+
+
+
+//- Include page content in content block
+append content
+    include ../contents/index.html

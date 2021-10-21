@@ -1,0 +1,37 @@
+//- =========================================================================================
+    File Name: documentation-styles-customization.html
+    Description: c
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+
+extends template
+
+block pageVars
+    - var pageTitle    = "Style Customization"
+    - var activeMenu   = "styles-customization"
+
+
+
+append breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"}, {name:"Style Customization"}])
+
+
+
+//- Include page content in content block
+append content
+    include ../contents/documentation-styles-customization.html
+
+//- Page specific dependency
+//------------------------------
+
+//- Add custom page specific CSS
+append pagecss
+  link(rel='stylesheet', type='text/css', href='../../../app-assets/vendors/css/ui/prism-treeview.css')
+
+
+//- Add custom page specific JS
+append pagejs
+  script(src='../../../app-assets/vendors/js/ui/prism-treeview.js', type='text/javascript')

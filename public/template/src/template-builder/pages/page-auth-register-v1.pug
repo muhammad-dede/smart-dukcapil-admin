@@ -1,0 +1,35 @@
+//- =========================================================================================
+    File Name: page-auth-register-v1.pug
+    Description: User simple register page.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+
+extends template
+
+block pageVars
+    - var pageTitle    = "Register Page"
+    - var pageSubTitle = "Simple User Register Page"
+    - var description  = "User simple register page."
+    - var activeMenu   = "register-v1"
+    - var isContainer  = false
+
+append pageConfig
+    - var contentLayout = 'blank-page'
+    - var navbarFixed = false //- OPTIONS:- true, false
+
+//- Include page content in page block
+append content
+    include ../contents/page-auth-register-v1.html
+
+append vendorjs
+    script(src=app_assets_path+'/vendors/js/forms/validation/jquery.validate.min.js')
+
+append pagejs
+    script(src=app_assets_path+'/js/scripts/pages/page-auth-register.js')
+
+append pagecss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/forms/form-validation.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/pages/page-auth.css')

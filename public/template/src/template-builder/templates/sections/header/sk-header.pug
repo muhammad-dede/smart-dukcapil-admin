@@ -1,0 +1,54 @@
+- var sk_path = "../../../starter-kit/"+ useDirection +"/"+ useLayout +"/"
+- var dashLink = "../../../html/"+ useDirection +"/"+ useLayout +"/"+ "index.html"
+
+nav.header-navbar.navbar.navbar-expand-lg.align-items-center(class=navbarPosition + ' '+ navbarColor, class=(navbarBorder == true ? 'navbar-border' : ''), class=(navbarShadow == true ? 'navbar-shadow' : ''), class=(navbarBrandCenter == true ? 'navbar-brand-center' : ''), class=(boxedLayout == true ? 'container boxed-layout' : ''), class=((isContainer === true && navbarPosition === 'floating-nav') ? 'container-xxl' : ''))
+  .navbar-container.d-flex(class= (centerLayout == true ? 'container center-layout' : 'content'))
+    .bookmark-wrapper.d-flex.align-items-center
+      if (contentLayout != '1-column')
+        ul.nav.navbar-nav.d-xl-none
+          li.nav-item
+            a.nav-link.menu-toggle(href='#')
+              i.ficon(data-feather="menu")
+      ul.nav.navbar-nav
+        li.nav-item.d-none.d-lg-block
+          a.nav-link.nav-link-style
+            if(style == '-dark')
+              i.ficon(data-feather="sun")
+            else
+              i.ficon(data-feather="moon")
+
+    ul.nav.navbar-nav.align-items-center.ms-auto
+      li.nav-item.dropdown.dropdown-user
+        a.nav-link.dropdown-toggle.dropdown-user-link#dropdown-user(href='#', data-bs-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+          .user-nav.d-sm-flex.d-none
+            span.user-name.fw-bolder John Doe
+            span.user-status Admin
+          span.avatar
+            img.round(src=app_assets_path+'/images/portrait/small/avatar-s-11.jpg', alt='avatar', height = '40', width = '40' )
+            span.avatar-status-online
+        .dropdown-menu.dropdown-menu-end(aria-labelledby='dropdown-user')
+          a.dropdown-item(href='#')
+            i.me-50(data-feather="user")
+            |  Profile
+          a.dropdown-item(href='#')
+            i.me-50(data-feather="mail")
+            |  Inbox
+          a.dropdown-item(href='#')
+            i.me-50(data-feather="check-square")
+            |  Task
+          a.dropdown-item(href='#')
+            i.me-50(data-feather="message-square")
+            |  Chats
+          .dropdown-divider
+          a.dropdown-item(href='#')
+            i.me-50(data-feather="settings")
+            |  Settings
+          a.dropdown-item(href='#')
+            i.me-50(data-feather="credit-card")
+            |  Pricing
+          a.dropdown-item(href='#')
+            i.me-50(data-feather="help-circle")
+            |  FAQ
+          a.dropdown-item(href='#')
+            i.me-50(data-feather="power")
+            |  Logout

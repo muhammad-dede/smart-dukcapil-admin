@@ -1,0 +1,27 @@
+//- =========================================================================================
+  File Name: layout-full.pug
+  Description: Full Layout
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: PIXINVENT
+  Author URL: http://www.themeforest.net/user/pixinvent
+  ==========================================================================================-//
+
+extends template
+
+block pageVars
+  - var pageTitle    = "Layout Full"
+  - var pageSubTitle = "layout full"
+  - var description  = "Layout full content"
+  - var activeMenu   = "layout-full"
+  - var isContainer  = false
+
+block breadcrumbs
+  +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Layouts"}, {name:"Layout Full"}])
+
+append pageConfig
+  - var isContainer = true
+
+//- Include page content in page block
+append content
+  include ../../contents/starter-kit/layout-full.html

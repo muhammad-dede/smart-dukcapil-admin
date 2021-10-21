@@ -1,0 +1,43 @@
+//- =========================================================================================
+    File Name: form-date-time-picker.pug
+    Description: Date picker widget based on twitter bootstrap.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================
+
+extends template
+
+block pageVars
+    - var pageTitle = "Date & Time Picker"
+    - var pageSubTitle = "pickers"
+    - var description  = "pickers"
+    - var activeMenu = "form-date-time-picker"
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Form Elements"}, {name:"Date & Time Picker"}])
+
+//- Include page content in page block
+append content
+    include ../contents/form-date-time-picker.html
+
+append vendorcss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/pickers/pickadate/pickadate.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/pickers/flatpickr/flatpickr.min.css')
+
+append vendorjs
+    //- Pick-a-date -//
+    script(src=app_assets_path+'/vendors/js/pickers/pickadate/picker.js')
+    script(src=app_assets_path+'/vendors/js/pickers/pickadate/picker.date.js')
+    script(src=app_assets_path+'/vendors/js/pickers/pickadate/picker.time.js')
+    script(src=app_assets_path+'/vendors/js/pickers/pickadate/legacy.js')
+    script(src=app_assets_path+'/vendors/js/pickers/flatpickr/flatpickr.min.js')
+
+append pagejs
+    //- Template JS for DateTimePicker
+    script(src=app_assets_path+'/js/scripts/forms/pickers/form-pickers.js')
+
+append pagecss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/forms/pickers/form-flat-pickr.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/forms/pickers/form-pickadate.css')

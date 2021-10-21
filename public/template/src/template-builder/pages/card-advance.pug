@@ -1,0 +1,48 @@
+//- =========================================================================================
+  File Name: card-advance.pug
+  Description: Advance Cards
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: PIXINVENT
+  Author URL: http://www.themeforest.net/user/pixinvent
+  ==========================================================================================
+
+extends template
+
+block pageVars
+  - var pageTitle = "Advance Card"
+  - var pageSubTitle = "Advance Cards"
+  - var description  = "Advance Cards"
+  - var activeMenu = "card-advance"
+
+block breadcrumbs
+  +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Card"}, {name:"Advance Card"}])
+
+//- Include page content in page block
+append content
+  include ../contents/card-advance.html
+
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+  link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/charts/apexcharts.css')
+
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+  //- Apex Chart JS
+  script(src=app_assets_path+'/vendors/js/charts/apexcharts.min.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+  //- Advance cards JS
+  script(src=app_assets_path+'/js/scripts/cards/card-advance.js')
+
+append pagecss
+  link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/pages/app-chat-list.css')

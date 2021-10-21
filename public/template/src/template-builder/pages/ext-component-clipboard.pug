@@ -1,0 +1,48 @@
+//- =========================================================================================
+    File Name: ext-component-clipboard.pug
+    Description: Clipboard
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================
+
+
+extends template
+
+block pageVars
+    - var pageTitle = "Clipboard"
+    - var pageSubTitle = "Clipboard"
+    - var description = "Clipboard"
+    - var activeMenu = "ext-component-clipboard"
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"}, {url:"#",name:"Extensions"}, {name:"Clipboard"}])
+
+//- Include page content in page block
+append content
+    include ../contents/ext-component-clipboard.html
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/extensions/toastr.min.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+    script(src=app_assets_path+'/vendors/js/extensions/toastr.min.js')
+
+//- Page CSS
+//------------------------------
+//- Add page specific CSS
+append pagecss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/extensions/ext-component-toastr.css')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+    script(src=app_assets_path + '/js/scripts/extensions/ext-component-clipboard.js')

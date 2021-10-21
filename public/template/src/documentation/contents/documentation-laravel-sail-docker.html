@@ -1,0 +1,259 @@
+<!-- intro -->
+<div class="card" id="introduction">
+  <div class="card-header">
+    <h4 class="car-title">Introduction</h4>
+  </div>
+  <div class="card-body">
+    <p class="card-text">
+      Laravel Sail is a light-weight command-line interface for interacting with Laravel's default Docker development
+      environment. Sail provides a great starting point for building a Laravel application using PHP, MySQL, and Redis
+      without requiring prior Docker experience.
+    </p>
+    <p class="card-text">
+      At its heart, Sail is the <code>docker-compose.yml</code> file and the <code>sail</code> script that is stored at
+      the root of your project. The <code>sail</code> script provides a CLI with convenient methods for interacting with
+      the Docker containers defined by the <code>docker-compose.yml</code> file.
+    </p>
+    <p class="card-text">
+      Laravel Sail is supported on <code>macOS</code>, <code>Linux</code>, and <code>Windows</code> (via WSL2).
+    </p>
+  </div>
+</div>
+
+<!-- what is docker? -->
+<div class="card" id="docker">
+  <div class="card-header">
+    <h4 class="card-title">What is the Docker?</h4>
+  </div>
+  <div class="card-body">
+    <p class="card-text">
+      Docker is a tool for running applications and services in small, light-weight "containers" which do not interfere
+      with your local computer's installed software or configuration. This means you don't have to worry about
+      configuring or setting up complicated development tools such as web servers and databases on your personal
+      computer. To get started, you only need to install
+      <a href="https://www.docker.com/products/docker-desktop" target="_blank">Docker Desktop</a>.
+    </p>
+
+    <p class="card-text">
+      Please refer to this <a href="https://www.docker.com/products/docker-desktop" target="_blank">guide</a> to install
+      docker.
+    </p>
+  </div>
+</div>
+
+<!-- installation and setup -->
+<div class="card" id="installation">
+  <div class="card-header">
+    <h4 class="card-title">Installation & Setup</h4>
+  </div>
+  <div class="card-body">
+    Laravel Sail is automatically installed with all new Laravel applications so you may start using it immediately. To
+    learn how to create a new Laravel application, please consult Laravel's
+    <a href="https://laravel.com/docs/8.x/installation" target="_blank">installation documentation</a> for your
+    operating system.
+  </div>
+</div>
+
+<!-- installing sail into existing applications -->
+<div class="card" id="existing-project">
+  <div class="card-header">
+    <h4 class="card-title">Installing Sail Into Existing Applications</h4>
+  </div>
+  <div class="card-body">
+    <p class="card-text">
+      If you are interested in using Sail with an existing Laravel application, you may simply install Sail using the
+      Composer package manager. Of course, these steps assume that your existing local development environment allows
+      you to install Composer dependencies:
+    </p>
+
+    <!-- code -->
+    <pre class="language-php">
+      <code class="language-php">
+        composer require laravel/sail --dev
+      </code>
+    </pre>
+    <p>
+      After Sail has been installed, you may run the <code>sail:install</code> Artisan command. This command will
+      publish Sail's <code>docker-compose.yml</code> file to the root of your application:
+    </p>
+
+    <!-- code -->
+    <pre class="language-php">
+      <code class="language-php">
+        php artisan sail:install
+      </code>
+    </pre>
+
+    <p class="card-text">
+      Finally, you may start Sail. To continue learning how to use Sail, please continue reading the remainder of this
+      documentation:
+    </p>
+
+    <!-- code -->
+    <pre class="language-php">
+      <code class="language-php">
+        ./vendor/bin/sail up
+      </code>
+    </pre>
+  </div>
+</div>
+
+<!-- configuring a bash alias -->
+<div class="card" id="alias">
+  <div class="card-header">
+    <h4 class="card-title">Configuring A Bash Alias</h4>
+  </div>
+  <div class="card-body">
+    <p class="card-text">
+      By default, Sail commands are invoked using the <code>vendor/bin/sail</code> script that is included with all new
+      Laravel applications:
+    </p>
+
+    <!-- code -->
+    <pre class="language-php">
+      <code class="language-php">
+        ./vendor/bin/sail up
+      </code>
+    </pre>
+
+    <p class="card-text">
+      However, instead of repeatedly typing <code>vendor/bin/sail</code> to execute Sail commands, you may wish to
+      configure a Bash alias that allows you to execute Sail's commands more easily:
+    </p>
+
+    <!-- code -->
+    <pre class="language-php">
+      <code class="language-php">
+        alias sail='bash vendor/bin/sail'
+      </code>
+    </pre>
+    <p class="card-text">
+      Once the Bash alias has been configured, you may execute Sail commands by simply typing <code>sail</code>. The
+      remainder of this documentation's examples will assume that you have configured this alias:
+    </p>
+    <pre class="language-php">
+      <code class="language-php">
+        sail up
+      </code>
+    </pre>
+  </div>
+</div>
+
+<!-- starting & stopping sail -->
+<div class="card" id="sail-execution">
+  <div class="card-header">
+    <h6 class="card-title">Starting & Stopping Sail</h6>
+  </div>
+  <div class="card-body">
+    <p class="card-text">
+      Laravel Sail's <code>docker-compose.yml</code> file defines a Docker variety of containers that work together to
+      help you build Laravel applications. Each of these containers is an entry within the
+      <code>services</code> configuration of your <code>docker-compose.yml</code> file. The
+      <code>laravel.test</code> container is the primary application container that will be serving your application.
+    </p>
+    <p class="card-text">
+      Before starting Sail, you should ensure that no other web servers or databases are running on your local computer.
+      To start all of the Docker containers defined in your application's <code>docker-compose.yml</code> file, you
+      should execute the <code>up</code> command:
+    </p>
+
+    <!-- code -->
+    <pre class="language-php">
+      <code class="language-php">
+        sail up
+      </code>
+    </pre>
+    <p class="card-text">
+      To start all of the Docker containers in the background, you may start Sail in "detached" mode:
+    </p>
+    <!-- code -->
+    <pre class="language-php">
+      <code class="language-php">
+        sail up -d
+      </code>
+    </pre>
+
+    <p class="card-text">
+      Once the application's containers have been started, you may access the project in your web browser at:
+      <a href="http://localhost">http://localhost</a>.
+    </p>
+    <p class="card-text">
+      To stop all of the containers, you may simply press Control + C to stop the container's execution. Or, if the
+      containers are running in the background, you may use the <code>down</code> command:
+    </p>
+    <!-- code -->
+    <pre class="language-php">
+      <code class="language-php">
+        sail down
+      </code>
+    </pre>
+  </div>
+</div>
+
+<!-- how to run vuexy on docker -->
+<div class="card" id="vuexy-docker">
+  <div class="card-header">
+    <h6 class="card-title">How to run the Vuexy template with docker?</h6>
+  </div>
+  <div class="card-body">
+    <p class="card-text">
+      You can run our template in docker environment using sail. After, successfully installed
+      <a href="https://www.docker.com/products/docker-desktop" target="_blank">docker</a> in your system run the below
+      command to install sail and composer in the template.
+    </p>
+
+    <!-- code -->
+    <pre class="language-php">
+      <code class="language-php">
+      docker run --rm \
+      -v $(pwd):/opt \
+      -w /opt \
+      laravelsail/php80-composer:latest \
+      composer install
+      </code>
+    </pre>
+
+    <!-- generate key -->
+    <p class="card-text">
+      In the root directory, you will find a file named <code>.env.example</code>, rename the given file name to
+      <code>.env</code> and run the following command to generate the key (and you can also edit your database
+      credentials here).
+    </p>
+    <!-- code -->
+    <pre class="language-php">
+      <code class="language-php">
+        php artisan key:generate
+      </code>
+    </pre>
+
+    <!-- download node module -->
+    <p class="card-text">
+      By running the following command, you will be able to get all the dependencies in your node_modules folder:
+    </p>
+    <pre class="language-php">
+      <code class="language-php">
+        yarn
+      </code>
+    </pre>
+
+    <!-- compile the template -->
+    <p class="card-text">
+      To run the project, you need to run following command in the project directory. It will compile the php files &
+      all the other project files. If you are making any changes in any of the php file then you need to run the given
+      command again.
+    </p>
+    <pre class="language-php">
+      <code class="language-php">
+        yarn dev
+      </code>
+    </pre>
+    <p class="card-text">Now, run the below command to create docker container and serve the template.</p>
+    <!-- code -->
+    <pre class="language-php">
+      <code class="language-php">alias sail='bash vendor/bin/sail'  //created alias
+
+        sail up
+      </code>
+    </pre>
+  </div>
+</div>

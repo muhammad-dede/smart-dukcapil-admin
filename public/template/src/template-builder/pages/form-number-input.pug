@@ -1,0 +1,37 @@
+//- =========================================================================================
+    File Name: form-number-input.pug
+    Description: All Basic form Elements.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    =========================================== ===============================================
+
+extends template
+
+block pageVars
+    - var pageTitle = "Number Input"
+    - var pageSubTitle = "Basic Form Number Input"
+    - var description  = "Standard form controls supported in all example form elements. Form controls automatically receives global styling."
+    - var activeMenu = "form-number-input"
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Form Elements"}, {name:"Number Input"}])
+
+
+//- Include page content in page block
+append content
+    include ../contents/form-number-input.html
+
+
+append vendorcss
+    //- Bootstrap Touchspin CSS
+    link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/forms/spinner/jquery.bootstrap-touchspin.css')
+
+append vendorjs
+    //- Bootstrap TouchSpin JS
+    script(src=app_assets_path + '/vendors/js/forms/spinner/jquery.bootstrap-touchspin.js')
+
+append pagejs
+    //- Template js for input Groups
+    script(src=app_assets_path + '/js/scripts/forms/form-number-input.js')

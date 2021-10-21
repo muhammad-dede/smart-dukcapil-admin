@@ -1,0 +1,230 @@
+<!-- laravel homestead  -->
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Laravel Homestead</h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+      <h6>Introduction</h6>
+      <p>
+        Laravel strives to make the entire PHP development experience delightful, including your local development
+        environment. <a href="https://www.vagrantup.com/" target="_blank">Vagrant</a> provides a simple, elegant way to
+        manage and provision Virtual Machines.
+      </p>
+      <p>
+        Laravel <a href="https://laravel.com/docs/6.x/homestead" target="_blank">Homestead</a> is an official,
+        pre-packaged Vagrant box that provides you a wonderful development environment without requiring you to install
+        PHP, a web server, and any other server software on your local machine. No more worrying about messing up your
+        operating system! Vagrant boxes are completely disposable. If something goes wrong, you can destroy and
+        re-create the box in minutes!
+      </p>
+      <p>
+        Homestead runs on any Windows, Mac, or Linux system, and includes Nginx, PHP, MySQL, PostgreSQL, Redis,
+        Memcached, Node, and all of the other goodies you need to develop amazing Laravel applications.
+      </p>
+      <div class="alert alert-warning mb-0" role="alert">
+        <div class="alert-body">
+          If you are using Windows, you may need to enable hardware virtualization (VT-x). It can usually be enabled via
+          your BIOS. If you are using Hyper-V on a UEFI system you may additionally need to disable Hyper-V in order to
+          access VT-x.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- installing and setup -->
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Installation & Setup</h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+      <h6>First Steps</h6>
+      <p>
+        Before launching your Homestead environment, you must install
+        <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">VirtualBox 6.x</a>,
+        <a href="https://www.vmware.com/in.html" target="_blank">VMWare</a>,
+        <a href="https://www.parallels.com/products/desktop/" translate="_blank">Parallels</a> or
+        <a
+          href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v"
+          target="_blank"
+        >
+          Hyper-V
+        </a>
+        as well as <a href="https://www.vagrantup.com/downloads.html" target="_blank">Vagrant</a>. All of these software
+        packages provide easy-to-use visual installers for all popular operating systems.
+      </p>
+      <p>
+        To use the VMware provider, you will need to purchase both <code>VMware Fusion / Workstation</code> and the
+        <code>VMware Vagrant plug-in</code>. Though it is not free, VMware can provide faster shared folder performance
+        out of the box.
+      </p>
+      <p>
+        To use the Parallels provider, you will need to install <strong>Parallels Vagrant plug-in</strong>. It is free
+        of charge.
+      </p>
+      <p>Because of <code>Vagrant limitations</code>, The Hyper-V provider ignores all networking settings.</p>
+      <h6>Installing The Homestead Vagrant Box</h6>
+      <p>
+        Once VirtualBox / VMware and Vagrant have been installed, you should add the
+        <code>laravel/homestead</code> box to your Vagrant installation using the following command in your terminal. It
+        will take a few minutes to download the box, depending on your Internet connection speed:
+      </p>
+      <pre class="language-php">
+          <code class="language-php">
+            vagrant box add laravel/homestead
+          </code>
+        </pre>
+      <p>If this command fails, make sure your Vagrant installation is up to date.</p>
+      <div class="alert alert-warning" role="alert">
+        <div class="alert-body">
+          Homestead periodically issues "alpha" / "beta" boxes for testing, which may interfere with the
+          <code>vagrant box add</code> command. If you are having issues running <code>vagrant box add</code>, you may
+          run the <code>vagrant</code> up command and the correct box will be downloaded when Vagrant attempts to start
+          the virtual machine.
+        </div>
+      </div>
+      <h6>Installing Homestead</h6>
+      <p>
+        You may install Homestead by cloning the repository onto your host machine. Consider cloning the repository into
+        a <code>Homestead</code> folder within your "home" directory, as the Homestead box will serve as the host to all
+        of your Laravel projects:
+      </p>
+      <pre class="language-php">
+          <code class="language-php">
+            git clone https://github.com/laravel/homestead.git ~/Homestead
+          </code>
+        </pre>
+      <p>
+        You should check out a tagged version of Homestead since the <code>master</code> branch may not always be
+        stable. You can find the latest stable version on the
+        <a href="https://github.com/laravel/homestead/releases" target="_blank">GitHub Release Page</a>. Alternatively,
+        you may checkout the release branch which always contains the latest stable release:
+      </p>
+      <pre class="language-php">
+          <code class="language-php">
+            cd ~/Homestead
+
+            git checkout release
+          </code>
+        </pre>
+      <p>
+        Once you have cloned the Homestead repository, run the <code>bash init.sh</code> command from the Homestead
+        directory to create the <code>Homestead.yaml</code> configuration file. The <code>Homestead.yaml</code>
+        file will be placed in the Homestead directory:
+      </p>
+      <pre class="language-php">
+        <code class="language-php">
+          // Mac / Linux...
+          bash init.sh
+
+          // Windows...
+          init.bat
+        </code>
+      </pre>
+    </div>
+  </div>
+</div>
+<!-- Configuring Homestead -->
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Configuring Homestead</h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+      <h6>Setting Your Provider</h6>
+      <p>
+        The <code>provider</code> key in your <code>Homestead.yaml</code> file indicates which Vagrant provider should
+        be used: <code>virtualbox</code>, <code>vmware_fusion</code>, <code>vmware_workstation</code>,
+        <code>parallels</code> or <code>hyperv</code>. You may set this to the provider you prefer:
+      </p>
+      <pre class="language-php">
+          <code class="language-php">
+            provider: virtualbox
+          </code>
+      </pre>
+      <h6>Configuring Shared Folders</h6>
+      <p>
+        The folders property of the Homestead.yaml file lists all of the folders you wish to share with your Homestead
+        environment. As files within these folders are changed, they will be kept in sync between your local machine and
+        the Homestead environment. You may configure as many shared folders as necessary:
+      </p>
+      <pre class="language-php">
+          <code class="language-php">
+            folders:
+              - map: C:/xampp/htdocs
+                to: /home/vagrant/xampp/htdocs
+          </code>
+      </pre>
+      <div class="alert alert-primary mt-1" role="alert">
+        <div class="alert-body">
+          Windows users should not use the ~/ path syntax and instead should use the full path to their project, such as
+          <code>C:\Users\user\Code\project1</code>.
+        </div>
+      </div>
+      <h6>Configuring Nginx Sites</h6>
+      <p>
+        Not familiar with Nginx? No problem. The sites property allows you to easily map a "domain" to a folder on your
+        Homestead environment. A sample site configuration is included in the Homestead.yaml file. Again, you may add as
+        many sites to your Homestead environment as necessary. Homestead can serve as a convenient, virtualized
+        environment for every Laravel project you are working on:
+      </p>
+      <pre class="language-php">
+          <code class="language-php">
+            sites:
+              - map: vuexyHTML.learn
+                to: /home/vagrant/xampp/htdocs/vuesax-vuejs-admin-template/vuexy-html-laravel-template/public
+              - map: vuexyHTMLStarter-Kit.learn
+                to: /home/vagrant/xampp/htdocs/vuesax-vuejs-admin-template/vuexy-html-laravel-starter-kit/public
+              - map: vuexyVuejs.learn
+                to: /home/vagrant/xampp/htdocs/vuesax-vuejs-admin-template/vuexy-vuejs-laravel-template/public
+              - map: vuexyVuejStarter-Kit.learn
+                to: /home/vagrant/xampp/htdocs/vuesax-vuejs-admin-template/vuexy-vuejs-laravel-starter-kit/public
+          </code>
+        </pre>
+      <p>
+        If you change the sites property after provisioning the Homestead box, you should re-run
+        <code>vagrant reload --provision</code> to update the Nginx configuration on the virtual machine.
+      </p>
+      <div class="alert alert-primary" role="alert">
+        <div class="alert-body">
+          Homestead scripts are built to be as idempotent as possible. However, if you are experiencing issues while
+          provisioning you should destroy and rebuild the machine via <code>vagrant destroy && vagrant up</code>.
+        </div>
+      </div>
+      <h6>Hostname Resolution</h6>
+      <p>
+        Homestead publishes hostnames over <code>mDNS</code> for automatic host resolution. If you set
+        <code>hostname: homestead</code> in your <code>Homestead.yaml</code> file, the host will be available at
+        <code>homestead.local.</code> MacOS, iOS, and Linux desktop distributions include mDNS support by default.
+        Windows requires installing
+        <a href="https://support.apple.com/kb/DL999?viewlocale=en_US&locale=en_US" target="_blank"
+          >Bonjour Print Services for Windows.</a
+        >
+      </p>
+      <p>
+        Using automatic hostnames works best for "per project" installations of Homestead. If you host multiple sites on
+        a single Homestead instance, you may add the "domains" for your web sites to the <code>hosts</code> file on your
+        machine. The hosts file will redirect requests for your Homestead sites into your Homestead machine. On Mac and
+        Linux, this file is located at <code>/etc/hosts</code>. On Windows, it is located at
+        <code>C:\Windows\System32\drivers\etc\hosts</code>. The lines you add to this file will look like the following:
+      </p>
+      <pre class="language-php">
+          <code class="language-php">
+            192.168.10.10 vuexyHTML.learn
+            192.168.10.10 vuexyHTMLStarter-Kit.learn
+            192.168.10.10 vuexyVuejs.learn
+            192.168.10.10 vuexyVuejStarter-Kit.learn
+          </code>
+        </pre>
+      <p>Now you can simply run your homestead virtual host environment using below command.</p>
+      <pre class="language-php">
+        <code class="language-php">
+cd laravel/homestead
+vagrant up
+vagrant ssh
+        </code>
+      </pre>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,516 @@
+<!-- laravel Localization -->
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Localization</h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+      <h5>Introduction</h5>
+      <p>
+        Laravel's <a href="https://laravel.com/docs/6.x/localization" target="_blank">localization</a> features provide
+        a convenient way to retrieve strings in various languages, allowing you
+        to easily support multiple languages within your application. Language strings are stored in files within the
+        <code>resources/lang</code> directory. Within this directory there should be a subdirectory for each
+        language supported by
+        the application:
+      </p>
+      <pre class="language-treeview">
+        <code class="language-treeview">
+          resources/
+          ├── lang/
+          |   ├── en/
+          |   |   ├── locale.php
+          |   ├── de/
+          |   |   ├── locale.php
+        </code>
+      </pre>
+      <p class="mt-2">All language files return an array of keyed strings. For example:</p>
+      <pre class="language-php">
+        <code class="language-php">
+          &lt;?php
+
+          return [
+              "Dashboard" => "Instrumententafel",
+              "Analytics" => "Analytics",
+          ];
+        </code>
+      </pre>
+      <h5 class="mt-2">Configuring The Locale</h5>
+      <p>The default language for your application is stored in the <code>config/app.php</code> configuration file.
+        You may modify this value to suit the needs of your application. You may also change the active language at
+        runtime using the <code>setLocale</code> method on the <code>App</code> facade:</p>
+      <pre class="language-php">
+          <code class="language-php">
+            Route::get('welcome/{locale}', function ($locale) {
+              App::setLocale($locale);
+
+              //
+          });
+          </code>
+      </pre>
+      <p class="mt-2">You may configure a "fallback language", which will be used when the active language does not
+        contain a given translation string. Like the default language, the fallback language is also configured in the
+        <code>config/app.php</code> configuration file:</p>
+      <pre class="language-php">
+          <code class="language-php">
+            'fallback_locale' => 'en',
+          </code>
+      </pre>
+      <h5 class="mt-2">Defining Translation Strings</h5>
+      <p>Typically, translation strings are stored in files within the <code>resources/lang</code> directory. Within
+        this directory
+        there should be a subdirectory for each language supported by the application:</p>
+
+      <h5 class="mt-2">Retrieving Translation Strings</h5>
+      <p>You may retrieve lines from language files using the <code> __</code> helper function. The
+        <code>__</code> method accepts the file and key of the translation string as its first argument. For
+        example,
+        let's retrieve the welcome translation string from the <code>resources/lang/en/locale.php</code> language
+        file:
+      </p>
+      <pre class="language-php">
+      <code class="language-php">
+        echo __('locale.welcome');
+      </code>
+    </pre>
+      <p class="mt-2">If you are using the Blade templating engine, you may use the {{ }} syntax to echo the translation
+        string or use the @lang directive:</p>
+      <pre class="language-php">
+        <code class="language-php">
+          {{ __('messages.welcome') }}
+
+          @lang('messages.welcome')
+        </code>
+      </pre>
+      <p>Now all set to work localization in simple project.</p>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Localization in Vuexy Laravel</h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+      <p>
+        In Vuexy laravel, We provide a dropdown to switch language you can find it in the navbar. How does it work?
+        When we select a language from dropdown-menu we call a Route which calls a controller's function which then
+        put selected language in session. We have created a middleware that sets the localization value from the session
+        variable. We set the session's lifetime 30min in the <code>.env</code> file. It sounds a little messy. Let's
+        find out how to do it.
+      </p>
+      <p>We have to create a Controller to check selected language is available or not in our template and then save it
+        to session variable. Run below command.</p>
+      <pre class="language-php">
+        <code class="language-php">
+          php artisan make:controller LanguageController
+        </code>
+      </pre>
+      <p class="mt-2">Use the below code in <code>LanguageController</code> file in
+        <code>App/Http/Controllers.</code></p>
+      <pre class="language-php">
+        <code class="language-php">
+          &lt;?php
+
+            namespace App\Http\Controllers;
+
+            use App\Http\Controllers\Controller;
+            use Illuminate\Http\Request;
+
+            class LanguageController extends Controller
+            {
+                //
+                public function swap($locale){
+                    // available language in template array
+                    $availLocale=['en'=>'en', 'fr'=>'fr','de'=>'de','pt'=>'pt'];
+                    // check for existing language
+                    if(array_key_exists($locale,$availLocale)){
+                        session()->put('locale',$locale);
+                    }
+                    return redirect()->back();
+                }
+            }
+
+        </code>
+      </pre>
+      <p class="mt-2">
+        We have to define Route for language switching in routes/web.php file.
+      </p>
+      <pre class="language-php">
+        <code class="language-php">
+          &lt;?php
+            use App\Http\Controllers\LanguageController;
+          // locale Route
+          Route::get('lang/{locale}',[LanguageController::class,'swap']);
+        </code>
+      </pre>
+      <p class="mt-2">Now we need a middleware to set <code>app()->setLocale()</code> variable gloabaly. Run below
+        cammand to create a middleware.</p>
+      <pre class="language-php">
+          <code class="language-php">
+            php artisan make:middleware LocaleMiddleware
+          </code>
+        </pre>
+      <p class="mt-2">You can find this middleware in <code>App\Http\Middleware</code></p>
+      <pre class="language-php">
+        <code class="language-php">
+          &lt;?php
+
+            namespace App\Http\Middleware;
+
+            use Closure;
+
+            class LocaleMiddleware
+            {
+                /**
+                * Handle an incoming request.
+                *
+                * @param  \Illuminate\Http\Request  $request
+                * @param  \Closure  $next
+                * @return mixed
+                */
+                public function handle($request, Closure $next)
+                {
+                    // available language in template array
+                    $availLocale=['en'=>'en', 'fr'=>'fr','de'=>'de','pt'=>'pt'];
+
+                    // Locale is enabled and allowed to be change
+                    if(session()->has('locale') && array_key_exists(session()->get('locale'),$availLocale)){
+                        // Set the Laravel locale
+                        app()->setLocale(session()->get('locale'));
+                    }
+                    return $next($request);
+                }
+            }
+        </code>
+      </pre>
+      <p class="mt-2">You must have to mention middleware in the <code>App\Http\kernel.php</code> file. Use the
+        <code>\App\Http\Middleware\LocaleMiddleware::class,</code> line in kernel.php file.</p>
+      <pre class="language-php">
+          <code class="language-php">
+            protected $middlewareGroups = [
+            'web' => [
+
+                \App\Http\Middleware\LocaleMiddleware::class,
+            ],
+
+            'api' => [
+                'throttle:60,1',
+                'bindings',
+            ],
+        ];
+          </code>
+      </pre>
+      <p class="mt-2">
+        Now we have to set the view. We provide language switch dropdown in navabar.blade.php.
+      </p>
+      <pre class="language-php">
+        <code class="language-php">
+          &lt;a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-bs-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false"&gt;
+                &lt;i class="flag-icon flag-icon-us"&gt;&lt;/i&gt;
+                &lt;span class="selected-language"&gt;English&lt;/span&gt;
+              &lt;/a&gt;
+              &lt;div class="dropdown-menu" aria-labelledby="dropdown-flag"&gt;
+                &lt;a class="dropdown-item" href="{{url('lang/en')}}" data-language="en"&gt;
+                  &lt;i class="flag-icon flag-icon-us"&gt;&lt;/i&gt;English
+                &lt;/a&gt;
+                &lt;a class="dropdown-item" href="{{url('lang/fr')}}" data-language="fr"&gt;
+                  &lt;i class="flag-icon flag-icon-fr"&gt;&lt;/i&gt;French
+                &lt;/a&gt;
+                &lt;a class="dropdown-item" href="{{url('lang/de')}}" data-language="de"&gt;
+                  &lt;i class="flag-icon flag-icon-de"&gt;&lt;/i&gt;German
+                &lt;/a&gt;
+                &lt;a class="dropdown-item" href="{{url('lang/pt')}}" data-language="pt"&gt;
+                  &lt;i class="flag-icon flag-icon-pt"&gt;&lt;/i&gt;Portuguese
+                &lt;/a&gt;
+              &lt;/div&gt;
+        </code>
+      </pre>
+      <p class="mt-2">We need to retrieve lines from language files using the <code>__</code> helper function. The
+        <code>__</code> method accepts the file and key of the translation string as its first argument.
+        We are using the Blade templating engine, We use the <code>{{ }}</code> syntax to echo the translation
+        string or use the <code>@lang</code> directive:
+      </p>
+      <h6 class="mt-2">Resources/views/panels</h6>
+      <p>sidebar.blade.php</p>
+      <pre class="language-php">
+        <code class="language-php">
+          &lt;div class="main-menu-content"&gt;
+            &lt;ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation"&gt;
+              {{-- Foreach menu item starts --}}
+              @if(isset($menuData[0]))
+              @foreach($menuData[0]->menu as $menu)
+              @if(isset($menu->navheader))
+              <li class="navigation-header">
+                <span>{{ $menu->navheader }}</span>
+              </li>
+              @else
+              {{-- Add Custom Class with nav-item --}}
+              @php
+              $custom_classes = "";
+              if(isset($menu->classlist)) {
+              $custom_classes = $menu->classlist;
+              }
+              $translation = "";
+              if(isset($menu->i18n)){
+              $translation = $menu->i18n;
+              }
+              @endphp
+              &lt;li class="nav-item {{ (request()->is($menu->url)) ? 'active' : '' }} {{ $custom_classes }}"&gt;
+                &lt;a href="{{ $menu-&gt;url }}"&gt;
+                  &lt;i class="{{ $menu-&gt;icon }}"&gt;&lt;/i&gt;
+                  &lt;span class="menu-title" data-i18n="{{ $translation }}"&gt;{{ __('locale.'.$menu-&gt;name) }}&lt;/span&gt;
+                  @if (isset($menu-&gt;badge))
+                  &lt;?php $badgeClasses = "badge rounded-pill bg-primary float-end" ?&gt;
+                  &lt;span
+                    class="{{ isset($menu-&gt;badgeClass) ? $menu-&gt;badgeClass.' test' : $badgeClasses.' notTest' }} "&gt;{{$menu-&gt;badge}}&lt;/span&gt;
+                  @endif
+                &lt;/a&gt;
+                @if(isset($menu-&gt;submenu))
+                @include('panels/submenu', ['menu' =&gt; $menu-&gt;submenu])
+                @endif
+              &lt;/li&gt;
+              @endif
+              @endforeach
+              @endif
+              {{-- Foreach menu item ends --}}
+            &lt;/ul&gt;
+          &lt;S/div&gt;
+        &lt;/div&gt;
+        </code>
+      </pre>
+      <p class="mt-2">submenu.blade.php</p>
+      <pre class="language-php">
+        <code class="language-php">
+          {{-- For submenu --}}
+            &lt;ul class="menu-content"&gt;
+                @if(isset($menu))
+                @foreach($menu as $submenu)
+                &lt;?php
+                        $submenuTranslation = "";
+                        if(isset($menu-&gt;i18n)){
+                            $submenuTranslation = $menu-&gt;i18n;
+                        }
+                    ?&gt;
+                &lt;li class="{{ (request()-&gt;is($submenu-&gt;url)) ? 'active' : '' }}"&gt;
+                    &lt;a href="{{ $submenu-&gt;url }}"&gt;
+                        &lt;i class="{{ isset($submenu-&gt;icon) ? $submenu-&gt;icon : "" }}"&gt;&lt;/i&gt;
+                        &lt;span class="menu-title" data-i18n="{{ $submenuTranslation }}"&gt;{{ __('locale.'.$submenu-&gt;name) }}&lt;/span&gt;
+                    &lt;/a&gt;
+                    @if (isset($submenu-&gt;submenu))
+                    @include('panels/submenu', ['menu' =&gt; $submenu-&gt;submenu])
+                    @endif
+                &lt;/li&gt;
+                @endforeach
+                @endif
+            &lt;/ul&gt;
+        </code>
+      </pre>
+      <P class="mt-2">HorizontalMenu.blade.php</P>
+      <pre class="language-php">
+        <code class="language-php">
+             &lt;!-- Horizontal menu content--&gt;
+          &lt;div class="navbar-container main-menu-content" data-menu="menu-container"&gt;
+            &lt;ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation"&gt;
+              {{-- Foreach menu item starts --}}
+              @if(isset($menuData[1]))
+              @foreach($menuData[1]-&gt;menu as $menu)
+              @php
+              $custom_classes = "";
+              if(isset($menu-&gt;classlist)) {
+              $custom_classes = $menu-&gt;classlist;
+              }
+              $translation = "";
+              if(isset($menu-&gt;i18n)){
+              $translation = $menu-&gt;i18n;
+              }
+              @endphp
+              &lt;li class="dropdown nav-item {{ (request()-&gt;is($menu-&gt;url)) ? 'active' : '' }} {{ $custom_classes }}"
+                data-menu="dropdown"&gt;
+                &lt;a href="{{ $menu-&gt;url }}" class="dropdown-toggle nav-link" data-bs-toggle="dropdown"&gt;
+                  &lt;i class="{{ $menu-&gt;icon }}"&gt;&lt;/i&gt;
+                  &lt;span data-i18n="{{ $translation }}"&gt;{{ __('locale.'.$menu-&gt;name) }}&lt;/span&gt;
+                &lt;/a&gt;
+                @if(isset($menu-&gt;submenu))
+                @include('panels/horizontalSubmenu', ['menu' =&gt; $menu-&gt;submenu])
+                @endif
+              &lt;/li&gt;
+              @endforeach
+              @endif
+              {{-- Foreach menu item ends --}}
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        </code>
+      </pre>
+      <p class="mt-2">horizontalSubmenu.blade.php</p>
+      <pre class="language-php">
+        <code class="language-php">
+          {{-- For Horizontal submenu --}}
+            &lt;ul class="dropdown-menu"&gt;
+              @if(isset($menu))
+              @foreach($menu as $submenu)
+              &lt;?php
+            $custom_classes = "";
+            if(isset($submenu-&gt;classlist)) {
+                $custom_classes = $submenu-&gt;classlist;
+            }
+            $submenuTranslation = "";
+            if(isset($menu-&gt;i18n)){
+                $submenuTranslation = $menu-&gt;i18n;
+            }
+              ?&gt;
+              &lt;li
+                class="{{ (request()-&gt;is($submenu-&gt;url)) ? 'active' : '' }} {{ (isset($submenu-&gt;submenu)) ? "dropdown dropdown-submenu" : '' }} {{ $custom_classes }}"&gt;
+                &lt;a href="{{ $submenu-&gt;url }}" class="dropdown-item {{ (isset($submenu-&gt;submenu)) ? "dropdown-toggle" : '' }}"
+                  {{ (isset($submenu-&gt;submenu)) ? 'data-bs-toggle=dropdown' : '' }}&gt;
+                  &lt;i class="{{ isset($submenu-&gt;icon) ? $submenu-&gt;icon : "" }}"&gt;&lt;/i&gt;
+                  &lt;span data-i18n="{{ $submenuTranslation }}"&gt;{{ __('locale.'.$submenu-&gt;name) }}&lt;/span&gt;
+                &lt;/a&gt;
+                @if (isset($submenu-&gt;submenu))
+                @include('panels/horizontalSubmenu', ['menu' =&gt; $submenu-&gt;submenu])
+                @endif
+              &lt;/li&gt;
+              @endforeach
+              @endif
+            &lt;/ul&gt;
+        </code>
+      </pre>
+    </div>
+  </div>
+</div>
+<!-- how to add a new language -->
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">How to add new language?</h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+      <p>1: To add a new language in whole template first we need to create a locale.php file in
+        <code>resources/lang/</code> which return an array with key and value pair.
+      </p>
+      <p>resources/lang/de/locale.php</p>
+      <pre class="language-php">
+        <code class="language-php">
+          &lt;?php
+
+          return [
+              "Dashboard" => "Instrumententafel",
+              "Analytics" => "Analytics",
+              "eCommerce" => "eCommerce",
+              "Apps" => "Anwendungen",
+              "UI Elements" => "UI Elemente",
+              "Forms & Tables" => "Formulare und Tabellen",
+              "Pages" => "Seiten",
+              "Charts & Maps" => "Karten & Landkarten",
+              "Others" => "Andere",
+              "Email" => "Email",
+
+        </code>
+      </pre>
+      <p class="mt-2">2: Now we need to mention our new language in controller and middleware which we already created.
+      </p>
+      <p>App/Http/Controllers/LanguageController.php</p>
+      <pre class="language-php">
+        <code class="language-php">
+        // available language in template array
+        $availLocale=['en'=>'en', 'fr'=>'fr','de'=>'de','pt'=>'pt']; //mention your new language as key and value pair.
+        </code>
+      </pre>
+      <p class="mt-2">App/Http/Middleware/LocaleMiddleware.php</p>
+      <pre class="language-php">
+        <code class="language-php">
+          // available language in template array
+          $availLocale=['en'=>'en', 'fr'=>'fr','de'=>'de','pt'=>'pt']; //mention your new language as key and value pair.
+        </code>
+      </pre>
+      <p class="mt-2">3: If you want to set your new language as default language using configuration variable then
+        you'll need to do below changes.</p>
+      <p>App/Helpers/helpers.php</strong></p>
+      <p>Add your new language in allOption array as key and value pair.</p>
+      <pre class="language-php">
+        <code class="language-php">
+          // All options available in the template
+          $allOptions = [
+
+              'defaultLanguage'=>array('en'=>'en','fr'=>'fr','de'=>'de','pt'=>'pt'),
+
+          ];
+
+        </code>
+      </pre>
+      <p class="mt-2">4: Now you can set your new language as default of whole Template.</p>
+      <p>config/custom.php</p>
+      <pre class="language-php">
+        <code class="language-php">
+          &lt;?php
+            return [
+                'custom' => [
+
+                    'defaultLanguage'=>'en',    //en(default)/de/pt/fr here are four optional language provided in theme
+
+                ],
+        </code>
+      </pre>
+      <p>Your new language is successfully added, Now it's ready to use.</p>
+    </div>
+  </div>
+</div>
+<!-- how to remove existing language -->
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">How to remove existing language?</h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+      <p>1: To remove a existing language in whole template first we need to delete language folder from
+        <code>resources/lang/</code>.
+      </p>
+
+      <pre class="language-treeview">
+        <code class="language-treeview">
+          resources/
+          ├── lang/
+          |   ├── en/
+          |   |   ├── locale.php
+          |   ├── de/
+          |   |   ├── locale.php
+        </code>
+      </pre>
+      <p class="mt-2">2: Now we need to delete existing language in controller and middleware which is already created.
+      </p>
+      <p>App/Http/Controllers/LanguageController.php</p>
+      <p>Remove your existing language from the availLocale array.</p>
+      <pre class="language-php">
+        <code class="language-php">
+          // available language in template array
+        $availLocale=['en'=>'en', 'fr'=>'fr','de'=>'de','pt'=>'pt'];
+
+        </code>
+      </pre>
+      <p>App/Http/Middleware/LocaleMiddleware.php</p>
+      <p>Remove your existing language from the availLocale array.</p>
+      <pre class="language-php">
+        <code class="language-php">
+          // available language in template array
+          $availLocale=['en'=>'en', 'fr'=>'fr','de'=>'de','pt'=>'pt'];
+        </code>
+      </pre>
+      <p class="mt-2">3: You also need to remove this language from helper.php file.</p>
+      <p>App/Helpers/helpers.php</p>
+      <p>remove language from the allOption array.</p>
+      <pre class="language-php">
+        <code class="language-php">
+          // All options available in the template
+          $allOptions = [
+
+              'defaultLanguage'=>array('en'=>'en','fr'=>'fr','de'=>'de','pt'=>'pt'),
+
+          ];
+        </code>
+      </pre>
+      <p>Now existing language has been removed from whole template.</p>
+    </div>
+  </div>
+</div>
+<!-- /laravel Localization -->

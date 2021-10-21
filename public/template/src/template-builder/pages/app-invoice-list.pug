@@ -1,0 +1,56 @@
+//- =========================================================================================
+  File Name: app-invoice-list.pug
+  Description: Invoice List Application
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: PIXINVENT
+  Author URL: http://www.themeforest.net/user/pixinvent
+  ==========================================================================================-//
+
+extends template
+
+block pageVars
+  - var pageTitle   = "Invoice List"
+  - var pageSubTitle = "Invoice List"
+  - var description  = "Invoice List Application"
+  - var activeMenu   = "app-invoice-list"
+
+block page-header
+
+//- Include file manager content
+append content
+  include ../contents/app-invoice-list.html
+
+//- vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+
+append vendorcss
+  link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/tables/datatable/dataTables.bootstrap5.min.css')
+  link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/tables/datatable/extensions/dataTables.checkboxes.css')
+  link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/tables/datatable/responsive.bootstrap4.min.css')
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+  link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/app-invoice-list.css')
+
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+  script(src=app_assets_path+'/vendors/js/extensions/moment.min.js')
+  script(src=app_assets_path+'/vendors/js/tables/datatable/jquery.dataTables.min.js')
+  script(src=app_assets_path+'/vendors/js/tables/datatable/datatables.buttons.min.js')
+  script(src=app_assets_path+'/vendors/js/tables/datatable/dataTables.bootstrap5.min.js')
+  script(src=app_assets_path+'/vendors/js/tables/datatable/datatables.checkboxes.min.js')
+  script(src=app_assets_path+'/vendors/js/tables/datatable/dataTables.responsive.min.js')
+  script(src=app_assets_path+'/vendors/js/tables/datatable/responsive.bootstrap4.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+  script(src=app_assets_path+'/js/scripts/pages/app-invoice-list.js')

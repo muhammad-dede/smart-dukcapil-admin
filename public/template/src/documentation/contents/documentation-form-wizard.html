@@ -1,0 +1,307 @@
+<!-- Form Wizard -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="form-wizard" class="card-title">Form wizard</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <p>
+        Bootstrap Stepper is a smart UI component which allows you to easily create wizard-like interfaces. This plugin
+        groups content into sections for a more structured and orderly page view.<br />Read the official
+        <a href="https://johann-s.github.io/bs-stepper/" target="_blank">Bootstrap Stepper Documentation</a> for a full
+        list of instructions and other options.
+      </p>
+      <h6>1. Initialize the plugin by referencing the necessary files:</h6>
+      <pre class="language-markup">
+<code class="language-markup">
+&lt;!-- Vendor files --&gt;
+&lt;script src="bs-stepper.min.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="bs-stepper.min.css"&gt;
+
+&lt;!-- Template files --&gt;
+&lt;link rel="stylesheet" type="text/css" href="app-assets/css/plugins/forms/form-wizard.css"&gt;
+</code>
+      </pre>
+      <div class="alert alert-warning my-2" role="alert">
+        <div class="alert-body">
+          <strong>Note!</strong> If you want to add extra components, then you have to add js/css files accordingly.
+        </div>
+      </div>
+
+      <h6>2. Binding to existing DOM element.</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;div class="bs-stepper wizard-example"&gt;
+  &lt;div class="bs-stepper-header"&gt;
+    &lt;div class="step" data-target="#account-details"&gt;
+      &lt;button type="button" class="step-trigger"&gt;
+        &lt;span class="bs-stepper-box"&gt;1&lt;/span&gt;
+        &lt;div class="bs-stepper-label"&gt;
+          &lt;span class="bs-stepper-title"&gt;Account Details&lt;/span&gt;
+          &lt;span class="bs-stepper-subtitle"&gt;Setup Account Details&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="line"&gt;
+      &lt;i data-feather="chevron-right" class="font-medium-2"&gt;&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;!-- More Steps goes here --&gt;
+    ...
+  &lt;/div&gt;
+  &lt;div class="bs-stepper-content"&gt;
+    &lt;div id="account-details" class="content"&gt;
+      ...
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+      </pre>
+
+      <h6>3. Basic usage looks something like this:</h6>
+      <pre class="language-javascript my-1">
+<code class="language-javascript">
+var wizardExample = document.querySelector('.wizard-example')
+
+if (typeof wizardExample !== undefined && wizardExample !== null) {
+  var wizardStepper = new Stepper(wizardExample, {
+    linear: false,
+  })
+  $(wizardExample)
+    .find('.btn-next')
+    .on('click', function () {
+      wizardStepper.next()
+    })
+  $(wizardExample)
+    .find('.btn-prev')
+    .on('click', function () {
+      wizardStepper.previous()
+    })
+
+  $(wizardExample)
+    .find('.btn-submit')
+    .on('click', function () {
+      alert('Submitted..!!')
+    })
+}
+</code>
+      </pre>
+      <p>Following are the options that can be used:</p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Options</th>
+              <th>Class</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Vertical Wizard</strong></td>
+              <td><code>.vertical</code></td>
+              <td>Use this class along with <code>.bs-stepper</code> for vertical oriented wizard.</td>
+            </tr>
+            <tr>
+              <td><strong>Icons in Steps</strong></td>
+              <td>N/A</td>
+              <td>Just add an icon instead of number as a child element of <code>.bs-stepper-box</code> class.</td>
+            </tr>
+            <tr>
+              <td><strong>Modern Wizard</strong></td>
+              <td><code>.wizard-modern</code></td>
+              <td>Use this class for modern styled wizard. Use this class to place steps outside the card.</td>
+            </tr>
+            <tr>
+              <td><strong>Vertical Modern Wizard</strong></td>
+              <td><code>.wizard-modern.vertical</code></td>
+              <td>Use these classes for vertical oriented modern styled wizard.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-2">
+        <strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong>
+      </p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Plugin Link</strong></td>
+              <td>
+                <a href="https://johann-s.github.io/bs-stepper/" target="_blank"
+                  >https://johann-s.github.io/bs-stepper/</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Github Link</strong></td>
+              <td>
+                <a href="https://github.com/Johann-S/bs-stepper" target="_blank"
+                  >https://github.com/Johann-S/bs-stepper</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-wizard.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-wizard.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Form Wizard -->
+
+<!-- Styling Wizard -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="styling-wizard" class="card-title">Styling Wizard</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <p>Following code adds crossed class to the steps for better styling:</p>
+      <pre class="language-javascript">
+          <code class="language-javascript">
+// Adds crossed class
+var bsStepper = document.querySelectorAll('.bs-stepper')
+
+if (typeof bsStepper !== undefined && bsStepper !== null) {
+  for (var el = 0; el &lt; bsStepper.length; ++el) {
+    bsStepper[el].addEventListener('show.bs-stepper', function (event) {
+      var index = event.detail.indexStep
+      var numberOfSteps = $(event.target).find('.step').length - 1
+      var line = $(event.target).find('.step')
+
+      // The first for loop is for increasing the steps,
+      // the second is for turning them off when going back
+      // and the third with the if statement because the last line
+      // can't seem to turn off when I press the first item.
+
+      for (var i = 0; i &lt; index; i++) {
+        line[i].classList.add('crossed')
+
+        for (var j = index; j &lt; numberOfSteps; j++) {
+          line[j].classList.remove('crossed')
+        }
+      }
+      if (event.detail.to == 0) {
+        for (var k = index; k &lt; numberOfSteps; k++) {
+          line[k].classList.remove('crossed')
+        }
+        line[0].classList.remove('crossed')
+      }
+    })
+  }
+}
+</code>
+        </pre>
+    </div>
+  </div>
+</div>
+<!-- /Styling Wizard -->
+
+<!-- Wizard Validation -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="wizard-validation" class="card-title">Wizard Validation</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <p>
+        Use jQuery validate to add validation to form. For more details on jQuery validation, visit
+        <a href="documentation-form-validation.html#jquery-validation">here</a>.
+      </p>
+      <p>
+        <span class="fw-bold">Please Note:</span>
+        <span>You'll have to include jQuery validation plugin files.</span>
+      </p>
+      <p>You can take HTML code from the above example and wizard validation code from as under:</p>
+      <pre class="language-javascript">
+        <code class="language-javascript">
+var wizardExample = document.querySelector('.wizard-example')
+
+if (typeof wizardExample !== undefined && wizardExample !== null) {
+  var numberedStepper = new Stepper(wizardExample),
+    $form = $(wizardExample).find('form')
+  $form.each(function () {
+    var $this = $(this)
+    $this.validate({
+      errorClass: 'text-danger',
+      rules: {
+        username: {
+          required: true,
+          ...
+        }
+        ...
+      }
+    })
+  })
+
+  $(wizardExample)
+    .find('.btn-next')
+    .each(function () {
+      $(this).on('click', function (e) {
+        var isValid = $(this).parent().siblings('form').valid()
+        if (isValid) {
+          numberedStepper.next()
+        } else {
+          e.preventDefault()
+        }
+      })
+    })
+
+  $(wizardExample)
+    .find('.btn-prev')
+    .on('click', function () {
+      numberedStepper.previous()
+    })
+
+  $(wizardExample)
+    .find('.btn-submit')
+    .on('click', function () {
+      var isValid = $(this).parent().siblings('form').valid()
+      if (isValid) {
+        alert('Submitted..!!')
+      }
+    })
+}
+</code>
+        </pre>
+    </div>
+  </div>
+</div>
+<!--/ Wizard Validation -->

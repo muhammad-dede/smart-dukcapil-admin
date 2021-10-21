@@ -1,0 +1,36 @@
+//- =========================================================================================
+    File Name: documentation-folder-structure.pug
+    Description: Folder structure Documentation page
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+
+extends template
+
+block pageVars
+    - var pageTitle    = "Folder structure"
+    - var activeMenu   = "folder-structure"
+
+
+
+append breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"}, {name:"Folder structure"}])
+
+
+//- Include page content in content block
+append content
+    include ../contents/documentation-folder-structure.html
+
+//- Page specific dependency
+//------------------------------
+
+//- Add custom page specific CSS
+append pagecss
+  link(rel='stylesheet', type='text/css', href='../../../app-assets/vendors/css/ui/prism-treeview.css')
+
+
+//- Add custom page specific JS
+append pagejs
+  script(src='../../../app-assets/vendors/js/ui/prism-treeview.js', type='text/javascript')

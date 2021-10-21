@@ -1,0 +1,24 @@
+- var sk_path = "../../../starter-kit/"+ useDirection +"/"+ useLayout +"/"
+- var dashLink = "index.html"
+//- - var dashLink = "../../../html/"+ useDirection +"/"+ useLayout +"/"+ "index.html"
+
+nav.header-navbar.navbar.navbar-expand-lg.align-items-center(class=navbarPosition + ' '+ navbarColor, class=(navbarBorder == true ? 'navbar-border' : ''), class=(navbarShadow == true ? 'navbar-shadow' : ''), class=(navbarBrandCenter == true ? 'navbar-brand-center' : ''), class=(boxedLayout == true ? 'container boxed-layout' : ''))
+  .navbar-container.d-flex(class= (centerLayout == true ? 'container center-layout' : 'content'))
+    .bookmark-wrapper.d-flex.align-items-center
+      ul.nav.navbar-nav.d-xl-none
+        li.nav-item
+          a.nav-link.menu-toggle(href='#')
+            i.ficon(data-feather="menu")
+    ul.nav.navbar-nav.align-items-center.ms-auto
+      li.nav-item.d-none.d-sm-block
+        a.btn.btn-flat-secondary.btn-doc-header(href='https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/landing/', target="_blank")
+          i(data-feather="layout", class="me-25")
+          |  Live Preview
+      li.nav-item
+        a.btn.btn-success.btn-doc-header(href='https://pixinvent.ticksy.com', target="_blank")
+          i(data-feather="life-buoy", class="me-25")
+          |  Support
+      li.nav-item
+        a.btn.btn-warning.btn-doc-header(href='https://1.envato.market/vuexy_admin')
+          i(data-feather="shopping-cart", class="me-25")
+          |  Purchase

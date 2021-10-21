@@ -1,0 +1,28 @@
+//- =========================================================================
+    File Name: page-kb-question.pug
+    Description:  Knowledge-base Question Page Content
+    --------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================
+
+extends template
+
+block pageVars
+    - var pageTitle   = "Question"
+    - var pageSubTitle = ""
+    - var description  = ""
+    - var activeMenu  = "knowledge-base"
+
+
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"}, {url:"#",name:"Pages"}, {url:"page-knowledge-base.html",name:"Knowledge Base"}, {url:"page-kb-category.html",name:"Category"}, {name:"Question"}])
+
+//- Include page content in page block
+append content
+    include ../contents/page-kb-question.html
+
+append pagecss
+    link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/page-knowledge-base.css')

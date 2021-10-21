@@ -1,0 +1,30 @@
+//- =========================================================================================
+  File Name: page-profile.pug
+  Description: User Profile page Content
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: PIXINVENT
+  Author URL: http://www.themeforest.net/user/pixinvent
+  ==========================================================================================
+
+extends template
+
+block pageVars
+  - var pageTitle = "Profile"
+  - var pageSubTitle = "User Profile Page"
+  - var activeMenu = "profile"
+
+block breadcrumbs
+  +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Pages"}, {name:"Profile"}])
+
+//- Include page content in page block
+append content
+  include ../contents/page-profile.html
+
+append pagecss
+  //- Form Extended CSS
+  link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/pages/page-profile.css')
+
+append pagejs
+  //- user-profile
+  script(src=app_assets_path+'/js/scripts/pages/page-profile.js')

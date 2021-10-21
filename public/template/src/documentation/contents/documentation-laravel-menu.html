@@ -1,0 +1,227 @@
+<!-- intro -->
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Menus</h4>
+  </div>
+  <div class="card-body">
+    <p>We have two types of menus for two different layouts.</p>
+    <ul>
+      <li>Vertical menu for <strong>VERTICAL</strong> layout</li>
+      <li>Horizontal menu for <strong>HORIZONTAL</strong> layout</li>
+    </ul>
+    <p>
+      We are using a JSON file to store all menus list and render it in our main menu. You can find these JSON files in
+      the <code>menu-data/</code> folder.
+    </p>
+    <p>Here is the path: <code>resources/data/menu-data/ </code></p>
+    <ul>
+      <li><code>verticalMenu.json</code> menu for <strong>VERTICAL</strong> layout</li>
+      <li><code>horizontalMenu.json</code> menu for <strong>HORIZONTAL</strong> layout</li>
+    </ul>
+  </div>
+</div>
+
+<!-- how to add new menu  -->
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">How to add New Menu</h4>
+  </div>
+  <div class="card-body">
+    <p>You'll need to add your page details in both <code>JSON</code> files to appear on your page in the Sidebar.</p>
+    <p><strong>Option 1:</strong> To add item in menu.</p>
+    <pre class="language-php">
+    <code class="language-php">
+{
+"url": "newPage",
+"name": "New Page",
+"icon": "mail",
+"slug": "new-page"
+},
+    </code>
+  </pre>
+    <p><strong>Option 2:</strong> To add item as a sub menu item.</p>
+    <pre class="language-php">
+    <code class="language-php">
+{
+  "name": "Pages",
+  "badge": "2",
+  "badgeClass": "badge badge-light-warning rounded-pill ms-auto me-1",
+  "icon": "home",
+  "slug": "",
+  "submenu": [
+    {
+      "url": "/page-test",
+      "name": "Test Page",
+      "icon": "circle",
+      "slug": "page-test"
+    },
+    {
+      "url": "/second-page",
+      "name": "Second Page",
+      "icon": "circle",
+      "slug": "second-page"
+    }
+  ]
+},
+    </code>
+  </pre>
+
+    <div class="alert alert-warning">
+      <div class="alert-body">
+        Note: Add page name to <strong>resources -> lang -> en{all language folder} -> locale.php</strong> file to
+        display in multi language.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Rendering Menus</h4>
+  </div>
+  <div class="card-body">
+    <p>We are rendering our menus in the below files. You can find these files here: <code>views/panels/</code></p>
+    <ul>
+      <li>sidebar.blade.php</li>
+      <li>submenu.blade.php</li>
+      <li>horizontalMenu.blade.php</li>
+      <li>horizontalSubmenu.blade.php</li>
+    </ul>
+
+    <p>The <code>sidebar.blade.php</code> and <code>submenu.blade.php</code> files are used for the Vertical layout.</p>
+    <pre class="language-php">
+      <code class="language-php">
+&lt;-------sidebar.blade.php-------&gt;
+
+&lt;ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation"&gt;
+    {{-- Foreach menu item starts --}}
+      @if(isset($menuData[0]))
+      @foreach($menuData[0]->menu as $menu)
+      @if(isset($menu->navheader))
+      &lt;li class="navigation-header"&gt;
+        &lt;span&gt;{{ $menu->navheader }}&lt;/span&gt;
+      &lt;/li&gt;
+      @else
+      {{-- Add Custom Class with nav-item --}}
+      @php
+      $custom_classes = "";
+      if(isset($menu->classlist)) {
+      $custom_classes = $menu->classlist;
+      }
+      @endphp
+      &lt;li class="nav-item {{ Route::currentRouteName() === $menu->slug ? 'active' : '' }} {{ $custom_classes }}"&gt;
+      &lt;a href="{{isset($menu->url)? url($menu->url):'#'}}" class="d-flex align-items-center" target="{{isset($menu->newTab) ? '_blank':'_self'}}"&gt;
+         &lt;i data-feather="{{ $menu->icon }}"&gt;&lt;/i&gt;
+          &lt;span class="menu-title text-truncate"&gt;{{ __('locale.'.$menu->name) }}&lt;/span&gt;
+          @if (isset($menu->badge))
+          &lt;?php $badgeClasses = "badge rounded-pill badge-light-primary ms-auto me-1" ?&gt;
+         &lt;span
+            class="{{ isset($menu->badgeClass) ? $menu->badgeClass : $badgeClasses }} "&gt;{{$menu->badge}}&lt;/span&gt;
+          @endif
+        &lt;/a&gt;
+        @if(isset($menu->submenu))
+        @include('panels/submenu', ['menu' => $menu->submenu])
+        @endif
+      &lt;/li&gt;
+      @endif
+      @endforeach
+      @endif
+      {{-- Foreach menu item ends --}}
+    &lt;/ul&gt;
+      </code>
+    </pre>
+
+    <!-- submenu.blade.php -->
+    <p class="mt-2">Here is the code of submenu page.</p>
+    <pre class="language-php">
+      <code class="language-php">
+&lt;-------submenu.blade.php-------&gt;
+
+  &lt;ul class="menu-content"&gt;
+  @if(isset($menu))
+  @foreach($menu as $submenu)
+  &lt;li class="{{ $submenu->slug === Route::currentRouteName() ? 'active' : '' }}"&gt;
+      &lt;a href="{{isset($submenu->url) ? url($submenu->url):'#'}}" class="d-flex align-items-center" target="{{isset($submenu->newTab) && $submenu->newTab === true  ? '_blank':'_self'}}"&gt;
+        @if(isset($submenu->icon))
+        &lt;i  data-feather="{{$submenu->icon}}"&gt;&lt;/i&gt;
+        @endif
+        &lt;span class="menu-item">{{ __('locale.'.$submenu->name) }}&lt;/span&gt;
+      </a>
+      @if (isset($submenu->submenu))
+      @include('panels/submenu', ['menu' => $submenu->submenu])
+      @endif
+  &lt;/li&gt;
+  @endforeach
+  @endif
+&lt;/ul&gt;
+      </code>
+    </pre>
+
+    <!-- horizontal menu -->
+    <p class="mt-2">The horizontalMenu.blade.php and horizontalSubmenu.blade.php files are used for the Horizontal layout.</p>
+
+  <pre class="language-php">
+    <code class="language-php">
+&lt;-------horizontalMenu.blade.php-------&gt;
+
+&lt;ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation"&gt;
+{{-- Foreach menu item starts --}}
+  @if(isset($menuData[1]))
+  @foreach($menuData[1]->menu as $menu)
+  @php
+  $custom_classes = "";
+  if(isset($menu->classlist)) {
+  $custom_classes = $menu->classlist;
+  }
+  @endphp
+  &lt;li class="nav-item @if(isset($menu->submenu)){{'dropdown'}}@endif {{ $custom_classes }} {{ Route::currentRouteName() === $menu->slug ? 'active' : '' }}"
+    @if(isset($menu->submenu)){{'data-menu=dropdown'}}@endif&gt;
+    &lt;a href="{{isset($menu->url)? url($menu->url):'#'}}" class="nav-link d-flex align-items-center @if(isset($menu->submenu)){{'dropdown-toggle'}}@endif" target="{{isset($menu->newTab) ? '_blank':'_self'}}"  @if(isset($menu->submenu)){{'data-bs-toggle=dropdown'}}@endif&gt;
+      &lt;i data-feather="{{ $menu->icon }}"&gt;&lt;/i&gt;
+      &lt;span>{{ __('locale.'.$menu->name) }}&lt;/span&gt;
+    &lt;/a&gt;
+    @if(isset($menu->submenu))
+    @include('panels/horizontalSubmenu', ['menu' => $menu->submenu])
+    @endif
+  &lt;/li&gt;
+  @endforeach
+  @endif
+  {{-- Foreach menu item ends --}}
+&lt;/ul&gt;
+    </code>
+  </pre>
+  <p class="mt-2">Here is the code of submenu page.</p>
+<pre class="language-php">
+  <code class="language-php">
+&lt;-------horizontalSubmenu.blade.php-------&gt;
+
+&lt;ul class="dropdown-menu"&gt;
+  @if(isset($menu))
+  @foreach($menu as $submenu)
+  @php
+  $custom_classes = "";
+  if(isset($submenu->classlist)) {
+    $custom_classes = $submenu->classlist;
+  }
+  @endphp
+
+  &lt;li
+    class="{{ $custom_classes }}{{ (isset($submenu->submenu)) ? 'dropdown dropdown-submenu' : '' }} {{ $submenu->slug === Route::currentRouteName() ? 'sidebar-group-active active' : '' }}" @if(isset($submenu->submenu)){{'data-menu=dropdown-submenu'}}@endif&gt;
+    &lt;a href="{{isset($submenu->url) ? url($submenu->url):'#'}}" class="dropdown-item {{ (isset($submenu->submenu)) ? 'dropdown-toggle' : '' }} d-flex align-items-center"
+      {{ (isset($submenu->submenu)) ? 'data-bs-toggle=dropdown' : '' }} target="{{isset($submenu->newTab) && $submenu->newTab === true  ? '_blank':'_self'}}"&gt;
+      @if (isset($submenu->icon))
+      &lt;i data-feather="{{ $submenu->icon }}"&gt;&lt;/i&gt;
+      @endif
+      &lt;span>{{ __('locale.'.$submenu->name) }}&lt;/span&gt;
+    &lt;/a&gt;
+    @if (isset($submenu->submenu))
+    @include('panels/horizontalSubmenu', ['menu' => $submenu->submenu])
+    @endif
+  &lt;/li&gt;
+  @endforeach
+  @endif
+&lt;/ul&gt;
+  </code>
+</pre>
+  </div>
+</div>

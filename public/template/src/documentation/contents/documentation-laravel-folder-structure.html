@@ -1,0 +1,166 @@
+<!-- Laravel Folder Structure -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="folder" class="card-title">Folder Structure</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <div class="card-text">
+        <p>
+          Vuexy also provide HTML laravel version. In this page, we have provided installation and usage information.
+        </p>
+      </div>
+      <p>
+        Once you download the template from ThemeForest, unzip the package and you will find the below folder structure
+        in <code>vuexy-bootstrap-laravel-admin-template/</code>.
+      </p>
+      <hr />
+      <pre>
+                <code class="language-treeview">
+                    vuexy-bootstrap-laravel-admin-template/
+                    ├── app/
+                    |   ├── Helpers/
+                    |   |   ├── helpers.php
+                    |   ├── Http/
+                    |   |   ├── Controllers/
+                    ├── bootstrap/
+                    ├── config/
+                    |   ├── custom.php (Template configuration file)
+                    ├── database/
+                    ├── docker/
+                    ├── public/(public content generated after compilation done.)
+                    |   ├── css/
+                    |   ├── data/
+                    |   ├── fonts/
+                    |   ├── images/
+                    |   ├── js/
+                    |   ├── vendors/
+                    |   ├── mix-manifest.json
+                    ├── resources/
+                    |   |   ├── assets/
+                    |   ├── data/
+                    |   |   ├── fullcalendar/
+                    |   |   ├── menu-data/
+                    |   |   |   ├── horizontalMenu.json
+                    |   |   |   ├── verticalMenu.json
+                    |   |   ├── invoice-list.json
+                    |   |   ├── jstree-data.json
+                    |   |   ├── kanban.json
+                    |   |   ├── search.json
+                    |   |   ├── table-datatable.json
+                    |   |   ├── user-list.json
+                    |   |   ├── fonts/
+                    |   |   ├── images/ (Vuexy Admin images)
+                    |   |   ├── js/ (Include js files)
+                    |   |   ├── lang/ (Include Languages)
+                    |   |   ├── sass/ (Include scss files)
+                    |   |   ├── vendors/ (Include all vendor css and js files)
+                    |   |   ├── views/ (Include blade.php files)
+                    |   |   |   ├── auth/
+                    |   |   |   ├── layouts/
+                    |   |   |   ├── content/
+                    |   |   |   ├── panels/
+                    ├── routes/
+                    ├── storage/
+                    ├── tests/ (For testing)
+                    ├── .env.example (Include Database credentials, it will be .env after update it.)
+                    ├── artisan (Include artisans commands)
+                    ├── composer.json (Dependencies used by composer)
+                    ├── package.json (Dependencies used by node)
+                    ├── phpunit.xml (Related With testing)
+                    ├── server.php (For php's internal web server)
+                    └── webpack.mix.js (Laravel's webpack file)
+                </code>
+            </pre>
+      <div class="alert alert-info mt-1" role="alert">
+        <div class="alert-body">
+          <strong>Tip:</strong> We also provide laravel starter-kit to speed up your laravel development with Vuexy
+          Admin.
+        </div>
+      </div>
+      <h6 class="mt-3">Following is the details for laravel folder structure.</h6>
+      <div class="table-responsive">
+        <table class="table table-striped mb-0">
+          <thead>
+            <tr>
+              <th>Folder/Files</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>app/</td>
+              <td>This folder contains all the controller inside controllers folder and model files.</td>
+            </tr>
+            <tr>
+              <td>bootstrap/</td>
+              <td>This folder contains cache and app.php.</td>
+            </tr>
+            <tr>
+              <td>config/</td>
+              <td>This folder contains the config files. You can find custom.php file for template customization.</td>
+            </tr>
+            <tr>
+              <td>database/</td>
+              <td>This folder contains database Migrations, model factories, & seeds.</td>
+            </tr>
+            <tr>
+              <td>docker/</td>
+              <td>This folder contains all docker files used by sail.</td>
+            </tr>
+            <tr>
+              <td>public/</td>
+              <td>This folder contains index.php ,static folder & Build of the tempalte.</td>
+            </tr>
+            <tr>
+              <td>public/data/search.json</td>
+              <td>This file contains the list of search menu items.</td>
+            </tr>
+            <tr>
+              <td>resources/</td>
+              <td>This folder contains views, layouts, store and js, sass, json files.</td>
+            </tr>
+            <tr>
+              <td>routes/</td>
+              <td>It contains the web.php file where pages can be served on the browser.</td>
+            </tr>
+            <tr>
+              <td>storage/</td>
+              <td>This folder contains compile blade templates.</td>
+            </tr>
+            <tr>
+              <td>verticalMenu.json</td>
+              <td>It contains the list of main-menu sidebar items of Vertical menu.</td>
+            </tr>
+            <tr>
+              <td>horizontalMenu.json</td>
+              <td>It contains the list of main-menu items of Horizontal menu.</td>
+            </tr>
+            <tr>
+              <td>views/layouts</td>
+              <td>It contains the all master layout files.</td>
+            </tr>
+            <tr>
+              <td>views/panels</td>
+              <td>It contains all panel files like header / footer / sidebar / navbar etc.</td>
+            </tr>
+            <tr>
+              <td>views/content</td>
+              <td>
+                It contains the content page files. To create new page <a href="#create-new-page">refer the code.</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Laravel Folder Structure -->

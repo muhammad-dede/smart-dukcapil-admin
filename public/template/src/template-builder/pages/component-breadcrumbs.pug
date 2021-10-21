@@ -1,0 +1,22 @@
+//- =========================================================================
+    File Name: component-breadcrumb.pug
+    Description: This Page contains breadcrumb styles.
+    --------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================
+
+extends template
+
+block pageVars
+    - var pageTitle   = "Breadcrumbs"
+    - var pageSubTitle = "Breadcrumbs"
+    - var description  = "Breadcrumbs with different styles."
+    - var activeMenu  = "component-breadcrumbs"
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Components"}, {name:"Breadcrumbs"}])
+
+//- Include page content in page block
+append content
+    include ../contents/component-breadcrumbs.html

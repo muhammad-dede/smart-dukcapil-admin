@@ -1,0 +1,39 @@
+//- =========================================================================================
+    File Name: form-validation.pug
+    Description: A JQuery validation plugin for bootstrap forms.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================
+
+extends template
+
+block pageVars
+    - var pageTitle = "Form Validation"
+    - var pageSubTitle = "A JQuery validation plugin for bootstrap forms."
+    - var description  = "jQuery plugin makes simple client side form validation easy, whilst still offering plenty of customization options."
+    - var activeMenu = "form-validation"
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Forms"}, {name:"Form Validation"}])
+
+//- Include page content in page block
+append content
+    include ../contents/form-validation.html
+
+append vendorcss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/forms/select/select2.min.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/pickers/flatpickr/flatpickr.min.css')
+
+append vendorjs
+    script(src=app_assets_path+'/vendors/js/forms/select/select2.full.min.js')
+    script(src=app_assets_path+'/vendors/js/forms/validation/jquery.validate.min.js')
+    script(src=app_assets_path+'/vendors/js/pickers/flatpickr/flatpickr.min.js')
+
+append pagejs
+    script(src=app_assets_path+'/js/scripts/forms/form-validation.js')
+
+append pagecss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/forms/form-validation.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/forms/pickers/form-flat-pickr.css')

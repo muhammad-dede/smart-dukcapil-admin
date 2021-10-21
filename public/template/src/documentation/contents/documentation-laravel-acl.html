@@ -1,0 +1,368 @@
+<!-- laravel Permission -->
+<div class="section">
+  <div class="card">
+    <div class="card-header">
+      <h4 class="card-title">Laravel Permission</h4>
+    </div>
+    <div class="card-content">
+      <div class="card-body">
+        This <a href="https://docs.spatie.be/laravel-permission/v3/installation-laravel/" target="_blank">package</a>
+        allows you to manage user permissions and roles in a database.
+      </div>
+    </div>
+  </div>
+</div>
+<!-- getting start -->
+<div class="section">
+  <div class="card">
+    <div class="card-header">
+      <h4 class="card-title">Getting started</h4>
+    </div>
+    <div class="card-content">
+      <div class="card-body">
+        <h6>Installation</h6>
+        <p>This package can be used with Laravel 5.8 or higher.</p>
+        <p>1. Consult the Prerequisites page for important considerations regarding your User models!</p>
+        <p>
+          2. This package publishes a <code>config/permission.php</code> file. If you already have a file by that name,
+          you must rename or remove it.
+        </p>
+        <p>3. You can install the package via composer:</p>
+        <pre class="language-php mb-1">
+          <code class="language-php">
+            composer require spatie/laravel-permission
+          </code>
+        </pre>
+        <p>
+          4. Optional: The service provider will automatically get registered. Or you may manually add the service
+          provider in your <code>config/app.php</code> file:
+        </p>
+        <pre class="language-php mb-1">
+          <code class="language-php">
+            'providers' => [
+              // ...
+              Spatie\Permission\PermissionServiceProvider::class,
+            ];
+          </code>
+        </pre>
+        <p>
+          5. You should publish
+          <a
+            href="https://github.com/spatie/laravel-permission/blob/master/database/migrations/create_permission_tables.php.stub"
+            target="_blankd"
+            >the migration</a
+          >
+          and the <code>config/permission.php</code> config file with:
+        </p>
+        <pre class="language-php mb-1">
+          <code class="language-php">
+            php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+          </code>
+        </pre>
+        <p>
+          6. NOTE: If you are using UUIDs, see the Advanced section of the docs on UUID steps, before you continue. It
+          explains some changes you may want to make to the migrations and config file before continuing. It also
+          mentions important considerations after extending this package’s models for UUID capability.
+        </p>
+        <p>
+          7. Run the migrations: After the config and migration have been published and configured, you can create the
+          tables for this package by running:
+        </p>
+        <pre class="language-php mb-1">
+          <code class="language-php">
+            php artisan migrate
+          </code>
+        </pre>
+        <p>
+          8. Add the necessary trait to your User model: Consult the Basic Usage section of the docs for how to get
+          started using the features of this package.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Basic Usage -->
+<div class="section">
+  <div class="card">
+    <div class="card-header">
+      <h4 class="card-title">Basic Usage</h4>
+    </div>
+    <div class="card-content">
+      <div class="card-body">
+        <p>First, add the <code>Spatie\Permission\Traits\HasRoles</code> trait to your <code>User</code> model(s):</p>
+        <pre class="language-php mb-1">
+          <code class="language-php">
+            use Illuminate\Foundation\Auth\User as Authenticatable;
+            use Spatie\Permission\Traits\HasRoles;
+
+            class User extends Authenticatable
+            {
+                use HasRoles;
+
+                // ...
+            }
+          </code>
+        </pre>
+        <p>
+          This package allows for users to be associated with permissions and roles. Every role is associated with
+          multiple permissions. A Role and a Permission are regular Eloquent models. They require a name and can be
+          created like this:
+        </p>
+        <pre class="language-php mb-1">
+          <code class="language-php">
+            use Spatie\Permission\Models\Role;
+            use Spatie\Permission\Models\Permission;
+
+            $role = Role::create(['name' => 'writer']);
+            $permission = Permission::create(['name' => 'edit articles']);
+          </code>
+        </pre>
+        <p>A permission can be assigned to a role using 1 of these methods:</p>
+        <pre class="language-php mb-1">
+          <code class="language-php">
+            $role->givePermissionTo($permission);
+            $permission->assignRole($role);
+          </code>
+        </pre>
+        <p>Multiple permissions can be synced to a role using 1 of these methods:</p>
+        <pre class="language-php mb-1">
+          <code class="language-php">
+            $role->syncPermissions($permissions);
+            $permission->syncRoles($roles);
+          </code>
+        </pre>
+        <p>A permission can be removed from a role using 1 of these methods:</p>
+        <pre class="language-php mb-1">
+          <code class="language-php">
+            $role->revokePermissionTo($permission);
+            $permission->removeRole($role);
+          </code>
+        </pre>
+        <p>
+          If you’re using multiple guards the guard_name attribute needs to be set as well. Read about it in the using
+          multiple guards section of the readme.
+        </p>
+        <p>
+          The <code>HasRoles</code> trait adds Eloquent relationships to your models, which can be accessed directly or
+          used as a base query:
+        </p>
+        <pre class="language-php mb-1">
+          <code class="language-php">
+            // get a list of all permissions directly assigned to the user
+            $permissionNames = $user->getPermissionNames(); // collection of name strings
+            $permissions = $user->permissions; // collection of permission objects
+
+            // get all permissions for the user, either directly, or from roles, or from both
+            $permissions = $user->getDirectPermissions();
+            $permissions = $user->getPermissionsViaRoles();
+            $permissions = $user->getAllPermissions();
+
+            // get the names of the user's roles
+            $roles = $user->getRoleNames(); // Returns a collection
+          </code>
+        </pre>
+        <p>
+          The <code>HasRoles</code> trait also adds a <code>role</code> scope to your models to scope the query to
+          certain roles or permissions:
+        </p>
+        <pre class="language-php mb-1">
+          <code class="language-php">
+            $users = User::role('writer')->get(); // Returns only users with the role 'writer'
+          </code>
+        </pre>
+        <p>
+          The <code>role</code> scope can accept a string, a <code>\Spatie\Permission\Models\Role</code> object or an
+          <code>\Illuminate\Support\Collection</code> object.
+        </p>
+        <p>The same trait also adds a scope to only get users that have a certain permission.</p>
+        <pre class="language-php mb-1">
+          <code class="language-php">
+            $users = User::permission('edit articles')->get(); // Returns only users with the permission 'edit articles' (inherited or directly)
+          </code>
+        </pre>
+        <p>
+          The scope can accept a string, a <code>\Spatie\Permission\Models\Permission</code> object or an
+          <code>\Illuminate\Support\Collection</code> object.
+        </p>
+        <h6>Using a middleware</h6>
+        <p>
+          This package comes with <code>RoleMiddleware</code>, <code>PermissionMiddleware</code> and
+          <code>RoleOrPermissionMiddleware</code> middleware. You can add them inside your
+          <code>app/Http/Kernel.php</code> file.
+        </p>
+        <pre class="language-php mb-1">
+          <code class="language-php">
+            protected $routeMiddleware = [
+              // ...
+              'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
+              'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,
+              'role_or_permission' => \Spatie\Permission\Middlewares\RoleOrPermissionMiddleware::class,
+            ];
+          </code>
+        </pre>
+        <p>Then you can protect your routes using middleware rules:</p>
+        <pre class="language-php mb-1">
+          <code class="language-php">
+            Route::group(['middleware' => ['role:super-admin']], function () {
+              //
+            });
+
+            Route::group(['middleware' => ['permission:publish articles']], function () {
+                //
+            });
+
+            Route::group(['middleware' => ['role:super-admin','permission:publish articles']], function () {
+                //
+            });
+
+            Route::group(['middleware' => ['role_or_permission:super-admin|edit articles']], function () {
+                //
+            });
+
+            Route::group(['middleware' => ['role_or_permission:publish articles']], function () {
+                //
+            });
+          </code>
+        </pre>
+        <p>Alternatively, you can separate multiple roles or permission with a <code>|</code> (pipe) character:</p>
+        <pre class="language-php mb-1">
+          <code class="language-php">
+            Route::group(['middleware' => ['role:super-admin|writer']], function () {
+              //
+            });
+
+            Route::group(['middleware' => ['permission:publish articles|edit articles']], function () {
+                //
+            });
+
+            Route::group(['middleware' => ['role_or_permission:super-admin|edit articles']], function () {
+                //
+            });
+          </code>
+        </pre>
+        <p>You can protect your controllers similarly, by setting desired middleware in the constructor:</p>
+        <pre class="language-php mb-1">
+          <code class="language-php">
+            public function __construct()
+            {
+              $this->middleware(['role:super-admin','permission:publish articles|edit articles']);
+            }
+          </code>
+        </pre>
+        <pre class="language-php mb-1">
+          <code class="language-php">
+            public function __construct()
+            {
+              $this->middleware(['role_or_permission:super-admin|edit articles']);
+            }
+          </code>
+        </pre>
+        <h6>Blade directives</h6>
+        <p><strong>Permissions</strong></p>
+        <p>
+          This package doesn’t add any permission-specific Blade directives. Instead, use Laravel’s native
+          <code>@can</code> directive to check if a user has a certain permission.
+        </p>
+        <pre class="language-php mb-1">
+          <code class="language-php">
+            @can('edit articles')
+              //
+            @endcan
+          </code>
+        </pre>
+        <p>or</p>
+        <pre class="language-php mb-1">
+          <code class="language-php">
+            @if(auth()->user()->can('edit articles') && $some_other_condition)
+              //
+            @endif
+          </code>
+        </pre>
+        <p>
+          You can use <code>@can</code>, <code>@cannot</code>, <code>@canany</code>, and <code>@guest</code> to test for
+          permission-related access.
+        </p>
+        <p><strong>Roles</strong></p>
+        <p>
+          As discussed in the Best Practices section of the docs,
+          <strong>it is strongly recommended to always use permission directives</strong>, instead of role directives.
+        </p>
+        <p>
+          Additionally, if your reason for testing against Roles is for a Super-Admin, see the Defining A Super-Admin
+          section of the docs.
+        </p>
+        <p>
+          If you actually need to test for Roles, this package offers some Blade directives to verify whether the
+          currently logged in user has all or any of a given list of roles.
+        </p>
+        <p>
+          Optionally you can pass in the <code>guard</code> that the check will be performed on as a second argument.
+        </p>
+        <p>Blade and Roles</p>
+        <p>Check for a specific role:</p>
+        <pre class="language-php mb-1">
+          <code class="language-php">
+            @role('writer')
+                I am a writer!
+            @else
+                I am not a writer...
+            @endrole
+          </code>
+        </pre>
+        <p>is the same as</p>
+        <pre class="language-php mb-1">
+          <code class="language-php">
+            @hasrole('writer')
+                I am a writer!
+            @else
+                I am not a writer...
+            @endhasrole
+          </code>
+        </pre>
+        <p>Check for any role in a list:</p>
+        <pre class="language-php mb-1">
+          <code class="language-php">
+            @hasanyrole($collectionOfRoles)
+                I have one or more of these roles!
+            @else
+                I have none of these roles...
+            @endhasanyrole
+            // or
+            @hasanyrole('writer|admin')
+                I am either a writer or an admin or both!
+            @else
+                I have none of these roles...
+            @endhasanyrole
+          </code>
+        </pre>
+        <p>Check for all roles:</p>
+        <pre class="language-php mb-1">
+          <code class="language-php">
+            @hasallroles($collectionOfRoles)
+                I have all of these roles!
+            @else
+                I do not have all of these roles...
+            @endhasallroles
+            // or
+            @hasallroles('writer|admin')
+                I am both a writer and an admin!
+            @else
+                I do not have all of these roles...
+            @endhasallroles
+          </code>
+        </pre>
+        <p>Alternatively, <code>@unlessrole</code> gives the reverse for checking a singular role, like this:</p>
+        <pre class="language-php mb-1">
+          <code class="language-php">
+            @unlessrole('does not have this role')
+                I do not have the role
+            @else
+                I do have the role
+            @endunlessrole
+          </code>
+        </pre>
+      </div>
+    </div>
+  </div>
+</div>

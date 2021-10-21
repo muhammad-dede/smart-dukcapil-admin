@@ -1,0 +1,35 @@
+//- =========================================================================================
+    File Name: page-auth-login-v1.pug
+    Description: User simple login page.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+
+extends template
+
+block pageVars
+    - var pageTitle    = "Login Page"
+    - var pageSubTitle = "Simple User Login Page"
+    - var description  = "User simple login page."
+    - var activeMenu   = "login-v1"
+    - var isContainer  = false
+
+append pageConfig
+    - var contentLayout = 'blank-page'
+    - var navbarFixed = false //- OPTIONS:- true, false
+
+//- Include page content in page block
+append content
+    include ../contents/page-auth-login-v1.html
+
+append vendorjs
+    script(src=app_assets_path+'/vendors/js/forms/validation/jquery.validate.min.js')
+
+append pagejs
+    script(src=app_assets_path+'/js/scripts/pages/page-auth-login.js')
+
+append pagecss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/forms/form-validation.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/pages/page-auth.css')

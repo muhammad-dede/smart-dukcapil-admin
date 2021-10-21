@@ -1,0 +1,135 @@
+<!-- Folder Structure -->
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Folder Structure</h4>
+  </div>
+  <div class="card-body">
+    <p>Below is the Vuexy Admin Template folder structure.</p>
+
+    <pre>
+<code class="language-treeview">
+vuexy-html-bootstrap-admin-template/
+├── app-assets/
+|   ├── css/
+|   ├── css-rtl/
+|   |   └── custom-rtl.css
+|   ├── data/
+|   ├── fonts/
+|   ├── images/
+|   ├── js/
+|   └── vendors/
+|       ├── css/
+|       |   └── vendors.min.css
+|       |   └── vendors-rtl.min.css
+|       ├── js/
+|       |   └── vendors.min.js
+├── assets/
+|   ├── css/
+|   ├── js/
+|   ├── scss/
+├── gulp-tasks/
+├── html/
+|   ├── ltr/
+|   ├── rtl/
+├── html-customizer/
+|   ├── ltr/
+|   ├── rtl/
+├── starter-kit/
+|   ├── ltr/
+|   ├── rtl/
+├── src/
+|   ├── js/
+|   ├── scss/
+├── .csscomb.json
+├── config.json
+├── favicon.ico
+├── gulpfile.js (gulp tasks)
+└── package.json (gulp package json)
+</code>
+    </pre>
+    <ul class="mt-2">
+      <li>
+        <code>vuexy-html-bootstrap-admin-template/</code> : Root template folder contain Vuexy Admin Template all html,
+        js, css, scss, images and other files.
+        <ul>
+          <li>
+            <code>app-assets/</code> : Folder contain all the Vuexy Admin Template assets which have css, js, fonts,
+            images & json files.
+            <strong>It is not recommended to change any files from this folder, use the assets folder instead.</strong>
+          </li>
+
+          <ul>
+            <li>
+              <code>css/</code> : All the generated css files from scss. Which contain bootstrap.css,
+              bootstrap-extended.css, app.css, colors.css, themes.css code, pages and plugins css files.
+            </li>
+            <li>
+              <code>css-rtl/</code> : All generated rtl css files from scss. Which contains custom-rtl.css file and all
+              file's RTL that we have in CSS folder. custom-rtl.css file contains common css of the template.
+            </li>
+            <li><code>data/</code> : Dummy JSON data for chats, tables and ajax example.</li>
+            <li><code>fonts/</code> : All the fonts files for font-icons.</li>
+            <li><code>images/</code> : Template images for image placeholder.</li>
+            <li><code>js/</code> : All the generated JS files from src/js.</li>
+            <li>
+              <code>vendors/</code> : Folder contain all the vendors css and js files in <code>css/</code> and
+              <code>js/</code> folder. It also contains minimum required vendors bundled CSS
+              <code>vendors.min.css</code> and JS <code>vendors.min.js</code> file.
+            </li>
+          </ul>
+          <li>
+            <code>assets/</code>: Folder contains assets which has sample scss, css, js files.
+            <strong
+              >Use folder for user customization purpose, you can add any custom css, js files & images in this
+              folder.</strong
+            >
+          </li>
+          <li><code>gulp-tasks/</code> : Folder contains all the gupl task files.</li>
+          <li>
+            <code>html/</code> : Folder contain all the HTML files. It has a text-direction & template name folder.
+          </li>
+          <li>
+            <code>html-customizer/</code> : Folder contain all the HTML files with built-in customizer. It has also
+            text-direction & template name folder.
+          </li>
+          <li><code>starter-kit/</code> : Folder contain all the generated HTML Starter kit files.</li>
+          <li>
+            <code>src/</code> : Folder contain source files for this template i.e SCSS & JS.
+            <ul>
+              <li><code>js/</code> : Folder contain all the core, menu, pages & other js files.</li>
+              <li>
+                <code>scss/</code> : Folder contain bootstrap, bootstrap-extended, app, colors, pages, plugins & themes
+                scss files.
+              </li>
+            </ul>
+          </li>
+          <li><code>.csscomb.json</code> : CSScomb config file. CSScomb is a coding style formatter for CSS.</li>
+          <li><code>config.json</code> : Template config, Includes source & destination path, vendors array etc...</li>
+          <li>
+            <code>favicon.ico</code> : Favicons are displayed by a web browser next to the title of the website or
+            webpage in the address bar.
+          </li>
+          <li><code>gulpfile.js</code> : Gulp tasks js file.</li>
+          <li><code>package.json</code> : NPM packages file.</li>
+        </ul>
+      </li>
+    </ul>
+    <div class="alert alert-warning" role="alert">
+      <h4 class="alert-heading">Heads Up!</h4>
+      <div class="alert-body">
+        It is not recommended to change any core files inside <code>src/</code> and <code>app-assets/</code> folder to
+        avoid future update conflicts. If you still modify the file, it may require to merge it manually with future
+        updates.
+      </div>
+    </div>
+    <div class="alert alert-success" role="alert">
+      <h4 class="alert-heading">Tip</h4>
+      <div class="alert-body">
+        It is recommended to use <code>assets/</code> folder to write your SCSS, CSS, JS. You can also add new assets to
+        this folder (i.e images, libs, etc..) to update the template in the future easily.
+      </div>
+    </div>
+    <p>For more detail about updating the template refer <a href="documentation-faq.html">FAQs</a>.</p>
+  </div>
+</div>
+<!--/ Folder Structure -->

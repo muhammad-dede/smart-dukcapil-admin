@@ -1,0 +1,26 @@
+//- =========================================================================================
+  File Name: layout-without-menu.pug
+  Description: Layout without menu
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: PIXINVENT
+  Author URL: http://www.themeforest.net/user/pixinvent
+  ==========================================================================================-//
+
+extends template
+
+block pageVars
+  - var pageTitle    = "Layout without menu"
+  - var pageSubTitle = "layout without menu"
+  - var description  = "Layout without menu"
+  - var activeMenu   = "layout-without-menu"
+
+block breadcrumbs
+  +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Layouts"}, {name:"Layout without menu"}])
+
+append pageConfig
+    - var contentLayout = '1-column'
+
+//- Include page content in page block
+append content
+  include ../../contents/starter-kit/layout-without-menu.html

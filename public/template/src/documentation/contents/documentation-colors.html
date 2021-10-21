@@ -1,0 +1,145 @@
+<!-- Primary -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="primary" class="card-title">Colors</h4>
+  </div>
+  <div class="card-content" aria-expanded="true">
+    <div class="card-body">
+      <div class="card-text">
+        <p class="mb-0">We have a series of colors that are used by default. They include:</p>
+        <ul class="colors-list list-unstyled mb-0">
+          <li><i data-feather="chevrons-right" class="ms-25 me-50"></i>primary</li>
+          <li><i data-feather="chevrons-right" class="ms-25 me-50"></i>secondary</li>
+          <li><i data-feather="chevrons-right" class="ms-25 me-50"></i>success</li>
+          <li><i data-feather="chevrons-right" class="ms-25 me-50"></i>danger</li>
+          <li><i data-feather="chevrons-right" class="ms-25 me-50"></i>warning</li>
+          <li><i data-feather="chevrons-right" class="ms-25 me-50"></i>info</li>
+        </ul>
+      </div>
+      <p class="mt-1"><strong>Color Classes Variation :</strong></p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Color Options</th>
+              <th>Class</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Background Color</strong></td>
+              <td><code>.bg-{color}</code></td>
+              <td>This class is used for background color.</td>
+            </tr>
+            <tr>
+              <td><strong>Lighten Background Color</strong></td>
+              <td><code>.bg-{color}.bg-lighten-{value}</code></td>
+              <td>
+                <p class="mb-0">For Lighten background color, these two classes are needed.</p>
+                <p class="mb-0">value: {1 | 2 | 3 | 4 | 5}</p>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Darken Background Color</strong></td>
+              <td><code>.bg-{color}.bg-darken-{value}</code></td>
+              <td>
+                <p class="mb-0">For Darken background color, these two classes are needed.</p>
+                <p class="mb-0">value: {1 | 2 | 3 | 4}</p>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Gradient Color</strong></td>
+              <td><code>.bg-gradient-{color}</code></td>
+              <td>This class is used for background with gradient color</td>
+            </tr>
+            <tr>
+              <td><strong>Background with rgba Color</strong></td>
+              <td><code>.bg-light-{color}</code></td>
+              <td>This class is used to set background color with rgba format where alpha of given color is 0.12.</td>
+            </tr>
+            <tr>
+              <td><strong>Background with bg-opacity Color</strong></td>
+              <td><code>.overlay-{color}</code></td>
+              <td>This class is used to set background color with opacity value of 0.6.</td>
+            </tr>
+            <tr>
+              <td><strong>Border Color</strong></td>
+              <td><code>.border-{color}</code></td>
+              <td>
+                <p class="mb-0">
+                  This class is used for border color. You may use <code>.border-{direction}-{color}</code> class for
+                  any particular border color with direction.
+                </p>
+                <p class="mb-0">direction: {top | right | bottom | left}</p>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Lighten Border Color</strong></td>
+              <td><code>.border-{color}.border-lighten-{value}</code></td>
+              <td>
+                <p class="mb-0">
+                  These classes are used for light border color. You may also use
+                  <code>.border-{direction}-{color}.border-{direction}-lighten-{value}</code> for any particular light
+                  border color with direction.
+                </p>
+                <p class="mb-0">direction: {top | right | bottom | left}</p>
+                <p class="mb-0">value: {1 | 2 | 3 | 4 | 5}</p>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Darken Border Color</strong></td>
+              <td><code>.border-{color}.border-darken-{value}</code></td>
+              <td>
+                <p class="mb-0">
+                  These classes are used for dark border color. You may also use
+                  <code>.border-{direction}-{color}.border-{direction}-darken-{value}</code> for any particular dark
+                  border color with direction.
+                </p>
+                <p class="mb-0">direction: {top | right | bottom | left}</p>
+                <p class="mb-0">value: {1 | 2 | 3 | 4}</p>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Text Color</strong></td>
+              <td><code>.text-{color}</code></td>
+              <td>This class is used for text color.</td>
+            </tr>
+            <tr>
+              <td><strong>Lighten Text Color</strong></td>
+              <td><code>.text-{color}.lighten-{value}</code></td>
+              <td>
+                <p class="mb-0">This class is used to lighten text color.</p>
+                <p class="mb-0">value: {1 | 2 | 3 | 4 | 5}</p>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Darken Text Color</strong></td>
+              <td><code>.text-{color}.darken-{value}</code></td>
+              <td>
+                <p class="mb-0">This class is used to darken text color.</p>
+                <p class="mb-0">value: {1 | 2 | 3 | 4 | 5}</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-1" id="use-of-color-variants"><strong>How to use this color variants?</strong></p>
+      <p>
+        If you want to update card background color to info color. Then you can use <code>.bg-info</code> class with
+        <code>.card</code> class.
+      </p>
+      <p>Find below structure to set background color of card :</p>
+      <pre class="language-markup">
+        <code class="language-markup">&lt;div class="card bg-info"&gt;
+          ...
+        &lt;/div&gt;</code></pre>
+
+      <p>
+        Here, we have shared only one example with a background color variant with a card. But you can use this
+        background color and other variants everywhere you want like with buttons, navbars, etc...
+      </p>
+    </div>
+  </div>
+</div>
+<!--/ color -->

@@ -1,0 +1,47 @@
+//- =========================================================================================
+    File Name: ext-component-tree.pug
+    Description: Tree
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+
+extends template
+
+block pageVars
+    - var pageTitle    = "Tree"
+    - var pageSubTitle = "Replacement for javascript's 'carousal'"
+    - var description  = "A BEAUTIFUL REPLACEMENT FOR JAVASCRIPT'S 'carousal'"
+    - var activeMenu   = "ext-component-tree"
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Extensions"}, {name:"Tree"}])
+
+//- Include page content in page block
+append content
+    include ../contents/ext-component-tree.html
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/fonts/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/extensions/jstree.min.css')
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+    script(src=app_assets_path+'/vendors/js/extensions/jstree.min.js')
+
+//- Page CSS
+//------------------------------
+//- Add page specific CSS
+append pagecss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/extensions/ext-component-tree.css')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+    script(src=app_assets_path+'/js/scripts/extensions/ext-component-tree.js')

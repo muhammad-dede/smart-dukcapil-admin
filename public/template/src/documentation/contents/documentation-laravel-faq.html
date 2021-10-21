@@ -1,0 +1,131 @@
+<!-- JetStream -->
+<div id="jet-stream" class="card">
+  <div class="card-header">
+    <a href="#jet-stream"><h4 class="card-title">Where is Jetstream?</h4></a>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <p>
+        As we all know, Laravel 8 comes with Jetstream for Authentication instead of Laravel UI. But it has few
+        requirements to be met.
+      </p>
+      <ol>
+        <li>Jetstream is designed using Tailwind CSS.</li>
+        <li>Offers your choice of Livewire or Inertia scaffolding.</li>
+      </ol>
+
+      <p>
+        We have opted for Laravel UI as our template is designed based on bootstrap CSS framework and Laravel UI
+        supports bootstrap CSS. Also, we do not offer any scaffolding for Livewire or Inertia which is the base for
+        using Jetstream.
+      </p>
+
+      <p>
+        One can always install Jetstream and remove Laravel UI from their project but it will be custom work on their
+        end. Follow <a href="https://jetstream.laravel.com/1.x/introduction.html">Jetstream</a> documentation to get
+        started with it.
+      </p>
+    </div>
+  </div>
+</div>
+<!--/ JetStream -->
+
+<!-- light/dark localstorage -->
+<div id="light-dark-localstorage" class="card">
+  <div class="card-header">
+    <a href="#light-dark-localstorage"><h4 class="card-title">How to sync dark/light mode with localStorage?</h4></a>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <p>Vuexy admin provides built-in support to sync user-preferred dark/light mode with localStorage.</p>
+      <p>
+        <strong>Ex:</strong> If the user has selected dark mode and on refresh, he/she wants to keep that mode
+        persistent.
+      </p>
+      <p>To enable this you just need to uncomment the below line from app-assets/js/core/app.js ~ line no 996</p>
+      <pre class="language-markup my-1">
+        <code class="language-json"> // Set layout on screen load
+//? Uncomment it if you want to sync layout with local db
+setLayout(currentLocalStorageLayout);
+      </code></pre>
+
+      <p>It will enable to store of the preferred user light/dark mode and make it persistent</p>
+
+      <div class="alert alert-info mb-0" role="alert">
+        <h4 class="alert-heading">Note</h4>
+        <div class="alert-body">
+          It is localStorage which will be stored on the user's local system and not stored on server side DB.
+          Developers need to implement it for that.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ light/dark localstorage -->
+
+<!-- collapse menu localstorage -->
+<div id="collapse-localstorage" class="card">
+  <div class="card-header">
+    <a href="#collapse-localstorage">
+      <h4 c#lass="card-title">How to sync collapsed menu with localStorage?</h4>
+    </a>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <p>Vuexy admin provides built-in support to sync user-preferred collapsed menu with localStorage.</p>
+      <p><strong>Ex:</strong> If the user want to collapsed menu, he/she wants to keep that menu persistent.</p>
+      <p>
+        To enable this you just need to comment/uncomment the below line from app-assets/js/core/app.js ~ line no 55
+      </p>
+      <pre class="language-markup my-1">
+      <code class="language-json">// if ($body.hasClass('menu-collapsed')) {
+// ? replace above if condition with below one for menu collapsed localstorage
+if ($body.hasClass('menu-collapsed') || localStorage.getItem('menuCollapsed') === 'true') {
+compactMenu = true;
+}</code></pre>
+
+      <p>Also, need to uncomment the below line from app-assets/js/core/app.js ~ line no 376</p>
+
+      <pre class="language-markup my-1">
+      <code class="language-json">// ? uncomment below code for menu collapsed localstorage
+// Save menu collapsed status in localstorage
+if ($body.hasClass('menu-expanded') || $body.hasClass('menu-open')) {
+localStorage.setItem('menuCollapsed', false);
+} else {
+localStorage.setItem('menuCollapsed', true);
+}</code></pre>
+
+      <p>It will enable to store of the preferred collapsed/expanded menu and make it persistent</p>
+
+      <div class="alert alert-info mb-0" role="alert">
+        <h4 class="alert-heading">Note</h4>
+        <div class="alert-body">
+          It is localStorage which will be stored on the user's local system and not stored on server side DB.
+          Developers need to implement it for that.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ collapse menu localstorage -->

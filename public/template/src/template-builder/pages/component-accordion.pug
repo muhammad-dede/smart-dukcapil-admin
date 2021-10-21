@@ -1,0 +1,27 @@
+//- =========================================================================================
+    File Name: component-accordion.pug
+    Description: Build vertically collapsing accordions in combination with our Collapse JavaScript plugin.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================
+
+extends template
+
+block pageVars
+    - var pageTitle   = "Accordion"
+    - var pageSubTitle = "Toggle item"
+    - var description = "Build vertically collapsing accordions in combination with our Collapse JavaScript plugin."
+    - var activeMenu  = "component-accordion"
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Components"}, {name:"Accordion"}])
+
+//- Include page content in page block
+append content
+    include ../contents/component-accordion.html
+
+append pagejs
+    //- Template js file
+    script(src=app_assets_path+'/js/scripts/components/components-accordion.js')

@@ -1,0 +1,48 @@
+//- =========================================================================================
+    File Name: ext-component-drag-drop.pug
+    Description: Drag & Drop Extensions
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================
+
+
+extends template
+
+block pageVars
+    - var pageTitle = "Drag & Drop"
+    - var pageSubTitle = "Drag and drop so simple it hurts"
+    - var description = "Have you ever wanted a drag and drop library that just works? That doesn't just depend on bloated frameworks, that has great support? That actually understands where to place the elements when they are dropped? That doesn't need you to do a zillion things to get it to work? Dragula is the answer."
+    - var activeMenu = "ext-component-drag-drop"
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"}, {url:"#",name:"Extensions"}, {name:"Drag & Drop"}])
+
+//- Include page content in page block
+append content
+    include ../contents/ext-component-drag-drop.html
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+    link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/extensions/dragula.min.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+    script(src=app_assets_path + '/vendors/js/extensions/dragula.min.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+    script(src=app_assets_path + '/js/scripts/extensions/ext-component-drag-drop.js')
+
+//- Page CSS
+//------------------------------
+//- Add page specific CSS
+append pagecss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/extensions/ext-component-drag-drop.css')

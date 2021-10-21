@@ -1,0 +1,41 @@
+//- =========================================================================================
+    File Name: ui-feather.pug
+    Description: Feather Icons
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================
+
+extends template
+
+block pageVars
+    - var pageTitle = "Feather Icons"
+    - var activeMenu = "ui-feather"
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},  {name:"UI"}, {name:"Feather Icons"}])
+
+//- Include page content in page block
+append content
+    include ../contents/ui-feather.html
+
+append pagecss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/extensions/ext-component-toastr.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/pages/ui-feather.css')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+    script(src=app_assets_path+'/js/scripts/ui/ui-feather.js')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+    script(src=app_assets_path + '/vendors/js/extensions/toastr.min.js')
+
+
+append vendorcss
+  link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/extensions/toastr.min.css')

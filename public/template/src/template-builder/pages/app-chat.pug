@@ -1,0 +1,43 @@
+//- =========================================================================================
+    File Name: app-chat.pug
+    Description: Chat application page layout.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+
+extends template
+
+block pageVars
+    - var pageTitle    = "Chat Application"
+    - var pageSubTitle = "Chat application"
+    - var activeMenu   = "app-chat"
+
+append pageConfig
+    - var contentLayout = 'content-left-sidebar'
+    - var pageClass = 'chat-application'
+
+
+block page-header
+
+//- Include chat content in page block
+append content
+    include ../contents/app-chat.html
+
+//- Include chat sidebar block
+append sidebar
+    include ../contents/app-chat-sidebar.html
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/pages/app-chat.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/pages/app-chat-list.css')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+    script(src=app_assets_path+'/js/scripts/pages/app-chat.js')

@@ -1,0 +1,33 @@
+//- =========================================================================================
+    File Name: documentation-sources-credits.pug
+    Description: c
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: Pixinvent
+    Author URL: hhttp://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+
+extends template
+
+block pageVars
+    - var pageTitle    = "Sources & Credits"
+    - var activeMenu   = "sources-credits"
+
+
+
+append pageConfig
+    - var contentLayout = 'content-right-sidebar'
+    - var sidebarSticky = true
+    //-OPTIONS:- true, false | For sticky(floating) sidebar, will affect only if there is a sidebar
+
+append breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"}, {name:"Sources & Credits"}])
+
+
+
+//- Include page content in content block
+append content
+    include ../contents/documentation-sources-credits.html
+
+append sidebar
+    include ../contents/sidebar/documentation-sources-credits-sidebar.html

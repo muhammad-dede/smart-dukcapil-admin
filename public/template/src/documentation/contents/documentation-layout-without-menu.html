@@ -1,0 +1,59 @@
+<!-- Layout Without Menu -->
+<div id="layout-without-menu-html" class="card">
+  <div class="card-header">
+    <h4 class="card-title">HTML Markup</h4>
+  </div>
+  <div class="card-body">
+    <p>
+      This section contains HTML Markup to create layout without menu. You need to add
+      <code>data-col="1-column"</code> attribute to <code>&lt;body&gt;</code> tag and also remove
+      <code>&lt;div&gt;</code> section with
+      <code>.main-menu menu-fixed.menu-light.menu-accordion.menu-shadow</code> classes. Default layout of the template
+      comes with menu but you can create without menu layout with below changes.
+    </p>
+    <p>
+      Vuexy has a ready to use starter kit, you can use this layout directly by using
+      <a
+        href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template-new/starter-kit/ltr/vertical-menu-template/layout-without-menu.html"
+        ><code>layout-without-menu.html</code></a
+      >.
+    </p>
+    <pre class="language-markup">
+<code class="language-markup">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  ...
+&lt;/head&gt;
+&lt;body class="vertical-layout vertical-menu-modern navbar-floating footer-static" data-menu="vertical-menu-modern" data-col="1-column"&gt;   &lt;!-- Add here --&gt;
+
+  &lt;!-- BEGIN: Navbar --&gt;
+  &lt;nav class="header-navbar navbar navbar-expand-lg align-items-center floating-nav navbar-light navbar-shadow"&gt;
+    ...
+  &lt;/nav&gt;
+  &lt;!-- END: Navbar --&gt;
+
+  &lt;!-- BEGIN: Content --&gt;
+  &lt;div class="app-content content"&gt;
+
+      &lt;!-- Content-wrapper --&gt;
+      &lt;div class="content-wrapper"&gt;
+        ...
+      &lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;!-- END: Content --&gt;
+
+  &lt;!-- Begin: Footer --&gt;
+  &lt;footer class="footer footer-static footer-light"&gt;
+    ...
+  &lt;/footer&gt;
+  &lt;!-- END: Footer --&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code>
+    </pre>
+  </div>
+</div>
+<!--/ Layout Without Menu -->

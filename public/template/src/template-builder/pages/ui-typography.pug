@@ -1,0 +1,23 @@
+//- =========================================================================================
+    File Name: ui-typography.pug
+    Description: Vuexy HTML admin includes simple and easily customized typography for headings, body text, lists,               and more. For even more control.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+
+extends template
+
+block pageVars
+    - var pageTitle    = "Typography"
+    - var pageSubTitle = "Simple & easily customized typography"
+    - var description  = "Vuexy HTML admin includes simple and easily customized typography for headings, body text, lists, and more. For even more control."
+    - var activeMenu   = "ui-typography"
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"UI"}, {name:"Typography"}])
+
+//- Include page content in page block
+append content
+    include ../contents/ui-typography.html

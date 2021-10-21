@@ -1,0 +1,23 @@
+//- =========================================================================================
+    File Name: form-switch.pug
+    Description: Form Fields checkboxes and radios.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================
+
+extends template
+
+block pageVars
+    - var pageTitle = "Switch"
+    - var pageSubTitle = "Turn checkboxes and radio buttons in switches"
+    - var description  = "Bootstrap switch and switchery are best switches with many options."
+    - var activeMenu = "form-switch"
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Form Elements"}, {name:"Switch"}])
+
+//- Include page content in page block
+append content
+    include ../contents/form-switch.html

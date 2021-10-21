@@ -1,0 +1,44 @@
+//- =========================================================================================
+    File Name: chart-chartjs.pug
+    Description: Chartjs examples.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+extends template
+
+block pageVars
+    - var pageTitle    = "Chartjs"
+    - var pageSubTitle = "chartjs"
+    - var description  = "A line chart or line graph is a type of chart which displays information as a series of data points called 'markers' connected by straight line segments."
+    - var activeMenu   = "chart-chartjs"
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Charts & Maps"}, {name:"Chartjs"}])
+
+//- Include page content in page block
+append content
+    include ../contents/chart-chartjs.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/pickers/flatpickr/flatpickr.min.css')
+
+append pagecss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/forms/pickers/form-flat-pickr.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+    script(src=app_assets_path+'/vendors/js/charts/chart.min.js')
+    script(src=app_assets_path+'/vendors/js/pickers/flatpickr/flatpickr.min.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+    script(src=app_assets_path+'/js/scripts/charts/chart-chartjs.js')

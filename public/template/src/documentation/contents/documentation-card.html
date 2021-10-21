@@ -1,0 +1,185 @@
+<!-- Card -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="cards" class="card-title">Card</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+        <li>
+          <a data-action="reload"><i data-feather="rotate-cw"></i></a>
+        </li>
+        <li>
+          <a data-action="close"><i data-feather="x"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <div class="card-text">
+        <p>
+          A card is a flexible and extensible content container. It includes options for headers and footers, a wide
+          variety of content, contextual background colors, and powerful display options. Cards require a small amount
+          of markup and classes to provide you with as much control as possible. These classes and markup are flexible
+          though and can typically be remixed and extended with ease.
+        </p>
+        <div class="alert alert-warning" role="alert">
+          <div class="alert-body">
+            <strong>For same heightened cards in a row, add <code>.match-height</code> class to row.</strong>
+          </div>
+        </div>
+        <p>
+          <strong
+            >If your card doesn't have any flush content like images, feel free to put the <code>.card-body</code> class
+            on the <code>.card</code> element to consolidate your markup.</strong
+          >
+        </p>
+      </div>
+      <h5 class="my-2">Card Structure</h5>
+      <pre class="language-HTML">
+<code class="language-HTML">
+&lt;div class="card"&gt;
+    &lt;div class="card-header"&gt;
+        &lt;h4 class="card-title"&gt;Special title treatment&lt;/h4&gt;
+        &lt;div class="heading-elements"&gt;
+            &lt;ul class="list-inline mb-0"&gt;
+                &lt;li&gt;&lt;a data-action="collapse"&gt;&lt;i data-feather="chevron-down"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a data-action="reload"&gt;&lt;i data-feather="rotate-cw"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a data-action="close"&gt;&lt;i data-feather="x"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="card-content collapse show" aria-expanded="true"&gt;
+        &lt;div class="card-body"&gt;
+            &lt;p class="card-text"&gt;With supporting text below as a natural lead-in to additional content.&lt;/p&gt;
+            &lt;a href="#" class="btn btn-primary"&gt;Go somewhere&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="card-footer"&gt;
+        &lt;span class="text-muted"&gt;Vuexy&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+
+      <h5 class="my-2">Content Types</h5>
+      <p>
+        Card supports a wide variety of content including images, texts, list groups, links, and more. Mix and match
+        multiple content types to create the card you need.
+      </p>
+      <p>Some card options with class name and details :</p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Card Options</th>
+              <th>Class</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Card image top</strong></td>
+              <td><code>.card-img-top</code></td>
+              <td>Places an image to the top of the card.</td>
+            </tr>
+            <tr>
+              <td><strong>Card Title</strong></td>
+              <td><code>.card-title</code></td>
+              <td>Card titles are used by adding this class to a heading tag such as h1, h2, h3, h4, h5 or h6.</td>
+            </tr>
+            <tr>
+              <td><strong>Card Subtitle</strong></td>
+              <td><code>.card-subtitle</code></td>
+              <td>
+                Subtitles are used by adding this class to a heading tag. If <code>.card-title</code> and
+                <code>.card-subtitle</code> are placed in <code>.card-body</code>, the card title and subtitle are
+                aligned nicely.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Card Header</strong></td>
+              <td><code>.card-header</code></td>
+              <td>Use this class to add header to the card.</td>
+            </tr>
+            <tr>
+              <td><strong>Card Body</strong></td>
+              <td><code>.card-body</code></td>
+              <td>Use this class to add body to the card with proper padding inside the card.</td>
+            </tr>
+            <tr>
+              <td><strong>Card Footer</strong></td>
+              <td><code>.card-footer</code></td>
+              <td>Use this class to add footer to the card.</td>
+            </tr>
+            <tr>
+              <td><strong>Gradient Cards</strong></td>
+              <td><code>.bg-gradient-{color}</code></td>
+              <td>
+                <p class="mb-0">Use this class to add gradient background color to the card.</p>
+                <p class="mb-0">color: {primary | secondary | success | danger | warning | info}</p>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Outline variants</strong></td>
+              <td><code>.border-{color}</code></td>
+              <td>
+                <p class="mb-0">Use this class to add any border color to a card.</p>
+                <p class="mb-0">color: {primary | secondary | success | danger | warning | info}</p>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Groups</strong></td>
+              <td><code>.card-group</code></td>
+              <td>Use this class to render cards as a single, attached element with equal width and height columns.</td>
+            </tr>
+            <tr>
+              <td><strong>Grid Cards</strong></td>
+              <td><code>.row-cols</code></td>
+              <td>
+                Use the Bootstrap grid system and its .row-cols classes to control how many grid columns (wrapped around
+                your cards) you show per row.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-1">
+        <strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong>
+      </p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Bootstrap Link</strong></td>
+              <td>
+                <a href="https://getbootstrap.com/docs/5.0/components/card/" target="_blank"
+                  >https://getbootstrap.com/docs/5.0/components/card/</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Card Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/card-basic.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/card-basic.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Card -->

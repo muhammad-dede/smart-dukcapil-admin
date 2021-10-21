@@ -1,0 +1,1250 @@
+<!-- Sweet Alerts -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="sweet-alerts" class="card-title">Sweet Alerts 2</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <p>
+        A beautiful, responsive, customizable, accessible (WAI-ARIA) replacement for Javascript's popup boxes.<br />Read
+        the official <a href="https://sweetalert2.github.io/" target="_blank">SweetAlert2 Documentation</a> for a full
+        list of instructions and other options.
+      </p>
+      <h6>1. Initialize the plugin by referencing the necessary files:</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;!-- Vendor files --&gt;
+&lt;script src="sweetalert2.all.min.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="sweetalert2.min.css"&gt;
+
+&lt;!-- Template files --&gt;
+&lt;link rel="stylesheet" type="text/css" href="app-assets/css/plugins/extensions/ext-component-sweet-alerts.css"&gt;
+</code>
+      </pre>
+      <h6>2. Call the sweetAlert-function after the page has loaded.</h6>
+      <p>Following is the code for basic 'Error' alert:</p>
+      <pre class="language-javascript my-1">
+<code class="language-javascript">
+Swal.fire({
+    icon: 'error',
+    title: 'Error!',
+    text: 'Do you want to continue?',
+    type: 'error',
+    confirmButtonText: 'Cool',
+    customClass: {
+      confirmButton: 'btn btn-primary'
+    },
+    buttonsStyling: false
+})
+</code>
+      </pre>
+      <p>
+        <strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong>
+      </p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Plugin Link</strong></td>
+              <td><a href="https://sweetalert2.github.io/" target="_blank">https://sweetalert2.github.io/</a></td>
+            </tr>
+            <tr>
+              <td><strong>Gitlab Link</strong></td>
+              <td>
+                <a href="https://github.com/sweetalert2/sweetalert2" target="_blank"
+                  >https://github.com/sweetalert2/sweetalert2</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/ext-component-sweet-alerts.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/ext-component-sweet-alerts.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Sweet Alerts -->
+
+<!-- Block UI -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="block-ui" class="card-title">Block UI</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <p>
+        The jQuery BlockUI Plugin lets you simulate synchronous behavior when using AJAX, without locking the browser.
+        When activated, it will prevent user activity with the page (or part of the page) until it is deactivated.
+        BlockUI adds elements to the DOM to give it both the appearance and behavior of blocking user interaction.<br />Read
+        the official <a href="http://jquery.malsup.com/block/" target="_blank">BlockUI Documentation</a> for a full list
+        of instructions and other options.
+      </p>
+      <h6>1. Binding to existing DOM element.</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;div id="section-block"&gt;...&lt;/div&gt;
+&lt;button id="btn-section-block" class="btn btn-primary"&gt;Block Section&lt;/button&gt;
+</code>
+      </pre>
+      <h6>2. Basic usage looks something like this:</h6>
+      <pre class="language-javascript my-1">
+<code class="language-javascript">
+$('#btn-section-block').on('click', function () {
+    $('#section-block').block({
+        message: '&lt;div class="spinner-border text-white" role="status"&gt;&lt;/div&gt;',
+        timeout: 1000,
+        css: {
+            backgroundColor: 'transparent',
+            border: '0'
+        },
+        overlayCSS: {
+            opacity: 0.5
+        }
+    });
+});
+</code>
+      </pre>
+      <p>
+        <strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong>
+      </p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Plugin Link</strong></td>
+              <td>
+                <a href="http://jquery.malsup.com/block/" target="_blank">http://jquery.malsup.com/block/</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/ext-component-blockui.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/ext-component-blockui.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Block UI -->
+
+<!-- Toastr -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="toastr" class="card-title">Toastr</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <p>
+        toastr is a Javascript library for non-blocking notifications.<br />Read the official
+        <a href="https://github.com/CodeSeven/toastr" target="_blank">Toastr Documentation</a> for a full list of
+        instructions and other options.
+      </p>
+      <h6>1. Initialize the plugin by referencing the necessary files:</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;!-- Vendor files --&gt;
+&lt;script src="toastr.min.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="toastr.min.css"&gt;
+
+&lt;!-- Template files --&gt;
+&lt;link rel="stylesheet" type="text/css" href="app-assets/css/plugins/extensions/ext-component-toastr.css"&gt;
+</code>
+      </pre>
+      <h6>2. Binding to existing DOM element.</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;button id="type-success" class="btn btn-success"&gt;Success&lt;/button&gt;
+</code>
+      </pre>
+      <h6>3. Basic usage looks something like this:</h6>
+      <pre class="language-javascript my-1">
+<code class="language-javascript">
+$('#type-success').on('click', function () {
+    toastr.success('👋 Jelly-o macaroon brownie tart ice cream croissant jelly-o apple pie.', 'Success!', {
+        closeButton: true,
+        tapToDismiss: false
+    });
+});
+
+// OR
+$('#type-success').on('click', function () {
+    toastr['success']('👋 Jelly-o macaroon brownie tart ice cream croissant jelly-o apple pie.', 'Success!', {
+        closeButton: true,
+        tapToDismiss: false
+    });
+});
+</code>
+      </pre>
+      <h5 class="mt-3">Change Toastr icon using CSS:</h5>
+      <p>Here is an example of Toastr with success variant.</p>
+      <pre class="language-css my-1">
+<code class="language-css">
+// For Toastr icon
+.toast-success:after {
+  background-image: url(data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E);
+}
+
+// For Toastr icon color
+.toast-success:before {
+  background-color: #28c76f;
+}
+</code>
+      </pre>
+      <p>You can change any Toastr icon using above method in the following file: <code>assets/css/style.css</code>.</p>
+      <h5 class="mt-3">Change Toastr icon using SCSS:</h5>
+      <p>Here is an example of Toastr with success variant.</p>
+      <pre class="language-css my-1">
+<code class="language-css">
+// For Toastr icon
+.toast-success:after {
+  background-image: url(str-replace(str-replace($check, 'currentColor', $white), '#', '%23'));
+}
+
+// For Toastr icon color
+.toast-success:before {
+  background-color: $success;
+}
+</code>
+      </pre>
+      <div class="table-responsive mb-1">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Toastr variant</th>
+              <th>Variable name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>.toast-success</code></td>
+              <td><code>$check</code></td>
+            </tr>
+            <tr>
+              <td><code>.toast-error</code></td>
+              <td><code>$remove</code></td>
+            </tr>
+            <tr>
+              <td><code>.toast-warning</code></td>
+              <td><code>$warningIcon</code></td>
+            </tr>
+            <tr>
+              <td><code>.toast-info</code></td>
+              <td><code>$infoIcon</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        You can change any Toastr icon using above method in the following file:
+        <code>assets/scss/variables/_variables.scss</code>.
+      </p>
+      <p class="mt-3">
+        <strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong>
+      </p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Plugin Link</strong></td>
+              <td>
+                <a href="https://codeseven.github.io/toastr/" target="_blank">https://codeseven.github.io/toastr/</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Gitlab Link</strong></td>
+              <td>
+                <a href="https://github.com/CodeSeven/toastr" target="_blank">https://github.com/CodeSeven/toastr</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/ext-component-toastr.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/ext-component-toastr.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Toastr -->
+
+<!-- NoUI Slider -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="noui-slider" class="card-title">NoUI Slider</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <p>
+        noUiSlider is a lightweight range slider with multi-touch support and a ton of features. It supports non-linear
+        ranges, requires no external dependencies, has keyboard support, and it works great in responsive designs.<br />Read
+        the official <a href="https://refreshless.com/nouislider/" target="_blank">noUiSlider Documentation</a> for a
+        full list of instructions and other options.
+      </p>
+      <h6>1. Initialize the plugin by referencing the necessary files:</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;!-- Vendor files --&gt;
+&lt;script src="wNumb.min.js"&gt;&lt;/script&gt;
+&lt;script src="nouislider.min.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="nouislider.min.css"&gt;
+
+&lt;!-- Template files --&gt;
+&lt;link rel="stylesheet" type="text/css" href="app-assets/css/plugins/extensions/ext-component-sliders.css"&gt;
+&lt;link rel="stylesheet" type="text/css" href="app-assets/css/core/colors/palette-noui.css"&gt;
+</code>
+      </pre>
+      <h6>2. Binding to existing DOM element.</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;div id="slider"&gt;&lt;/div&gt;
+</code>
+      </pre>
+      <h6>3. Basic usage looks something like this:</h6>
+      <pre class="language-javascript my-1">
+<code class="language-javascript">
+var slider = document.getElementById('slider');
+// RTL Support
+var direction = 'ltr';
+if ($('html').data('textdirection') == 'rtl') {
+  direction = 'rtl';
+}
+
+noUiSlider.create(slider, {
+    start: [20, 80],
+    connect: true,
+    direction: direction, // RTL Support
+    range: {
+        'min': 0,
+        'max': 100
+    }
+});
+</code>
+      </pre>
+      <p>
+        <strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong>
+      </p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Plugin Link</strong></td>
+              <td>
+                <a href="https://refreshless.com/nouislider/" target="_blank">https://refreshless.com/nouislider/</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Gitlab Link</strong></td>
+              <td>
+                <a href="https://github.com/leongersen/noUiSlider" target="_blank"
+                  >https://github.com/leongersen/noUiSlider</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/ext-component-sliders.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/ext-component-sliders.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ NoUI Slider -->
+
+<!-- Drag and drop -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="drag-and-drop" class="card-title">Drag And Drop</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show">
+    <div class="card-body">
+      <p>
+        Drag and Drop allows the user to drag an element from a container and drop it in the same or any other
+        container. If the element is dropped anywhere that's not one of the containers, the event will be cancelled.<br />Read
+        the official <a href="https://bevacqua.github.io/dragula/" target="_blank">Drag and Drop Documentation</a> for a
+        full list of instructions and other options.
+      </p>
+      <h6>1. Initialize the plugin by referencing the necessary files:</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;!-- Vendor files --&gt;
+&lt;script src="dragula.min.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="dragula.min.css"&gt;
+
+&lt;!-- Template files --&gt;
+&lt;link rel="stylesheet" type="text/css" href="app-assets/css/plugins/extensions/ext-component-drag-drop.css"&gt;
+</code>
+      </pre>
+      <h6>2. Following is the example to drag & drop from one container to same or another container.</h6>
+      <pre class="language-javascript my-1">
+<code class="language-javascript">
+dragula([document.getElementById(left), document.getElementById(right)]);
+</code>
+      </pre>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Plugin Link</strong></td>
+              <td>
+                <a href="https://bevacqua.github.io/dragula/" target="_blank">https://bevacqua.github.io/dragula/</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Gitlab Link</strong></td>
+              <td>
+                <a href="https://github.com/bevacqua/dragula" target="_blank">https://github.com/bevacqua/dragula</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/ext-component-drag-drop.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/ext-component-drag-drop.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Drag and drop -->
+
+<!-- Tour -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="tour" class="card-title">Shepherd Tour</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show">
+    <div class="card-body">
+      <p>
+        Guide your users through a tour of your app.<br />Read the official
+        <a href="https://shepherdjs.dev/" target="_blank">Shepherd Tour Documentation</a> for a full list of
+        instructions and other options.
+      </p>
+      <p><strong>Note: Shepherd Tour does not support Internet Explorer.</strong></p>
+      <h6>1. Initialize the plugin by referencing the necessary files:</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;!-- Vendor files --&gt;
+&lt;script src="shepherd.min.js"&gt;&lt;/script&gt;
+&lt;script src="tether.min.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="shepherd.min.css"&gt;
+&lt;link rel="stylesheet" type="text/css" href="tether.min.css"&gt;
+&lt;link rel="stylesheet" type="text/css" href="tether-theme-arrows.css"&gt;
+
+&lt;!-- Template files --&gt;
+&lt;link rel="stylesheet" type="text/css" href="app-assets/css/plugins/extensions/ext-component-tour.css"&gt;
+</code>
+      </pre>
+      <h6>2. Binding to existing DOM element.</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;button id="tour" class="btn btn-primary"&gt;Start Tour&lt;/button&gt;
+</code>
+      </pre>
+      <h6>3. Basic usage looks something like this:</h6>
+      <pre class="language-javascript my-1">
+<code class="language-javascript">
+function setupTour(tour) {
+  tour.addStep({
+    title: 'Example Shepherd',
+    text: 'Creating a Shepherd is easy too! Just create ...',
+    attachTo: { element: '.hero-example', on: 'bottom'},
+    buttons: [
+      {
+        action: tour.cancel,
+        classes: 'btn btn-sm btn-outline-primary',
+        text: 'Skip'
+      },
+      {
+        action: tour.next,
+        classes: 'btn btn-sm btn-primary btn-next',
+        text: 'Next'
+      }
+    ]
+  });
+  return tour;
+}
+
+$('#tour').on('click', function () {
+  var tourVar = new Shepherd.Tour({
+    defaultStepOptions: {
+      classes: 'shadow-md bg-purple-dark',
+      scrollTo: false,
+      cancelIcon: {
+        enabled: true
+      }
+    },
+    useModalOverlay: true
+  });
+  setupTour(tourVar).start();
+});
+</code>
+      </pre>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Plugin Link</strong></td>
+              <td>
+                <a href="https://shepherdjs.dev/" target="_blank">https://shepherdjs.dev/</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Gitlab Link</strong></td>
+              <td>
+                <a href="https://github.com/shipshapecode/shepherd" target="_blank"
+                  >https://github.com/shipshapecode/shepherd</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/ext-component-tour.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/ext-component-tour.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Tour -->
+
+<!-- Clipboard -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="clipboard" class="card-title">Clipboard</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show">
+    <div class="card-body">
+      <div class="alert alert-primary" role="alert">
+        <h4 class="alert-heading">Info</h4>
+        <div class="alert-body">Clipboard is an extension created by PIXINVENT.</div>
+      </div>
+      <p>Use below code to initialize clipboard.</p>
+      <h6>1. Binding to existing DOM element.</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;copy-to-clipboard-input&quot; value=&quot;Copy Me!&quot;&gt;
+&lt;button class=&quot;btn btn-primary&quot; id=&quot;btn-copy&quot;&gt;Copy!&lt;/button&gt;
+</code>
+      </pre>
+      <h6>2. Basic usage looks something like this:</h6>
+      <pre class="language-javascript my-1">
+<code class="language-javascript">
+var userText = $("#copy-to-clipboard-input");
+var btnCopy = $("#btn-copy");
+
+// copy text on click
+btnCopy.on("click", function () {
+  userText.select();
+  document.execCommand("copy");
+})
+</code>
+      </pre>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/ext-component-clipboard.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/ext-component-clipboard.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Clipboard -->
+
+<!-- Media Player -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="media-player" class="card-title">Media Player</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show">
+    <div class="card-body">
+      <p>
+        Plyr is a simple, lightweight, accessible and customizable HTML5, YouTube and Vimeo media player that supports
+        modern browsers.<br />Read the official <a href="https://plyr.io/" target="_blank">Plyr Documentation</a> for a
+        full list of instructions and other options.
+      </p>
+      <h6>1. Initialize the plugin by referencing the necessary files:</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;!-- Vendor files --&gt;
+&lt;script src='plyr.min.js'&gt;&lt;/script&gt;
+&lt;script src='plyr.polyfilled.min.js'&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="plyr.min.css"&gt;
+
+&lt;!-- Template files --&gt;
+&lt;link rel="stylesheet" type="text/css" href="app-assets/css/plugins/extensions/ext-component-media-player.css"&gt;
+</code>
+      </pre>
+      <h6>2. Binding to existing DOM element.</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;div id="video-player"&gt;
+  &lt;iframe
+    src="https://www.youtube.com/embed/bTqVqk7FSmY?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+    allowfullscreen
+    allowtransparency
+    allow="autoplay"
+  &gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;audio id="audio-player" controls&gt;
+  &lt;source
+    src="https://cdn.plyr.io/static/demo/Kishi_Bashi_-_It_All_Began_With_a_Burst.mp3"
+    type="audio/mp3"
+  /&gt;
+  &lt;source
+    src="https://cdn.plyr.io/static/demo/Kishi_Bashi_-_It_All_Began_With_a_Burst.ogg"
+    type="audio/ogg"
+  /&gt;
+&lt;/audio&gt;
+</code>
+      </pre>
+      <h6>3. Basic usage looks something like this:</h6>
+      <pre class="language-javascript my-1">
+<code class="language-javascript">
+var player = new Plyr('#video-player');
+var player1 = new Plyr('#audio-player');
+</code>
+      </pre>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Plugin Link</strong></td>
+              <td><a href="https://plyr.io/" target="_blank">https://plyr.io/</a></td>
+            </tr>
+            <tr>
+              <td><strong>Gitlab Link</strong></td>
+              <td><a href="https://github.com/sampotts/plyr" target="_blank">https://github.com/sampotts/plyr</a></td>
+            </tr>
+            <tr>
+              <td><strong>Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/ext-component-media-player.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/ext-component-media-player.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Media Player -->
+
+<!-- Context Menu -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="context-menu" class="card-title">Context Menu</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show">
+    <div class="card-body">
+      <p>
+        Context Menu can provide a simple list of clickable commands, or offer an in-menu form. This makes very simple
+        attribute modification possible.<br />Read the official
+        <a href="https://swisnl.github.io/jQuery-contextMenu/" target="_blank">Context Menu Documentation</a> for a full
+        list of instructions and other options.
+      </p>
+      <p>
+        <strong>Note:</strong> The toasts appearing on click of menu items are manually configured using third party
+        plugin <strong>Toastr</strong> mentioned above.
+      </p>
+      <h6>1. Initialize the plugin by referencing the necessary files:</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;!-- Vendor files --&gt;
+&lt;script src='jquery.contextMenu.min.js'&gt;&lt;/script&gt;
+&lt;script src='jquery.ui.position.min.js'&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="jquery.contextMenu.min.css"&gt;
+
+&lt;!-- Template files --&gt;
+&lt;link rel="stylesheet" type="text/css" href="app-assets/css/plugins/extensions/ext-component-context-menu.css"&gt;
+</code>
+        </pre>
+      <h6>2. Binding to existing DOM element.</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;button class=&quot;btn btn-primary&quot; id=&quot;basic-context-menu&quot;&gt;Right Click On Me&lt;/button&gt;
+</code>
+      </pre>
+      <h6>3. Basic usage looks something like this:</h6>
+      <pre class="language-javascript my-1">
+<code class="language-javascript">
+$.contextMenu({
+  selector: "#basic-context-menu",
+  callback: function (key, options) {
+    var r = "clicked " + key;
+    (window.console && console.log(r)) || alert(r)
+  },
+  items: {
+    "Option 1": { name: "Option 1" },
+    "Option 2": { name: "Option 2" },
+  }
+})
+</code>
+      </pre>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Plugin Link</strong></td>
+              <td>
+                <a href="https://swisnl.github.io/jQuery-contextMenu/" target="_blank"
+                  >https://swisnl.github.io/jQuery-contextMenu/</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Gitlab Link</strong></td>
+              <td>
+                <a href="https://github.com/swisnl/jQuery-contextMenu" target="_blank"
+                  >https://github.com/swisnl/jQuery-contextMenu</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/ext-component-context-menu.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/ext-component-context-menu.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Context Menu -->
+
+<!-- Swiper -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="swiper" class="card-title">Swiper</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show">
+    <div class="card-body">
+      <p>
+        Swiper is the most modern free mobile touch slider with hardware accelerated transitions and amazing native
+        behavior. It is intended to be used in mobile websites, mobile web apps, and mobile native/hybrid apps.<br />Read
+        the official <a href="https://swiperjs.com/" target="_blank">Swiper Documentation</a> for a full list of
+        instructions and other options.
+      </p>
+      <p><strong>Swiper is not compatible with all platforms.</strong></p>
+      <h6>1. Initialize the plugin by referencing the necessary files:</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+  &lt;!-- Vendor files --&gt;
+  &lt;script src='swiper.min.js'&gt;&lt;/script&gt;
+  &lt;link rel="stylesheet" type="text/css" href="swiper.min.css"&gt;
+
+  &lt;!-- Template files --&gt;
+  &lt;link rel="stylesheet" type="text/css" href="app-assets/css/plugins/extensions/ext-component-swiper.css"&gt;
+</code>
+      </pre>
+      <h6>2. Binding to existing DOM element.</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;div class="swiper-default swiper-container"&gt;
+    &lt;div class="swiper-wrapper"&gt;
+        &lt;div class="swiper-slide"&gt;Slider 1 data &lt;/div&gt;
+        &lt;div class="swiper-slide"&gt;Slider 2 data &lt;/div&gt;
+        &lt;div class="swiper-slide"&gt;Slider 3 data &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code>
+      </pre>
+      <h6>3. Initialization</h6>
+      <pre class="language-javascript my-1">
+<code class="language-javascript">
+var mySwiper = new Swiper('.swiper-default');
+</code>
+      </pre>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Plugin Link</strong></td>
+              <td><a href="https://swiperjs.com/" target="_blank">https://swiperjs.com/</a></td>
+            </tr>
+            <tr>
+              <td><strong>Gitlab Link</strong></td>
+              <td>
+                <a href="https://github.com/nolimits4web/swiper" target="_blank"
+                  >https://github.com/nolimits4web/swiper</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/frest-clean-bootstrap-admin-dashboard-template/html/ltr/vertical-menu-template/ext-component-swiper.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/frest-clean-bootstrap-admin-dashboard-template/html/ltr/vertical-menu-template/ext-component-swiper.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Swiper -->
+
+<!-- Tree -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="tree" class="card-title">Tree</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <p>
+        jsTree is jquery plugin, that provides interactive trees. jsTree is easily extendable, themeable and
+        configurable, it supports HTML & JSON data sources and AJAX loading.<br />Read the official
+        <a href="https://www.jstree.com/" target="_blank">jsTree Documentation</a> for a full list of instructions and
+        other options.
+      </p>
+      <h6>1. Initialize the plugin by referencing the necessary files:</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;!-- Vendor files --&gt;
+&lt;script src="jstree.min.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="jstree.min.css"&gt;
+
+&lt;!-- Template files --&gt;
+&lt;link rel="stylesheet" type="text/css" href="app-assets/css/plugins/extensions/ext-component-tree.css"&gt;
+</code>
+      </pre>
+      <h6>2. Binding to existing DOM element.</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;div id="jstree-basic"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      css
+      &lt;ul&gt;
+        &lt;li&gt;app.css&lt;/li&gt;
+        &lt;li&gt;style.css&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li class="jstree-open"&gt;
+      img
+      &lt;ul&gt;
+        &lt;li&gt;logo.jpg&lt;/li&gt;
+        &lt;li&gt;avatar.png&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;index.html&lt;/li&gt;
+    &lt;li&gt;page.html&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code>
+      </pre>
+      <h6>3. Basic usage looks something like this:</h6>
+      <pre class="language-javascript my-1">
+<code class="language-javascript">
+$('#jstree-basic').jstree();
+</code>
+      </pre>
+      <p>
+        <strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong>
+      </p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Plugin Link</strong></td>
+              <td>
+                <a href="https://www.jstree.com/" target="_blank">https://www.jstree.com/</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Gitlab Link</strong></td>
+              <td><a href="https://github.com/vakata/jstree" target="_blank">https://github.com/vakata/jstree</a></td>
+            </tr>
+            <tr>
+              <td><strong>Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/ext-component-tree.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/ext-component-tree.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Tree -->
+
+<!-- Ratings -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="ratings" class="card-title">Ratings</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <p>
+        RateYo is a tiny and flexible jQuery star rating plugin that uses SVG to render rating, so no images are
+        required.<br />Read the official
+        <a href="https://rateyo.fundoocode.ninja/" target="_blank">RateYo Documentation</a> for a full list of
+        instructions and other options.
+      </p>
+      <h6>1. Initialize the plugin by referencing the necessary files:</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;!-- Vendor files --&gt;
+&lt;script src="jquery.rateyo.min.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="jquery.rateyo.min.css"&gt;
+
+&lt;!-- Template files --&gt;
+&lt;link rel="stylesheet" type="text/css" href="app-assets/css/plugins/extensions/ext-component-ratings.css"&gt;
+</code>
+      </pre>
+      <h6>2. Binding to existing DOM element.</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;div id="basic-ratings"&gt;&lt;/div&gt;
+</code>
+      </pre>
+      <h6>3. Basic usage looks something like this:</h6>
+      <pre class="language-javascript my-1">
+<code class="language-javascript">
+var isRtl = $('html').attr('data-textdirection') === 'rtl' // RTL support
+$('#basic-ratings').rateYo({
+  rating: 3.6,
+  rtl: isRtl // RTL support
+});
+</code>
+      </pre>
+      <p>
+        <strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong>
+      </p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Plugin Link</strong></td>
+              <td>
+                <a href="https://rateyo.fundoocode.ninja/" target="_blank">https://rateyo.fundoocode.ninja/</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Gitlab Link</strong></td>
+              <td><a href="https://github.com/prrashi/rateYo" target="_blank">https://github.com/prrashi/rateYo</a></td>
+            </tr>
+            <tr>
+              <td><strong>Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/ext-component-ratings.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/ext-component-ratings.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Ratings -->
+
+<!-- i18n -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="i18n" class="card-title">Internationalization</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show">
+    <div class="card-body">
+      <p>
+        18next goes beyond just providing the standard i18n features such as (plurals, context, interpolation, format).
+        It provides you with a complete solution to localize your product from web to mobile and desktop.<br />Read the
+        official <a href="https://www.i18next.com/" target="_blank">i18next Documentation</a> for a full list of
+        instructions and other options.
+      </p>
+      <h6>Basic usage looks something like this:</h6>
+      <pre class="language-javascript my-1">
+<code class="language-javascript">
+i18next.init({
+  lng: 'en',
+  debug: true,
+  resources: {
+    en: {
+      translation: {
+        "key": "hello world"
+      }
+    }
+  }
+}, function(err, t) {
+  // initialized and ready to go!
+  document.getElementById('output').innerHTML = i18next.t('key');
+});
+</code>
+      </pre>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Plugin Link</strong></td>
+              <td><a href="https://www.i18next.com/" target="_blank">https://www.i18next.com/</a></td>
+            </tr>
+            <tr>
+              <td><strong>Gitlab Link</strong></td>
+              <td>
+                <a href="https://github.com/i18next/i18next-gitbook" target="_blank"
+                  >https://github.com/i18next/i18next-gitbook</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/ext-component-i18n.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/ext-component-i18n.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ i18n -->

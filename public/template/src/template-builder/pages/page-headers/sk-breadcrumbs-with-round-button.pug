@@ -1,0 +1,24 @@
+.content-header-left.col-md-9.col-12.mb-2
+  .row.breadcrumbs-top
+    .col-12
+      h2.content-header-title.float-start.mb-0 #{pageTitle}
+      block breadcrumbs
+        +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Page headers"}, {name:"Breadcrumbs with round button"}])
+.content-header-right.text-md-end.col-md-3.col-12.d-md-block.d-none
+  .mb-1.breadcrumb-right
+    .dropdown
+      button.btn-icon.btn.btn-primary.btn-round.btn-sm.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+        i(data-feather="grid")
+      .dropdown-menu.dropdown-menu-end
+        a.dropdown-item(href='#')
+          i.me-1(data-feather="check-square")
+          span.align-middle Todo
+        a.dropdown-item(href='#')
+          i.me-1(data-feather="message-square")
+          span.align-middle Chat
+        a.dropdown-item(href='#')
+          i.me-1(data-feather="mail")
+          span.align-middle Email
+        a.dropdown-item(href='#')
+          i.me-1(data-feather="calendar")
+          span.align-middle Calendar

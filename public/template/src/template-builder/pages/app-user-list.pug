@@ -1,0 +1,56 @@
+//- =========================================================================================
+    File Name: app-user-list.pug
+    Description: Users list page with users record.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+
+extends template
+
+block pageVars
+    - var pageTitle    = "User List"
+    - var pageSubTitle = "User List"
+    - var description  = "User list page with users record"
+    - var activeMenu   = "app-user-list"
+
+block page-header
+
+//- Include chat content in page block
+append content
+    include ../contents/app-user-list.html
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/forms/form-validation.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/pages/app-user.css')
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/tables/datatable/dataTables.bootstrap5.min.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/tables/datatable/responsive.bootstrap4.min.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/tables/datatable/buttons.bootstrap5.min.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+    script(src=app_assets_path+'/vendors/js/tables/datatable/jquery.dataTables.min.js')
+    script(src=app_assets_path+'/vendors/js/tables/datatable/dataTables.bootstrap5.min.js')
+    script(src=app_assets_path+'/vendors/js/tables/datatable/dataTables.responsive.min.js')
+    script(src=app_assets_path+'/vendors/js/tables/datatable/responsive.bootstrap4.js')
+    script(src=app_assets_path+'/vendors/js/tables/datatable/responsive.bootstrap4.js')
+    script(src=app_assets_path+'/vendors/js/tables/datatable/datatables.buttons.min.js')
+    script(src=app_assets_path+'/vendors/js/tables/datatable/buttons.bootstrap5.min.js')
+    script(src=app_assets_path+'/vendors/js/forms/validation/jquery.validate.min.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+    script(src=app_assets_path+'/js/scripts/pages/app-user-list.js')

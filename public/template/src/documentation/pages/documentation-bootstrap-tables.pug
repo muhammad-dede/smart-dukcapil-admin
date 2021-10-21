@@ -1,0 +1,25 @@
+//- =========================================================================================
+    File Name: documentation-bootstrap-tables.pug
+    Description: Bootstrap tables Documentation page
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+
+extends template
+
+block pageVars
+    - var pageTitle    = "Tables"
+    - var activeMenu   = "bootstrap-tables"
+
+
+
+append breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"}, {name:"Tables"}, {name:"Bootstrap"}])
+
+
+
+//- Include page content in content block
+append content
+    include ../contents/documentation-bootstrap-tables.html

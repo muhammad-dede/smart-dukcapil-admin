@@ -1,0 +1,116 @@
+<!-- Javascript Usage -->
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">JavaScript Folder Structure</h4>
+  </div>
+  <div class="card-body">
+    <p class="card-text">
+      Vuexy admin manages all JS files in <code>src/js/</code> folder. Gulp task <code>gulp dist-js</code> clean js
+      folder from <code>app-assets/</code>, copy js files from src folder and minify them.
+    </p>
+    <div class="alert alert-warning" role="alert">
+      <h4 class="alert-heading">Heads Up!</h4>
+      <div class="alert-body">
+        It is not recommended to change any JS files inside <code>src/js/</code> folder to avoid future update
+        conflicts. If you still modify the file, it may require to merge it manually with future updates.
+      </div>
+    </div>
+
+    <hr />
+    <pre class="my-1">
+<code class="language-treeview">
+vuexy-html-bootstrap-admin-template/
+├── src/
+|   ├── js/
+|   |   ├── core/
+|   |   |   ├── app-menu.js
+|   |   |   └── app.js
+|   |   ├── scripts/
+</code>
+    </pre>
+
+    <p>Following is the details of what all js folders.</p>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Folder</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>core</td>
+            <td>
+              Folder contains core libraries and core JS files of vuexy admin template i.e
+              <code>app.js</code> file for common app related JS and <code>app-menu.js</code> file for menu JS.
+            </td>
+          </tr>
+          <tr>
+            <td>scripts</td>
+            <td>Folder contains all js files that are used to initialize plugins.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="alert alert-success my-1" role="alert">
+      <h4 class="alert-heading">Tip</h4>
+      <div class="alert-body">
+        File <code>app.js</code> contains JS color objects which are used in Charts & Maps. You can change them to
+        customize the chart color.
+      </div>
+    </div>
+
+    <pre class="language-markup">
+<code class="language-javascript">
+window.colors = {
+solid: {
+  primary: '#7367F0',
+  secondary: '#82868b',
+  success: '#28C76F',
+  info: '#00cfe8',
+  warning: '#FF9F43',
+  danger: '#EA5455',
+  dark: '#4b4b4b',
+  black: '#000',
+  white: '#fff',
+  body: '#f8f8f8'
+},
+light: {
+  primary: '#7367F01a',
+  secondary: '#82868b1a',
+  success: '#28C76F1a',
+  info: '#00cfe81a',
+  warning: '#FF9F431a',
+  danger: '#EA54551a',
+  dark: '#4b4b4b1a'
+}
+};
+</code>
+    </pre>
+
+    <h4 class="mt-3">JS files structure for <code>assets/</code> folder.</h4>
+    <p>Write your custom JS inside <code>assets/js/scripts.js</code> file.</p>
+    <div class="alert alert-success" role="alert">
+      <h4 class="alert-heading">Tip</h4>
+      <div class="alert-body">
+        It is recommended to use this folder to write your scss, css, js. You can also add new assets to this folder i.e
+        images, libs, etc...
+      </div>
+    </div>
+
+    <pre>
+<code class="language-treeview">
+vuexy-html-bootstrap-admin-template/
+├── assets/
+|   ├── js/
+|   |   ├── scripts.js
+</code>
+    </pre>
+
+    <p class="mb-0">
+      You can add your new JS files or folder in <code>assets/</code> folder to avoid any future conflicts or merge.
+    </p>
+  </div>
+</div>
+<!--/ Javascript Usage -->

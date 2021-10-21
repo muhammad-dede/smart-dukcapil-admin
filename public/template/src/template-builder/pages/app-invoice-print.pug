@@ -1,0 +1,37 @@
+//- =========================================================================================
+  File Name: app-invoice-print.pug
+  Description: Invoice Preview Application
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: PIXINVENT
+  Author URL: http://www.themeforest.net/user/pixinvent
+  ==========================================================================================-//
+
+extends template
+
+block pageVars
+  - var pageTitle   = "Invoice Print"
+  - var pageSubTitle = "Invoice Print"
+  - var description  = "Invoice Print"
+  - var isContainer  = false
+
+append pageConfig
+    - var contentLayout = 'blank-page'
+    - var navbarFixed = false //- OPTIONS:- true, false
+
+
+//- Include file manager content
+append content
+  include ../contents/app-invoice-print.html
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+  link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/app-invoice-print.css')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+  script(src=app_assets_path+'/js/scripts/pages/app-invoice-print.js')

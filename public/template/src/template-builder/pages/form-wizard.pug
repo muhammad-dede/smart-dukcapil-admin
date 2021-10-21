@@ -1,0 +1,38 @@
+//- =========================================================================================
+    File Name: form-wizard.pug
+    Description: Form wizard circle style steps examples.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================-//
+extends template
+
+block pageVars
+    - var pageTitle    = "Form Wizard"
+    - var pageSubTitle = "Form Wizard"
+    - var description = "Add .wizard-circle class to form tag to apply circle style wizard steps. This is the default style with circle wizard steps. There are two styles to display wizard tabs horizontal and vertical. You can display numbers or icons as wizard steps. You can also validate form fields on each wizard step."
+    - var activeMenu   = "form-wizard"
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Forms"}, {name:"Form Wizard"}])
+
+//- Include page content in page block
+append content
+    include ../contents/form-wizard.html
+
+append vendorcss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/forms/wizard/bs-stepper.min.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/vendors/css/forms/select/select2.min.css')
+
+append vendorjs
+    script(src=app_assets_path+'/vendors/js/forms/wizard/bs-stepper.min.js')
+    script(src=app_assets_path+'/vendors/js/forms/select/select2.full.min.js')
+    script(src=app_assets_path+'/vendors/js/forms/validation/jquery.validate.min.js')
+
+append pagecss
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/forms/form-validation.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/plugins/forms/form-wizard.css')
+
+append pagejs
+    script(src=app_assets_path+'/js/scripts/forms/form-wizard.js')

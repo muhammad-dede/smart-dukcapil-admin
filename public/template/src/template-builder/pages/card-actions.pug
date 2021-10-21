@@ -1,0 +1,23 @@
+//- =========================================================================================
+    File Name: card-actions.pug
+    Description: All cards have actions like minimize, refresh, expand, close/cancel.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================
+
+extends template
+
+block pageVars
+    - var pageTitle    = "Card Actions"
+    - var pageSubTitle = "Card Actions Options"
+    - var description  = "All cards have actions like minimize, refresh, expand, close/cancel for each card in card header."
+    - var activeMenu   = "card-actions"
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"}, {name:"Card Actions"}])
+
+//- Include page content in page block
+append content
+    include ../contents/card-actions.html

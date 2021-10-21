@@ -1,0 +1,31 @@
+//- =========================================================================
+    File Name: component-pagination.pug
+    Description: Provide pagination links for your site or app with the multi-page pagination component.
+    --------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================
+
+extends template
+
+block pageVars
+    - var pageTitle   = "Pagination"
+    - var pageSubTitle = "The sequence of numbers assigned to pages"
+    - var description = "Provide pagination links for your site or app with the multi-page pagination component."
+    - var activeMenu  = "component-pagination"
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Components"}, {name:"Pagination"}])
+
+//- Include page content in page block
+append content
+    include ../contents/component-pagination.html
+
+append vendorjs
+    //- Template JS for pagination
+    script(src=app_assets_path+'/vendors/js/pagination/jquery.bootpag.min.js')
+    script(src=app_assets_path+'/vendors/js/pagination/jquery.twbsPagination.min.js')
+
+append pagejs
+    script(src=app_assets_path+'/js/scripts/pagination/components-pagination.js')

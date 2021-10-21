@@ -1,0 +1,26 @@
+//- =========================================================================================
+  File Name: layout-blank.pug
+  Description: Blank page layout
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: PIXINVENT
+  Author URL: http://www.themeforest.net/user/pixinvent
+  ==========================================================================================-//
+
+extends template
+
+
+block pageVars
+  - var pageTitle    = "Layout blank"
+  - var pageSubTitle = "blank"
+  - var description  = "Blank page layout"
+  - var activeMenu   = "layout-blank"
+  - var isContainer  = false
+
+append pageConfig
+    - var contentLayout = 'blank-page'
+    - var navbarFixed = false
+
+//- Include page content in page block
+append content
+  include ../contents/layout-blank.html

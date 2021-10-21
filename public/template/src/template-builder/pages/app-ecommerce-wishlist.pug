@@ -1,0 +1,48 @@
+//- =========================================================================================
+    File Name: app-ecommerce-wishlist.pud
+    Description: wishlist of products
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+    ==========================================================================================
+
+extends template
+
+block pageVars
+    - var pageTitle   = "WishList"
+    - var pageSubTitle = "Wishlist"
+    - var description = "Wishlist"
+    - var activeMenu  = "app-ecommerce-wishlist"
+append pageConfig
+    - var pageClass = 'ecommerce-application'
+
+block breadcrumbs
+    +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"eCommerce"}, {name:"Wish List"}])
+
+//- Include page content in page block
+append content
+    include ../contents/app-ecommerce-wishlist.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+    link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/extensions/toastr.min.css')
+
+
+append pagecss
+    link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/app-ecommerce.css')
+    link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/plugins/extensions/ext-component-toastr.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+    script(src=app_assets_path + '/vendors/js/extensions/toastr.min.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+    script(src=app_assets_path + '/js/scripts/pages/app-ecommerce-wishlist.js')

@@ -1,0 +1,1223 @@
+<!-- Input -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="inputs" class="card-title">Input</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <p>
+        Bootstrap’s form controls expand on Rebooted form styles with classes. Use these classes to opt into their
+        customized displays for a more consistent rendering across browsers and devices.
+      </p>
+      <p>Use different types of class with <code>.form-control</code> class which contains input field.</p>
+      <p>Find input style options below:</p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Options</th>
+              <th>Class</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Rounded Input</strong></td>
+              <td><code>.round</code></td>
+              <td>Use this class for round styled input.</td>
+            </tr>
+            <tr>
+              <td><strong>Square Input</strong></td>
+              <td><code>.square</code></td>
+              <td>Use this class for square styled input.</td>
+            </tr>
+            <tr>
+              <td><strong>Input Sizes</strong></td>
+              <td><code>.form-control-[lg/sm]</code></td>
+              <td>Use this class for different input sizes.</td>
+            </tr>
+            <tr>
+              <td><strong>Horizontal Form Label Sizing</strong></td>
+              <td><code>.col-form-label-[lg/sm]</code></td>
+              <td>
+                Be sure to use this class to your <code>&lt;label&gt;</code>s or <code>&lt;legend&gt;</code>s to
+                correctly follow the size of <code>.form-control-lg</code> and <code>.form-control-sm</code>.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Floating Labels</strong></td>
+              <td><code>.form-floating</code></td>
+              <td>
+                Use this class as a wrapper of <code>.form-control</code> and <code>&lt;label&gt;</code> elements for
+                floating labels.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Input Validation States</strong></td>
+              <td><code>.is-{valid | invalid}</code>, <code>.{valid | invalid}-feedback</code></td>
+              <td>
+                To show input with validation state, use <code>.is-{valid | invalid}</code> class along with
+                <code>.form-control</code> class and use <code>.{valid | invalid}-feedback</code> class as a sibling of
+                <code>.form-control</code> class to show feedback message.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Input Validation with Tooltips</strong></td>
+              <td><code>.needs-validation</code>, <code>.{valid/invalid}-tooltip</code></td>
+              <td>
+                <code>.needs-validation</code> class must be used along with <code>&lt;form&gt;</code> element. Use
+                <code>.{valid/invalid}-tooltip</code> class as a sibling of <code>.form-control</code> class to show
+                message in tooltip on validation.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-2">
+        <strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong>
+      </p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Plugin Link</strong></td>
+              <td>
+                <a href="https://getbootstrap.com/docs/5.0/components/forms/" target="_blank"
+                  >https://getbootstrap.com/docs/5.0/components/forms/</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-input.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-input.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Input -->
+
+<!-- Input Group -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="input-group" class="card-title">Input Group</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <p>
+        Easily extend form controls by adding text, buttons, or button groups on either side of textual inputs, custom
+        selects, and custom file inputs.
+      </p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Options</th>
+              <th>Class</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Input Group</strong></td>
+              <td><code>.input-group</code></td>
+              <td>Use this class to make input related elements in one line.</td>
+            </tr>
+            <tr>
+              <td><strong>Prepend & Append Element</strong></td>
+              <td><code>.input-group-text</code></td>
+              <td>
+                Use <code>.input-group-text</code> class before/after input elements to prepend/append item to the
+                input-group.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Merge Input Group</strong></td>
+              <td><code>.input-group-merge</code></td>
+              <td>
+                Use this class along with <code>.input-group</code> class and use <code>.input-group-text</code> as a
+                child of this class. Use Merged input group to remove border between prepend/append element and input
+                element.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-2">
+        <strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong>
+      </p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Plugin Link</strong></td>
+              <td>
+                <a href="https://getbootstrap.com/docs/5.0/components/input-group/" target="_blank"
+                  >https://getbootstrap.com/docs/5.0/components/input-group/</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-input-groups.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-input-groups.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Input Group -->
+
+<!-- Input Mask -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="input-mask" class="card-title">Input Mask</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <p>
+        <strong>Cleave.js</strong> helps you format input text content automatically. It provides an easy way to
+        increase input field readability by formatting your typed data. By using this library, you won't need to write
+        any mind-blowing regular expressions or mask patterns to format input text.<br />Read the official
+        <a href="https://nosir.github.io/cleave.js/" target="_blank">Cleave.js Documentation</a> for a full list of
+        instructions and other options.
+      </p>
+      <h6>1. Initialize the plugin by referencing the necessary files:</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;script src="cleave.min.js"&gt;&lt;/script&gt;
+&lt;script src="cleave-phone.{country}.js"&gt;&lt;/script&gt;
+</code>
+      </pre>
+      <h6>2. Binding to existing DOM element.</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;input type="number" class="input-phone" /&gt;
+</code>
+      </pre>
+      <h6>3. Basic usage looks something like this:</h6>
+      <pre class="language-javascript my-1">
+<code class="language-javascript">
+var cleave = new Cleave('.input-phone', {
+  phone: true,
+  phoneRegionCode: '{country}'
+});
+</code>
+      </pre>
+      <p class="mt-2">
+        <strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong>
+      </p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Plugin Link</strong></td>
+              <td>
+                <a href="https://nosir.github.io/cleave.js/" target="_blank">https://nosir.github.io/cleave.js/</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Gitlab Link</strong></td>
+              <td>
+                <a href="https://github.com/nosir/cleave.js" target="_blank">https://github.com/nosir/cleave.js</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-input-mask.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-input-mask.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Input Mask -->
+
+<!-- Textarea Input -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="textarea" class="card-title">Textarea Input</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <p>Textarea input options with different classes and advance options:</p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Options</th>
+              <th>Class / Attribute</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Floating Label</strong></td>
+              <td><code>.form-floating</code></td>
+              <td>
+                Use this class as a wrapper of <code>textarea.form-control</code> element and
+                <code>&lt;label&gt;</code> element to add a Floating Label with textarea.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Counter</strong></td>
+              <td>
+                <code>.char-textarea</code>, <code>[data-length="{number}"]</code>,
+                <code>.textarea-counter-value</code>,
+                <code>.char-count</code>
+              </td>
+              <td>
+                Use <code>.char-textarea</code> class and <code>[data-length="{number}"]</code> attribute along with
+                <code>&lt;textarea&gt;</code> element for counting text-length. You need to add
+                <code>.textarea-counter-value</code> class after textarea's wrapper and use
+                <code>.char-count</code> class as a child of <code>.textarea-counter-value</code> to show counting
+                number and maximum number of characters that can be typed.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-2">
+        <strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong>
+      </p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Plugin Link</strong></td>
+              <td>
+                <a href="https://getbootstrap.com/docs/5.0/components/forms/" target="_blank"
+                  >https://getbootstrap.com/docs/5.0/components/forms/</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-textarea.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-textarea.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Textarea Input -->
+
+<!-- Checkbox -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="checkbox" class="card-title">Checkbox</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <p>Checkboxes are used for selecting one or several options in a list.</p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Options</th>
+              <th>Class</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Basic Checkbox</strong></td>
+              <td><code>.form-check</code>, <code>.form-check-input</code>, <code>.form-check-label</code></td>
+              <td>
+                For basic checkbox, use <code>.form-check</code> class as a wrapper of
+                <code>.form-check-input</code> class with <code>input[type="checkbox"]</code> and
+                <code>.form-check-label</code> class with label element.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Colored Checkbox</strong></td>
+              <td><code>.form-check-{color}</code></td>
+              <td>Use this class along with <code>.form-check</code> classes to change color of checkbox.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-2">
+        <strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong>
+      </p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Plugin Link</strong></td>
+              <td>
+                <a href="https://getbootstrap.com/docs/5.0/components/forms/#checkboxes-and-radios" target="_blank"
+                  >https://getbootstrap.com/docs/5.0/components/forms/#checkboxes-and-radios</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-checkbox.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-checkbox.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Checkbox -->
+
+<!-- Radio -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="radio" class="card-title">Radio</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <p>Radios are used for selecting one option from many.</p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Options</th>
+              <th>Class</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Basic Radio</strong></td>
+              <td><code>.form-check</code>, <code>.form-check-input</code>, <code>.form-check-label</code></td>
+              <td>
+                For basic radio, use <code>.form-check</code> class as a wrapper of <code>.form-check-input</code> class
+                with <code>input[type="radio"]</code> and <code>.form-check-label</code> class with label element.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Custom Radio</strong></td>
+              <td>
+                <code>.form-check</code>, <code>.form-check-input</code>,
+                <code>.form-check-label</code>
+              </td>
+              <td>
+                For custom radio, use <code>.form-check</code> classes as a wrapper of
+                <code>.form-check-input</code> class with input element and <code>.form-check-label</code> class with
+                label element.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Colored Radio</strong></td>
+              <td><code>.form-check-{color}</code></td>
+              <td>Use this class along with <code>.form-check</code> classes to change color of checkbox.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-2">
+        <strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong>
+      </p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Plugin Link</strong></td>
+              <td>
+                <a href="https://getbootstrap.com/docs/5.0/components/forms/#checkboxes-and-radios" target="_blank"
+                  >https://getbootstrap.com/docs/5.0/components/forms/#checkboxes-and-radios</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-radio.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-radio.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Radio -->
+
+<!-- Switch -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="switch" class="card-title">Switch</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <p>Some options with Switch are as follows:</p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Options</th>
+              <th>Class</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Basic Switch</strong></td>
+              <td>
+                <code>.form-check. form-switch </code>, <code>.form-check-input</code>,
+                <code>.form-check-label</code>
+              </td>
+              <td>
+                For basic switch, use <code>.form-check. form-switch </code> classes as a wrapper of
+                <code>.form-check-input</code> class with input element and <code>.form-check-label</code> class with
+                label element.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Colored Switch</strong></td>
+              <td><code>.form-check-{color}</code></td>
+              <td>
+                Use this class along with <code>.form-check. form-switch </code> classes to change color of switch.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Switch with Icon</strong></td>
+              <td><code>.switch-icon-{left | right}</code></td>
+              <td>
+                Use these classes as children of <code>.form-check-label</code> class for icons on either side of a
+                switch. Use <code>.switch-icon-left</code> class for icon on left side and
+                <code>.switch-icon-right</code> class for icon on right side inside the switch itself.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-2">
+        <strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong>
+      </p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Plugin Link</strong></td>
+              <td>
+                <a href="https://getbootstrap.com/docs/5.0/components/forms/#switches" target="_blank"
+                  >https://getbootstrap.com/docs/5.0/components/forms/#switches</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-switch.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-switch.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Switch -->
+
+<!-- Basic Select -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="select" class="card-title">Basic Select</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <p>Select one or more option from a drop-down list.</p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Options</th>
+              <th>Class / Attribute</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Basic Select</td>
+              <td><code>.form-select</code></td>
+              <td>Wrap all <code>option</code>s with <code>select.form-select</code>.</td>
+            </tr>
+            <tr>
+              <td>Select Sizes</td>
+              <td><code>.form-select-{sm | lg}</code></td>
+              <td>Use this class along with <code>select.form-select</code> for different sizes of select.</td>
+            </tr>
+            <tr>
+              <td>Multiple Select</td>
+              <td><code>[multiple]</code></td>
+              <td>Use this attribute along with select element to select multiple options.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-2">
+        <strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong>
+      </p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Plugin Link</strong></td>
+              <td>
+                <a href="https://getbootstrap.com/docs/5.0/components/forms/#select-menu" target="_blank"
+                  >https://getbootstrap.com/docs/5.0/components/forms/#select-menu</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-select.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-select.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Basic Select -->
+
+<!-- Select2 -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="select2" class="card-title">Select2</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <p>
+        Select2 gives you a customizable select box with support for searching, tagging, remote data sets and many other
+        highly used options.<br />Read the official
+        <a href="https://select2.org/" target="_blank">Select2 Documentation</a> for a full list of instructions and
+        other options.
+      </p>
+      <h6>1. Initialize the plugin by referencing the necessary files:</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;script src="select2.full.min.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="select2.min.css"&gt;
+</code>
+      </pre>
+      <h6>2. Binding to existing DOM element.</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;select class="basic-select2" name="state"&gt;
+    &lt;option value="AL"&gt;Alabama&lt;/option&gt;
+        ...
+    &lt;option value="WY"&gt;Wyoming&lt;/option&gt;
+&lt;/select&gt;
+</code>
+      </pre>
+      <h6>3. Basic usage looks something like this:</h6>
+      <pre class="language-javascript my-1">
+<code class="language-javascript">
+$(".basic-select2").select2();
+</code>
+      </pre>
+      <p class="mt-2">
+        <strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong>
+      </p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Plugin Link</strong></td>
+              <td>
+                <a href="https://select2.org/" target="_blank">https://select2.org/</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Github Link</strong></td>
+              <td>
+                <a href="https://github.com/select2/select2" target="_blank">https://github.com/select2/select2</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-select.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-select.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Select2 -->
+
+<!-- Number Input -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="number-input" class="card-title">Number Input</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <p>
+        Bootstrap TouchSpin is a mobile and touch friendly input spinner component.<br />Read the official
+        <a href="https://www.virtuosoft.eu/code/bootstrap-touchspin/" target="_blank"
+          >Bootstrap TouchSpin Documentation</a
+        >
+        for a full list of instructions and other options.
+      </p>
+      <h6>1. Initialize the plugin by referencing the necessary files:</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;script src="jquery.bootstrap-touchspin.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="jquery.bootstrap-touchspin.css"&gt;
+</code>
+      </pre>
+      <h6>2. Binding to existing DOM element.</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;div class="input-group"&gt;
+    &lt;input type="text" class="touchspin" value="{number}" /&gt;
+&lt;/div&gt;
+</code>
+      </pre>
+      <h6>3. Basic usage looks something like this:</h6>
+      <pre class="language-javascript my-1">
+<code class="language-javascript">
+$('.touchspin').TouchSpin({
+    min: 0,
+    max: 100,
+    step: 0.1,
+    decimals: 2,
+    buttondown_class: 'btn btn-primary',
+    buttonup_class: 'btn btn-primary',
+    buttondown_txt: feather.icons['minus'].toSvg(),
+    buttonup_txt: feather.icons['plus'].toSvg()
+});
+</code>
+      </pre>
+      <p class="mt-2">
+        <strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong>
+      </p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Plugin Link</strong></td>
+              <td>
+                <a href="https://www.virtuosoft.eu/code/bootstrap-touchspin/" target="_blank"
+                  >https://www.virtuosoft.eu/code/bootstrap-touchspin/</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Github Link</strong></td>
+              <td>
+                <a href="https://github.com/istvan-ujjmeszaros/bootstrap-touchspin" target="_blank"
+                  >https://github.com/istvan-ujjmeszaros/bootstrap-touchspin</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-number-input.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-number-input.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Number Input -->
+
+<!-- File Uploader -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="file-uploader" class="card-title">File Uploader</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <p>
+        DropzoneJS is an open source library that provides drag’n’drop file uploads with image previews.<br />Read the
+        official <a href="https://www.dropzonejs.com/" target="_blank">DropzoneJS Documentation</a> for a full list of
+        instructions and other options.
+      </p>
+      <h6>1. Initialize the plugin by referencing the necessary files:</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;!-- Vendor files --&gt;
+&lt;script src="dropzone.min.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="dropzone.min.css"&gt;
+
+&lt;!-- Template files --&gt;
+&lt;link rel="stylesheet" type="text/css" href="app-assets/css/plugins/forms/form-file-uploader.css"&gt;
+</code>
+      </pre>
+      <h6>2. Binding to existing DOM element.</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;form action="#" class="dropzone dropzone-area" id="my-awesome-dropzone"&gt;
+  &lt;div class="dz-message"&gt;Drop files here or click to upload.&lt;/div&gt;
+&lt;/form&gt;
+</code>
+      </pre>
+      <h6>3. Basic usage looks something like this:</h6>
+      <pre class="language-javascript my-1">
+<code class="language-javascript">
+$('#my-awesome-dropzone').dropzone({
+    // options
+    ...
+});
+</code>
+      </pre>
+      <p class="mt-2">
+        <strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong>
+      </p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Plugin Link</strong></td>
+              <td>
+                <a href="https://www.dropzonejs.com/" target="_blank">https://www.dropzonejs.com/</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Github Link</strong></td>
+              <td>
+                <a href="https://github.com/enyo/dropzone" target="_blank">https://github.com/enyo/dropzone</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-file-uploader.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-file-uploader.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ File Uploader -->
+
+<!-- Quill Editor -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="quill-editor" class="card-title">Quill Editor</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content collapse show" aria-expanded="true">
+    <div class="card-body">
+      <p>
+        Quill is a free, open source WYSIWYG editor built for the modern web. With its modular architecture and
+        expressive API, it is completely customizable to fit any need.<br />Read the official
+        <a href="https://quilljs.com/" target="_blank">Quill Documentation</a> for a full list of instructions and other
+        options.
+      </p>
+      <h6>1. Initialize the plugin by referencing the necessary files:</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;!-- Vendor files --&gt;
+&lt;script src="quill.min.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="quill.snow.css"&gt;
+&lt;link rel="stylesheet" type="text/css" href="quill.bubble.css"&gt;
+
+&lt;!-- Template files --&gt;
+&lt;link rel="stylesheet" type="text/css" href="app-assets/css/plugins/forms/form-quill-editor.css"&gt;
+</code>
+      </pre>
+      <h6>2. Binding to existing DOM element.</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;div id="editor"&gt;
+    ...
+&lt;/div&gt;
+</code>
+      </pre>
+      <h6>3. Basic usage looks something like this:</h6>
+      <pre class="language-javascript my-1">
+<code class="language-javascript">
+var quill = new Quill('#editor', {
+    ...
+});
+</code>
+      </pre>
+      <p class="mt-2">
+        <strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong>
+      </p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Plugin Link</strong></td>
+              <td>
+                <a href="https://quilljs.com/" target="_blank">https://quilljs.com/</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Github Link</strong></td>
+              <td>
+                <a href="https://github.com/quilljs/quill/" target="_blank">https://github.com/quilljs/quill/</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-quill-editor.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-quill-editor.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Quill Editor -->
+
+<!-- Date & Time Picker -->
+<div class="card">
+  <div class="card-header">
+    <h4 id="date-time-picker" class="card-title">Date & Time Picker</h4>
+    <div class="heading-elements">
+      <ul class="list-inline mb-0">
+        <li>
+          <a data-action="collapse"><i data-feather="chevron-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-content" aria-expanded="true">
+    <div class="card-body">
+      <h5>Flatpickr</h5>
+      <p>
+        Flatpickr is a lightweight and powerful datetime picker.<br />Read the official
+        <a href="https://flatpickr.js.org/" target="_blank">Flatpickr Documentation</a> for a full list of instructions
+        and other options.
+      </p>
+      <h6>1. Initialize the plugin by referencing the necessary files:</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;!-- Vendor files --&gt;
+&lt;script src="flatpickr.min.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="flatpickr.min.css"&gt;
+
+&lt;!-- Template files --&gt;
+&lt;link rel="stylesheet" type="text/css" href="app-assets/css/plugins/forms/pickers/form-flat-pickr.css"&gt;
+</code>
+      </pre>
+      <h6>2. Binding to existing DOM element.</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;input type="text" id="basic-flatpickr" /&gt;
+</code>
+      </pre>
+      <h6>3. Basic usage looks something like this:</h6>
+      <pre class="language-javascript my-1">
+<code class="language-javascript">
+$('#basic-flatpickr').flatpickr();
+</code>
+      </pre>
+      <h5 class="mt-3">Pickadate</h5>
+      <p>
+        Pickadate is mobile-friendly, responsive, and lightweight jQuery date & time input picker.<br />Read the
+        official <a href="https://amsul.ca/pickadate.js/" target="_blank">Pickadate Documentation</a> for a full list of
+        instructions and other options.
+      </p>
+      <h6>1. Initialize the plugin by referencing the necessary files:</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;!-- Vendor files --&gt;
+&lt;script src="picker.js"&gt;&lt;/script&gt;
+&lt;script src="picker.date.js"&gt;&lt;/script&gt;
+&lt;script src="picker.time.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="pickadate.css"&gt;
+
+&lt;!-- Template files --&gt;
+&lt;link rel="stylesheet" type="text/css" href="app-assets/css/plugins/forms/pickers/form-pickadate.css"&gt;
+</code>
+  </pre>
+      <h6>2. Binding to existing DOM element.</h6>
+      <pre class="language-markup my-1">
+<code class="language-markup">
+&lt;input type="text" id="basic-pickadate" /&gt;
+</code>
+  </pre>
+      <h6>3. Basic usage looks something like this:</h6>
+      <pre class="language-javascript my-1">
+<code class="language-javascript">
+$('#basic-pickadate').pickadate();
+</code>
+  </pre>
+      <p class="mt-2">
+        <strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong>
+      </p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Flatpickr Plugin Link</strong></td>
+              <td>
+                <a href="https://flatpickr.js.org/" target="_blank">https://flatpickr.js.org/</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Flatpickr Github Link</strong></td>
+              <td>
+                <a href="https://github.com/flatpickr/flatpickr" target="_blank"
+                  >https://github.com/flatpickr/flatpickr</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Pickadate Plugin Link</strong></td>
+              <td>
+                <a href="https://amsul.ca/pickadate.js/" target="_blank">https://amsul.ca/pickadate.js/</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Pickadate Github Link</strong></td>
+              <td>
+                <a href="https://github.com/amsul/pickadate.js" target="_blank"
+                  >https://github.com/amsul/pickadate.js</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Template Page</strong></td>
+              <td>
+                <a
+                  href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-date-time-picker.html"
+                  target="_blank"
+                  >https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/form-date-time-picker.html</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Date & Time Picker -->

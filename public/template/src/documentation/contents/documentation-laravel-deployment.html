@@ -1,0 +1,154 @@
+<div class="card" id="deployment">
+  <div class="card-header">
+    <h4 class="card-title">Root and Subdirectory Deployment</h4>
+  </div>
+  <div class="card-body">
+    <p class="card-text">
+      We are going to discuss basic changes in our template before deploying our template in the root domain.
+    </p>
+    <div class="alert alert-success">
+      <h4 class="alert-heading">TIP</h4>
+      <div class="alert-body">
+        Firstly, you have to follow all the installation steps if you have not done it before. You can find these steps
+        here.
+      </div>
+    </div>
+
+    <!-- step 1 -->
+    <h6 class="fw-bolder">Step 1</h6>
+    <p>First, run the <code>yarn prod</code> or <code>yarn prod</code> command to generate the build.</p>
+
+    <!-- step 2 -->
+    <h6 class="fw-bolder">Step 2</h6>
+    <p class="card-text">
+      You have to place all public files inside your server's <code>public_html</code> folder and your Laravel is in a
+      separate folder.
+    </p>
+    <p class="card-text">For example:-</p>
+    <p class="card-text">We have two folder in our server.</p>
+    <pre class="language-treeview">
+        <code class="language-treeview">
+        public_html/ -> (folder for public accessible)
+        ├── css/
+        ├── fonts/
+        ├── images/
+        ├── js/
+        ├── .htaccess
+        ├── favicon.ico
+        ├── index.php
+        ├── mix-manifest.json
+        ├── web.config
+        └── robots.txt
+
+        laravel/ -> (folder where laravel live)
+        ├── app/
+        ├── bootstrap/
+        ├── config/
+        ├── database/
+        ├── frontend/
+        ├── resources/
+        ├── routes/
+        ├── storage/
+        ├── tests/
+        ├── vendor/
+        ├── .babelrc
+        ├── .env
+        ├── .gitattributes
+        ├── .gitignore
+        ├── .styleci.yml
+        ├── artisan
+        ├── composer.json
+        ├── docker-compose.yml
+        ├── package.json
+        ├── phpunit.xml
+        ├── server.php
+        └── webpack.mix.js
+        </code>
+    </pre>
+
+    <p class="card-text">
+      As an above structure, we have to changes some paths in the <code>index.php</code> file in the public or
+      public_html file. Also, we have to <code>bind</code> the document root to he current file path, where
+      <code>index.php</code>
+      exists.
+    </p>
+
+    <!-- code -->
+    <pre class="language-php">
+      <code class="language-php">
+&lt;?php
+
+use Illuminate\Contracts\Http\Kernel;
+use Illuminate\Http\Request;
+
+define('LARAVEL_START', microtime(true));
+
+/*
+|--------------------------------------------------------------------------
+| Check If Application Is Under Maintenance
+|--------------------------------------------------------------------------
+|
+| If the application is maintenance / demo mode via the "down" command we
+| will require this file so that any prerendered template can be shown
+| instead of starting the framework, which could cause an exception.
+|
+*/
+
+if (file_exists(__DIR__.'/../laravel/storage/framework/maintenance.php')) {
+    require __DIR__.'/../laravel/storage/framework/maintenance.php';
+}
+
+/*
+|--------------------------------------------------------------------------
+| Register The Auto Loader
+|--------------------------------------------------------------------------
+|
+| Composer provides a convenient, automatically generated class loader for
+| this application. We just need to utilize it! We'll simply require it
+| into the script here so we don't need to manually load our classes.
+|
+*/
+
+require __DIR__.'/../laravel/vendor/autoload.php';
+
+/*
+|--------------------------------------------------------------------------
+| Run The Application
+|--------------------------------------------------------------------------
+|
+| Once we have the application, we can handle the incoming request using
+| the application's HTTP kernel. Then, we will send the response back
+| to this client's browser, allowing them to enjoy our application.
+|
+*/
+
+$app = require_once __DIR__.'/../laravel/bootstrap/app.php';
+
+$app->bind('path.public', function() {
+    return base_path('/../public_html');
+});
+
+$kernel = $app->make(Kernel::class);
+
+$response = tap($kernel->handle(
+    $request = Request::capture()
+))->send();
+
+$kernel->terminate($request, $response);
+      </code>
+    </pre>
+
+    <div class="alert alert-success mt-2">
+      <h4 class="alert-heading">Subdirectory deployment</h4>
+      <div class="alert-body">
+        <p>
+          For your Subdirectory deployment, you have to make path changes as per your Subdirectory folder structure in
+          the above file.
+        </p>
+        <p>Note: <code>public_html</code> folder may differ from server to server.</p>
+      </div>
+    </div>
+
+    <p>Congratulation! You successfully deployed your project.</p>
+  </div>
+</div>
