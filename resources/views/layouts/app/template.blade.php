@@ -21,6 +21,7 @@
         type="text/css" />
     <link href="{{ asset('') }}assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="{{ asset('') }}assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('') }}css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
     @stack('styles')
 </head>
 
@@ -50,30 +51,34 @@
     <script src="{{ asset('') }}assets/plugins/global/plugins.bundle.js"></script>
     <script src="{{ asset('') }}assets/js/scripts.bundle.js"></script>
     <script src="{{ asset('') }}assets/js/custom/widgets.js"></script>
+    <script src="{{ asset('') }}js/jquery.dataTables.min.js"></script>
+    <script src="{{ asset('') }}js/dataTables.bootstrap5.min.js"></script>
     <script src="{{ asset('') }}js/sweetalert.js"></script>
     <script>
-        $(function() {
-            @if (Session::has('success'))
-                Swal.fire({
-                toast: true,
-                icon: 'success',
-                title: '{{ Session::get('success') }}',
-                showConfirmButton: false,
-                showCloseButton: true,
-                position: 'top-end',
-                });
-            @endif
-            @if (Session::has('warning'))
-                Swal.fire({
-                toast: true,
-                icon: 'error',
-                title: '{{ Session::get('success') }}',
-                position: 'top-end',
-                showConfirmButton: false,
-                showCloseButton: true,
-                });
-            @endif
-        });
+        @if (Session::has('success'))
+            $(function(){
+            Swal.fire({
+            toast: true,
+            icon: 'success',
+            title: '{{ Session::get('success') }}',
+            showConfirmButton: false,
+            showCloseButton: true,
+            position: 'top-end',
+            });
+            });
+        @endif
+        @if (Session::has('warning'))
+            $(function(){
+            Swal.fire({
+            toast: true,
+            icon: 'error',
+            title: '{{ Session::get('success') }}',
+            position: 'top-end',
+            showConfirmButton: false,
+            showCloseButton: true,
+            });
+            });
+        @endif
     </script>
     @stack('scripts')
 </body>

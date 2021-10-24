@@ -31,20 +31,23 @@
                     <div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold my-5 my-lg-0 align-items-stretch"
                         id="#kt_header_menu" data-kt-menu="true">
                         <div data-kt-menu-placement="bottom-start" class="menu-item me-lg-1">
-                            <a class="menu-link active py-3" href="{{ url('') }}">
+                            <a class="menu-link {{ Request::is('/') ? 'active' : '' }} py-3"
+                                href="{{ url('') }}">
                                 <span class="menu-title">Beranda</span>
                             </a>
                         </div>
                         <div data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start"
                             class="menu-item menu-lg-down-accordion me-lg-1">
-                            <span class="menu-link py-3">
+                            <span
+                                class="menu-link {{ Request::is('user') || Request::is('layanan') ? 'active' : '' }} py-3">
                                 <span class="menu-title">Master Data</span>
                                 <span class="menu-arrow d-lg-none"></span>
                             </span>
                             <div
                                 class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px">
                                 <div class="menu-item">
-                                    <a href="{{ url('user') }}" class="menu-link">
+                                    <a href="{{ url('user') }}"
+                                        class="menu-link {{ Request::is('user') ? 'active' : '' }}">
                                         <span class="menu-bullet">
                                             <span class="bullet bullet-dot"></span>
                                         </span>
@@ -62,7 +65,8 @@
                             </div>
                         </div>
                         <div data-kt-menu-placement="bottom-start" class="menu-item me-lg-1">
-                            <a class="menu-link py-3" href="{{ url('') }}">
+                            <a class="menu-link {{ Request::is('pengajuan') ? 'active' : '' }} py-3"
+                                href="{{ url('pengajuan') }}">
                                 <span class="menu-title">Pengajuan</span>
                                 <span></span>
                             </a>
@@ -190,19 +194,23 @@
                         <div class="btn btn-icon btn-active-light-primary w-30px h-30px w-md-40px h-md-40px"
                             data-kt-menu-trigger="click" data-kt-menu-attach="parent"
                             data-kt-menu-placement="bottom-end">
-                            <img class="h-30px w-30px rounded" src="{{ asset('') }}images/profil/default.svg"
-                                alt="" />
+                            <img class="h-30px w-30px rounded"
+                                src="{{ asset('') }}images/profil/{{ auth()->user()->profil }}" alt="" />
                         </div>
                         <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-primary fw-bold py-4 fs-6 w-275px"
                             data-kt-menu="true">
                             <div class="menu-item px-3">
                                 <div class="menu-content d-flex align-items-center px-3">
                                     <div class="symbol symbol-50px me-5">
-                                        <img alt="Logo" src="{{ asset('') }}images/profil/default.svg" />
+                                        <img alt="Logo"
+                                            src="{{ asset('') }}images/profil/{{ auth()->user()->profil }}" />
                                     </div>
                                     <div class="d-flex flex-column">
-                                        <div class="fw-bolder d-flex align-items-center fs-5">Max Smith </div>
-                                        <a href="#" class="fw-bold text-muted text-hover-primary fs-7">max@kt.com</a>
+                                        <div class="fw-bolder d-flex align-items-center fs-5">
+                                            {{ Str::words(auth()->user()->nama, 1, '') }} </div>
+                                        <a href="{{ url('profil') }}"
+                                            class="fw-bold text-muted text-hover-primary fs-7">{{ \Illuminate\Support\Str::limit(auth()->user()->email . 'ahsdkjhdasdh', 20, $end = '...') }}
+                                        </a>
                                     </div>
                                 </div>
                             </div>
