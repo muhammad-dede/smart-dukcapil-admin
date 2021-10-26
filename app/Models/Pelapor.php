@@ -18,4 +18,9 @@ class Pelapor extends Model
     {
         return $this->hasMany(Pengajuan::class, 'id_pelapor', 'id');
     }
+
+    public function kewargaNegaraan()
+    {
+        return $this->belongsTo(_Negara::class, 'kewarganegaraan', 'kode');
+    }
 }

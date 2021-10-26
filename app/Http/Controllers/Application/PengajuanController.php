@@ -48,7 +48,10 @@ class PengajuanController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('app.pengajuan.show', [
+            'pengajuan' => Pengajuan::with('layanan', 'pelapor', 'user', 'data_pengajuan')->where('id', $id)->first(),
+            'status_pengajuan' => get_status_pengajuan($id),
+        ]);
     }
 
     /**
@@ -114,5 +117,13 @@ class PengajuanController extends Controller
             })
             ->rawColumns(['action'])
             ->toJson();
+    }
+
+    public function status(Request $request, $id, $status)
+    {
+        // $status_pengajuan = $status == 'terima' ? 'Y' : ($status == 'tolak' ? 'N' : null);
+        // Pengajuan::where('id', $id)->update([
+        //     'terima' =>
+        // ]);
     }
 }

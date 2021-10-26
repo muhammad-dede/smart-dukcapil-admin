@@ -4,7 +4,6 @@ $.ajaxSetup({
     }
 });
 $(document).ready(function () {
-
     // Username
     $("#btn-edit-username").on("click", function (e) {
         e.preventDefault();
