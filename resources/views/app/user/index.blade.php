@@ -30,8 +30,8 @@
                                 <tr class="text-start text-muted fw-bolder fs-7 text-uppercase gs-0">
                                     <th class="min-w-20px">No</th>
                                     <th class="min-w-125px">Nama</th>
-                                    <th class="min-w-125px">Email</th>
                                     <th class="min-w-125px">Username</th>
+                                    <th class="min-w-125px">Email</th>
                                     <th class="min-w-125px">Role</th>
                                     <th class="text-center min-w-100px">Aksi</th>
                                 </tr>

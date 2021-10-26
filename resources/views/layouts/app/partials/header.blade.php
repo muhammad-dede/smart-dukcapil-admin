@@ -54,20 +54,19 @@
                                         <span class="menu-title">User</span>
                                     </a>
                                 </div>
-                                <div class="menu-item">
-                                    <a href="#" class="menu-link">
-                                        <span class="menu-bullet">
-                                            <span class="bullet bullet-dot"></span>
-                                        </span>
-                                        <span class="menu-title">Layanan</span>
-                                    </a>
-                                </div>
                             </div>
                         </div>
                         <div data-kt-menu-placement="bottom-start" class="menu-item me-lg-1">
                             <a class="menu-link {{ Request::is('pengajuan') ? 'active' : '' }} py-3"
                                 href="{{ url('pengajuan') }}">
                                 <span class="menu-title">Pengajuan</span>
+                                <span></span>
+                            </a>
+                        </div>
+                        <div data-kt-menu-placement="bottom-start" class="menu-item me-lg-1">
+                            <a class="menu-link {{ Request::is('chat') ? 'active' : '' }} py-3"
+                                href="{{ url('chat') }}">
+                                <span class="menu-title">Chat</span>
                                 <span></span>
                             </a>
                         </div>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Application\BerandaController;
+use App\Http\Controllers\Application\ChatController;
 use App\Http\Controllers\Application\PengajuanController;
 use App\Http\Controllers\Application\ProfilController;
 use App\Http\Controllers\Application\UserController;
@@ -16,7 +17,9 @@ Route::group(['middleware' => 'auth'], function () {
     });
     Route::get('/user/data', [UserController::class, 'data'])->name('user.data');
     Route::resource('user', UserController::class)->except('show');
-    Route::group(['prefix' => 'pengajuan', 'as' => 'pengajuan.'], function () {
-        Route::get('/', [PengajuanController::class, 'index'])->name('index');
+    Route::get('/pengajuan/data', [PengajuanController::class, 'data'])->name('pengajuan.data');
+    Route::resource('pengajuan', PengajuanController::class);
+    Route::group(['prefix' => 'chat', 'as' => 'chat.'], function () {
+        Route::get('/', [ChatController::class, 'index'])->name('index');
     });
 });
