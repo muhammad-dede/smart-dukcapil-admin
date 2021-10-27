@@ -9,7 +9,7 @@ class DataPelaporanPencatatanSipilDariLuarWilayahNkri extends Model
 {
     use HasFactory;
 
-    protected $table = 'data_pelapor_pencatatan_sipil_dari_luar_wilayah_nkri';
+    protected $table = 'data_pelaporan_pencatatan_sipil_dari_luar_wilayah_nkri';
     protected $primaryKey = 'id';
     public $timestamps = false;
 

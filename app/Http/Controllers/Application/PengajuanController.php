@@ -121,9 +121,13 @@ class PengajuanController extends Controller
 
     public function status(Request $request, $id, $status)
     {
-        // $status_pengajuan = $status == 'terima' ? 'Y' : ($status == 'tolak' ? 'N' : null);
-        // Pengajuan::where('id', $id)->update([
-        //     'terima' =>
-        // ]);
+        $status_pengajuan = $status == 'terima' ? 'Y' : ($status == 'tolak' ? 'N' : 'V');
+        $keterangan = $status_pengajuan == 'V' ? null : $request->keterangan;
+        Pengajuan::where('id', $id)->update([
+            'status' => $status_pengajuan,
+            'keterangan' => $keterangan
+        ]);
+
+        return redirect()->back()->with('success', 'Berhasil mengubah status pengajuan');
     }
 }

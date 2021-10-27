@@ -1,4 +1,4 @@
-<div id="data-pembatalam-akta">
+<div id="data-pembatalan-akta">
     <h3 class="text-primary mb-5">Data Pembatalan Akta</h3>
     <div class="row mb-7">
         <label class="col-lg-4 fw-bold text-muted"> Akta yang dibatalkan</label>

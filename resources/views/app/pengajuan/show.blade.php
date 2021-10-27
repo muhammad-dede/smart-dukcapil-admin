@@ -48,24 +48,14 @@
                                             <ul class="dropdown-menu dropdown-menu-dark"
                                                 aria-labelledby="dropdownMenuButton2">
                                                 <li>
-                                                    <form
-                                                        action="{{ url('pengajuan/status') }}/{{ $pengajuan->id }}/terima"
-                                                        method="POST">
-                                                        @csrf
-                                                        @method('put')
-                                                        <button text="Yakin ingin menerima pengajuan?"
-                                                            class="dropdown-item btn_status">Terima</button>
-                                                    </form>
+                                                    <button type="button" class="dropdown-item modal_status_show"
+                                                        url="{{ url('pengajuan/status') }}/{{ $pengajuan->id }}/terima"
+                                                        title="Pengajuan Diterima" color="btn btn-success">Terima</button>
                                                 </li>
                                                 <li>
-                                                    <form
-                                                        action="{{ url('pengajuan/status') }}/{{ $pengajuan->id }}/tolak"
-                                                        method="POST">
-                                                        @csrf
-                                                        @method('put')
-                                                        <button text="Yakin ingin menolak pengajuan?"
-                                                            class="dropdown-item btn_status">Tolak</button>
-                                                    </form>
+                                                    <button type="button" class="dropdown-item modal_status_show"
+                                                        url="{{ url('pengajuan/status') }}/{{ $pengajuan->id }}/tolak"
+                                                        title="Pengajuan Ditolak" color="btn btn-danger">Tolak</button>
                                                 </li>
                                                 @if (auth()->user()->is_admin)
                                                     <li>
@@ -77,11 +67,17 @@
                                                             method="POST">
                                                             @csrf
                                                             @method('put')
-                                                            <button text="Yakin ingin mengatur ulang status pengajuan?"
-                                                                class="dropdown-item btn_status">Atur
+                                                            <button type="submit"
+                                                                text="Yakin ingin mengatur ulang status pengajuan?"
+                                                                class="dropdown-item btn_status"
+                                                                title="Atur Ulang Status">Atur
                                                                 Ulang
                                                                 Status</button>
                                                         </form>
+                                                        {{-- <button type="button" class="dropdown-item modal_status_show"
+                                                            url="{{ url('pengajuan/status') }}/{{ $pengajuan->id }}/reset"
+                                                            title="Atur Ulang Status Pengajuan" color="btn btn-warning">Atur
+                                                            Ulang Status</button> --}}
                                                     </li>
                                                 @endif
                                             </ul>
@@ -155,17 +151,35 @@
                         @include('app.pengajuan.show.pembetulan-akta')
                     @elseif ($pengajuan->layanan->url == 'pembatalan-akta' && $pengajuan->id_layanan == 15)
                         @include('app.pengajuan.show.pembatalan-akta')
-                    @elseif ($pengajuan->layanan->url == 'pelapor-pencatatan-sipil-dari-luar-wilayah-nkri' &&
+                    @elseif ($pengajuan->layanan->url == 'pelaporan-pencatatan-sipil-dari-luar-wilayah-nkri' &&
                         $pengajuan->id_layanan == 16)
-                        @include('app.pengajuan.show.pelapor-pencatatan-sipil-dari-luar-wilayah-nkri')
+                        @include('app.pengajuan.show.pelaporan-pencatatan-sipil-dari-luar-wilayah-nkri')
                     @else
                         @include('app.pengajuan.show.404')
+                    @endif
+                    @if (count($pengajuan->pengajuanBerkas))
+                        <div class="mb-3 text-muted">
+                            <hr>
+                        </div>
+                        <div id="data-berkas-pengajuan">
+                            <h3 class="text-primary mb-5">Berkas Pengajuan</h3>
+                            @foreach ($pengajuan->pengajuanBerkas as $berkas)
+                                <div class="row mb-7">
+                                    <label
+                                        class="col-lg-4 fw-bold text-muted">{{ $berkas->persyaratan->persyaratan }}</label>
+                                    <div class="col-lg-8">
+                                        <a href="{{ asset('') }}berkas/{{ $berkas->berkas }}" class="fw-bolder fs-6"
+                                            target="_blank">{{ $berkas->berkas }}</a>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
                     @endif
                 </div>
             </div>
         </div>
     </div>
-
+    @include('app.pengajuan.modal.status')
 @endsection
 
 @push('scripts')

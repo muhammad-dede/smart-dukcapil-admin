@@ -96,83 +96,62 @@
                                         fill="black" />
                                 </svg>
                             </span>
-                            <span
-                                class="bullet bullet-dot bg-success h-6px w-6px position-absolute translate-middle top-0 start-50 animation-blink"></span>
+                            @if (get_notifikasi()->count_notifikasi > 0)
+                                <span
+                                    class="bullet bullet-dot bg-success h-6px w-6px position-absolute translate-middle top-0 start-50 animation-blink"></span>
+                            @endif
                         </div>
                         <div class="menu menu-sub menu-sub-dropdown menu-column w-350px w-lg-375px" data-kt-menu="true">
                             <div class="d-flex flex-column bgi-no-repeat rounded-top"
                                 style="background-image:url('{{ asset('') }}assets/media/misc/pattern-1.jpg')">
                                 <h3 class="text-white fw-bold px-9 mt-10 mb-6">Notifikasi
-                                    <span class="fs-8 opacity-75 ps-3">24</span>
+                                    <span
+                                        class="fs-8 opacity-75 ps-3">{{ get_notifikasi()->count_notifikasi }}</span>
                                 </h3>
                                 <ul class="nav nav-line-tabs nav-line-tabs-2x nav-stretch fw-bold px-9">
                                     <li class="nav-item">
                                         <a class="nav-link text-white opacity-75 opacity-state-100 pb-4"
-                                            data-bs-toggle="tab" href="#kt_topbar_notifications_1">Permohonan</a>
+                                            data-bs-toggle="tab" href="#kt_topbar_notifications_1">Pengajuan</a>
                                     </li>
                                 </ul>
                             </div>
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="kt_topbar_notifications_1" role="tabpanel">
                                     <div class="scroll-y mh-325px my-5 px-8">
-                                        <div class="d-flex flex-stack py-4">
-                                            <div class="d-flex align-items-center">
-                                                <div class="symbol symbol-35px me-4">
-                                                    <span class="symbol-label bg-light-danger">
-                                                        <span class="svg-icon svg-icon-2 svg-icon-danger">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                height="24" viewBox="0 0 24 24" fill="none">
-                                                                <rect opacity="0.3" x="2" y="2" width="20" height="20"
-                                                                    rx="10" fill="black" />
-                                                                <rect x="11" y="14" width="7" height="2" rx="1"
-                                                                    transform="rotate(-90 11 14)" fill="black" />
-                                                                <rect x="11" y="17" width="2" height="2" rx="1"
-                                                                    transform="rotate(-90 11 17)" fill="black" />
-                                                            </svg>
+                                        @foreach (get_notifikasi()->data_notifikasi as $notifikasi)
+                                            <div class="d-flex flex-stack py-4">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="symbol symbol-35px me-4">
+                                                        <span class="symbol-label bg-light-info">
+                                                            <span class="svg-icon svg-icon-2 svg-icon-info">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                    height="24" viewBox="0 0 24 24" fill="none">
+                                                                    <rect opacity="0.3" x="2" y="2" width="20"
+                                                                        height="20" rx="10" fill="black" />
+                                                                    <rect x="11" y="14" width="7" height="2" rx="1"
+                                                                        transform="rotate(-90 11 14)" fill="black" />
+                                                                    <rect x="11" y="17" width="2" height="2" rx="1"
+                                                                        transform="rotate(-90 11 17)" fill="black" />
+                                                                </svg>
+                                                            </span>
                                                         </span>
-                                                    </span>
+                                                    </div>
+                                                    <div class="mb-0 me-2">
+                                                        <a href="{{ url('pengajuan', $notifikasi->id) }}"
+                                                            class="fs-6 text-gray-800 text-hover-primary fw-bolder">{{ $notifikasi->layanan->layanan }}</a>
+                                                        <div class="text-gray-400 fs-7">
+                                                            {{ $notifikasi->status == 'V' ? 'Sedang Diverifikasi' : 'Done' }}
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div class="mb-0 me-2">
-                                                    <a href="#"
-                                                        class="fs-6 text-gray-800 text-hover-primary fw-bolder">HR
-                                                        Confidential</a>
-                                                    <div class="text-gray-400 fs-7">Confidential staff
-                                                        documents</div>
-                                                </div>
+                                                <span
+                                                    class="badge badge-light fs-8">{{ \Carbon\Carbon::parse($notifikasi->tgl)->diffForHumans() }}</span>
                                             </div>
-                                            <span class="badge badge-light fs-8">2 hrs</span>
-                                        </div>
-                                        <div class="d-flex flex-stack py-4">
-                                            <div class="d-flex align-items-center">
-                                                <div class="symbol symbol-35px me-4">
-                                                    <span class="symbol-label bg-light-primary">
-                                                        <span class="svg-icon svg-icon-2 svg-icon-primary">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                height="24" viewBox="0 0 24 24" fill="none">
-                                                                <path opacity="0.3"
-                                                                    d="M6 22H4V3C4 2.4 4.4 2 5 2C5.6 2 6 2.4 6 3V22Z"
-                                                                    fill="black" />
-                                                                <path
-                                                                    d="M18 14H4V4H18C18.8 4 19.2 4.9 18.7 5.5L16 9L18.8 12.5C19.3 13.1 18.8 14 18 14Z"
-                                                                    fill="black" />
-                                                            </svg>
-                                                        </span>
-                                                    </span>
-                                                </div>
-                                                <div class="mb-0 me-2">
-                                                    <a href="#"
-                                                        class="fs-6 text-gray-800 text-hover-primary fw-bolder">Project
-                                                        Breafing</a>
-                                                    <div class="text-gray-400 fs-7">Product launch status update</div>
-                                                </div>
-                                            </div>
-                                            <span class="badge badge-light fs-8">21 Jan</span>
-                                        </div>
+                                        @endforeach
                                     </div>
                                     <div class="py-3 text-center border-top">
-                                        <a href="../../demo2/dist/pages/profile/activity.html"
-                                            class="btn btn-color-gray-600 btn-active-color-primary">View
-                                            All
+                                        <a href="{{ url('pengajuan') }}"
+                                            class="btn btn-color-gray-600 btn-active-color-primary">Lihat Semua
                                             <span class="svg-icon svg-icon-5">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24" fill="none">

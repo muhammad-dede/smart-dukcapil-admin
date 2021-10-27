@@ -64,45 +64,55 @@ function get_lamanya_dalam_kandungan()
 function get_status_pengajuan($id)
 {
     $pengajuan = \App\Models\Pengajuan::where('id', $id)->first();
-    if ($pengajuan->terima == 'Y') {
-        $color = 'success';
-        $status = 'Pengajuan Diterima';
-        $text = 'Pengajuan Anda memenuhi persyaratan kami, kunjungi Dinas Kependudukan dan Catatan Sipil Kota Cilegon serta membawa print out berkas persyaratan yang telah Anda Upload!';
-    } elseif ($pengajuan->terima == 'N') {
-        $color = 'danger';
-        $status = 'Pengajuan Ditolak';
-        $text = 'Pengajuan Anda tidak memenuhi persyaratan kami, Anda dapat melakukan pengajuan kembali setelah hari ini atau Anda dapat mengunjungi langsung Dinas Kependudukan dan Catatan Sipil Kota Cilegon!';
-    } else {
-        $persyaratan = \App\Models\Persyaratan::where('id_layanan', $pengajuan->id_layanan)->count();
-        if ($persyaratan > 0) {
-            $pengajuan_berkas =  \App\Models\PengajuanBerkas::where('id_pengajuan', $pengajuan->id);
-            if ($pengajuan_berkas->count() == 0) {
-                $color = 'warning';
-                $status = 'Berkas Persyaratan Belum Di-Upload ';
-                $text = 'Anda belum upload berkas persyaratan.';
-            } else {
-                $invalid_pengajuan_berkas = \App\Models\PengajuanBerkas::where('id_pengajuan', $pengajuan->id)->where('valid', false)->get();
-                if ($invalid_pengajuan_berkas->count() > 0) {
-                    $color = 'danger';
-                    $status = 'Berkas Tidak Valid';
-                    $text = $invalid_pengajuan_berkas->count() . ' berkas tidak valid, mohon untuk mengupload ulang berkas persyaratan anda.';
-                } else {
-                    $color = 'info';
-                    $status = 'Belum Diverifikasi';
-                    $text = 'Mohon menunggu, Pengajuan Anda sedang diverifikasi oleh Admin kami.';
-                }
-            }
+    $persyaratan = \App\Models\Persyaratan::where('id_layanan', $pengajuan->id_layanan)->count();
+    if ($persyaratan > 0) {
+        $upload_pengajuan_berkas = \App\Models\PengajuanBerkas::where('id_pengajuan', $pengajuan->id)->where('upload', false);
+        if ($upload_pengajuan_berkas->count() > 0) {
+            $kode = 'Incompleted';
+            $color = 'warning';
+            $status = 'Berkas Persyaratan Tidak Lengkap';
+            $text = $upload_pengajuan_berkas->count() . ' berkas belum diupload, mohon untuk melengkapi data persyaratan untuk proses verifikasi.';
         } else {
-            $color = 'info';
-            $status = 'Belum Diverifikasi';
-            $text = 'Mohon menunggu, Pengajuan Anda sedang diverifikasi oleh Admin kami.';
+            // $invalid_pengajuan_berkas = \App\Models\PengajuanBerkas::where('id_pengajuan', $pengajuan->id)->where('valid', false)->get();
+            // if ($invalid_pengajuan_berkas->count() > 0) {
+            //     $kode = 'Invalid';
+            //     $color = 'danger';
+            //     $status = 'Berkas Tidak Valid';
+            //     $text = $invalid_pengajuan_berkas->count() . ' berkas tidak valid, mohon untuk mengupload ulang berkas persyaratan anda.';
+            // } else {
+            //     $kode = $pengajuan->status;
+            //     $color = $pengajuan->statusPengajuan->color;
+            //     $status = $pengajuan->status == 'V' ? 'Sedang Diverikasi' : ($pengajuan->status == 'Y' ? 'Pengajuan Diterima' : 'Pengajuan Ditolak');
+            //     $text = $pengajuan->statusPengajuan->pesan;
+            // }
+            $kode = $pengajuan->status;
+            $color = $pengajuan->statusPengajuan->color;
+            $status = $pengajuan->status == 'V' ? 'Belum Diverikasi' : ($pengajuan->status == 'Y' ? 'Diterima' : 'Ditolak');
+            $text = $pengajuan->statusPengajuan->pesan;
         }
+    } else {
+        $kode = $pengajuan->status;
+        $color = $pengajuan->statusPengajuan->color;
+        $status = $pengajuan->status == 'V' ? 'Belum Diverikasi' : ($pengajuan->status == 'Y' ? 'Diterima' : 'Ditolak');
+        $text = $pengajuan->statusPengajuan->pesan;
     }
 
     $status_pengajuan = (object) [
+        'kode' => $kode,
         'color' => $color,
         'status' => $status,
         'text' => $text,
     ];
     return $status_pengajuan;
+}
+
+function get_notifikasi()
+{
+    $pengajuan = \App\Models\Pengajuan::where('status', 'V')->get();
+
+    $get_notifikasi = (object) [
+        'count_notifikasi' => $pengajuan->count(),
+        'data_notifikasi' => $pengajuan,
+    ];
+    return $get_notifikasi;
 }

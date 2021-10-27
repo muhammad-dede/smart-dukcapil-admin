@@ -15,11 +15,14 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/', [ProfilController::class, 'index'])->name('index');
         Route::post('/update/{form}', [ProfilController::class, 'update'])->name('update');
     });
+    // User
     Route::get('/user/data', [UserController::class, 'data'])->name('user.data');
     Route::resource('user', UserController::class)->except('show');
+    // Pengajuan
     Route::get('/pengajuan/data', [PengajuanController::class, 'data'])->name('pengajuan.data');
-    Route::put('/pengajuan/status/{id}/{status}/', [PengajuanController::class, 'status'])->name('pengajuan.status');
+    Route::put('/pengajuan/status/{id}/{status}', [PengajuanController::class, 'status'])->name('pengajuan.status');
     Route::resource('pengajuan', PengajuanController::class);
+    // Chat
     Route::group(['prefix' => 'chat', 'as' => 'chat.'], function () {
         Route::get('/', [ChatController::class, 'index'])->name('index');
     });
