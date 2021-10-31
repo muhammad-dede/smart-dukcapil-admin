@@ -11,13 +11,9 @@
                     <li class="breadcrumb-item">
                         <span class="bullet bg-white opacity-75 w-5px h-2px"></span>
                     </li>
-                    <li class="breadcrumb-item text-white opacity-75">Hubungi Kami</li>
+                    <li class="breadcrumb-item text-white opacity-75">Chat</li>
                 </ul>
             </div>
-            {{-- <div class="d-flex align-items-center py-3 py-md-1">
-                <a href="{{ url('pengajuan/create') }}" class="btn btn-bg-white btn-active-color-primary">Tambah
-                    Pengajuan</a>
-            </div> --}}
         </div>
     </div>
     <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container-xxl">
@@ -26,7 +22,7 @@
                 <div class="flex-column flex-lg-row-auto w-100 w-lg-300px w-xl-400px mb-10 mb-lg-0">
                     <div class="card card-flush">
                         <div class="card-header pt-7" id="kt_chat_contacts_header">
-                            <h5 class="card-title">Hubungi Operator Kami</h5>
+                            <h5 class="card-title">Chat List</h5>
                         </div>
                         <div class="card-body pt-5" id="chat_list">
                             <div class="scroll-y me-n5 pe-5 h-500px h-lg-auto" data-kt-scroll="true"
@@ -40,8 +36,8 @@
                                         </div>
                                         <div class="ms-5">
                                             <a href="#"
-                                                class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2">Administrator</a>
-                                            <div class="fw-bold text-muted">Admin</div>
+                                                class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2">Amar</a>
+                                            <div class="fw-bold text-muted">Pelapor</div>
                                         </div>
                                     </div>
                                     <div class="d-flex flex-column align-items-end ms-2">
@@ -56,8 +52,8 @@
                                         </div>
                                         <div class="ms-5">
                                             <a href="#"
-                                                class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2">Operator 1</a>
-                                            <div class="fw-bold text-muted">operator</div>
+                                                class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2">Oman</a>
+                                            <div class="fw-bold text-muted">pelapor</div>
                                         </div>
                                     </div>
                                     <div class="d-flex flex-column align-items-end ms-2">
@@ -74,7 +70,7 @@
                             <div class="card-title">
                                 <div class="d-flex justify-content-center flex-column me-3">
                                     <a href="#"
-                                        class="fs-4 fw-bolder text-gray-900 text-hover-primary me-1 mb-2 lh-1">Administrator</a>
+                                        class="fs-4 fw-bolder text-gray-900 text-hover-primary me-1 mb-2 lh-1">Amar</a>
                                     <div class="mb-0 lh-1">
                                         <span class="badge badge-success badge-circle w-10px h-10px me-1"></span>
                                         <span class="fs-7 fw-bold text-muted">Online</span>
