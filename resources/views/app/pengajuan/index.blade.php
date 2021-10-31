@@ -27,7 +27,8 @@
                     <div class="card-header border-0 pt-5">
                         <h3 class="card-title align-items-start flex-column">
                             <span class="card-label fw-bolder fs-3 mb-1">Semua Data Pengajuan</span>
-                            <span class="text-muted mt-1 fw-bold fs-7">Belum Diverifikasi 0</span>
+                            <span class="text-muted mt-1 fw-bold fs-7">Belum Diverifikasi
+                                {{ get_notifikasi()->count_notifikasi }}</span>
                         </h3>
                     </div>
                     <div class="card-body py-3">
@@ -63,7 +64,10 @@
             ajax: "{{ route('pengajuan.data') }}",
             columns: [{
                     data: 'DT_RowIndex',
-                    name: 'id'
+                    name: 'id',
+                    orderable: false,
+                    searchable: false,
+                    sClass: 'text-center'
                 },
                 {
                     data: 'pelapor',
@@ -83,7 +87,9 @@
                 },
                 {
                     data: 'action',
-                    name: 'action'
+                    name: 'action',
+                    orderable: false,
+                    searchable: false,
                 },
             ]
         });

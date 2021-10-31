@@ -54,6 +54,15 @@
                                         <span class="menu-title">User</span>
                                     </a>
                                 </div>
+                                <div class="menu-item">
+                                    <a href="{{ url('layanan') }}"
+                                        class="menu-link {{ Request::is('layanan') ? 'active' : '' }}">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot"></span>
+                                        </span>
+                                        <span class="menu-title">Layanan</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div data-kt-menu-placement="bottom-start" class="menu-item me-lg-1">

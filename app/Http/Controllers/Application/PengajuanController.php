@@ -90,7 +90,7 @@ class PengajuanController extends Controller
 
     public function data()
     {
-        $model = Pengajuan::query()->with(['data_pengajuan', 'layanan', 'pelapor', 'user'])->orderBy('tgl', 'desc');
+        $model = Pengajuan::with(['data_pengajuan', 'layanan', 'pelapor', 'user'])->orderBy('tgl', 'desc')->get();
         return DataTables::of($model)
             ->addIndexColumn()
             ->addColumn('layanan', function ($model) {
@@ -116,7 +116,7 @@ class PengajuanController extends Controller
                 ]);
             })
             ->rawColumns(['action'])
-            ->toJson();
+            ->make(true);
     }
 
     public function status(Request $request, $id, $status)

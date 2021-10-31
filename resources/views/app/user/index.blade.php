@@ -58,7 +58,10 @@
             ajax: "{{ route('user.data') }}",
             columns: [{
                     data: 'DT_RowIndex',
-                    name: 'id'
+                    name: 'id',
+                    orderable: false,
+                    searchable: false,
+                    sClass: 'text-center'
                 },
                 {
                     data: 'nama',
@@ -78,7 +81,10 @@
                 },
                 {
                     data: 'action',
-                    name: 'action'
+                    name: 'action',
+                    orderable: false,
+                    searchable: false,
+                    sClass: 'text-center'
                 },
             ]
         });
