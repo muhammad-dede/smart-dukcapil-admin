@@ -14,10 +14,10 @@
                     <li class="breadcrumb-item text-white opacity-75">Pengajuan</li>
                 </ul>
             </div>
-            <div class="d-flex align-items-center py-3 py-md-1">
+            {{-- <div class="d-flex align-items-center py-3 py-md-1">
                 <a href="{{ url('pengajuan/create') }}" class="btn btn-bg-white btn-active-color-primary">Tambah
                     Pengajuan</a>
-            </div>
+            </div> --}}
         </div>
     </div>
     <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container-xxl">
